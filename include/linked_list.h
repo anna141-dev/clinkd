@@ -2,6 +2,7 @@
 #define LINKED_LIST_H
 
 #include <stdint.h>
+#include <stdlib.h>
 
 typedef struct Node {
   void* data;
@@ -36,7 +37,14 @@ void LinkedListPropend(NodeItem** head, void* value);
  * @param head Pointer to the head of the list.
  * @return Pointer to the new last node, or NULL if the list is now empty.
  */
-NodeItem* LinkedListPop(NodeItem* head);
+NodeItem* LinkedListPopFront(NodeItem* head);
+
+/**
+ * @brief Removes the first node from the list.
+ * @param head Pointer to the head of the list.
+ * @return Pointer to the new first node, or NULL if the list is now empty.
+ */
+NodeItem* LinkedListPopBack(NodeItem* head);
 
 /**
  * @brief Finds a node by value.
@@ -70,5 +78,15 @@ NodeItem* LinkedListDeleteAt(NodeItem* head, int index);
  * @param print_data The function corresponding to the type of data to list
  */
 void LinkedListNodes(NodeItem* head, void (*PrintData)(void*));
+
+/**
+ * @brief Deletes all nodes on the list, freeing memory up correctly
+ *
+ * Always use this after you finish operations with the list you are using, it's important to avoid memory leaks.
+ * It automatically sets the pointer to the head to NULL, so you don't need to worry about doing it manually.
+ *
+ * @param head Pointer to the head of the list.
+ */
+void LinkedListFree(NodeItem** head);
 
 #endif

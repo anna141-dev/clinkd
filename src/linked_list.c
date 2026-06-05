@@ -56,3 +56,14 @@ void LinkedListNodes(NodeItem* head, void (*print_data)(void*)) {
   }
   printf(" --> NULL\n");
 }
+
+void LinkedListFree(NodeItem** head) {
+  NodeItem* temp;
+
+  while (*head != NULL) {
+    temp = *head;
+    *head = (*head)->next;
+    free(temp);
+  }
+}
+

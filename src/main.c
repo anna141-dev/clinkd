@@ -41,6 +41,7 @@ int main(void) {
 
   LinkedListNodes(node, print_int);
 
-  free(node);
+  LinkedListFree(&node);
+
   return 0;
 }
