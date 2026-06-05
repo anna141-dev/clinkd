@@ -1,0 +1,32 @@
+/* Responsividade básica para Doxygen */
+
+/* Recolhe a sidebar no mobile */
+@media screen and (max-width: 768px) {
+  #side-nav {
+    display: none;
+  }
+
+  #doc-content {
+    margin-left: 0 !important;
+  }
+
+  #top {
+    position: relative !important;
+  }
+
+  /* Tabelas horizontalmente scrolláveis */
+  table.doxtable {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Ajusta fonte e espaçamento */
+  div.contents {
+    padding: 8px 16px;
+  }
+
+  .memproto, .memdoc {
+    overflow-x: auto;
+  }
+}
