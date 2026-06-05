@@ -59,7 +59,7 @@ NodeItem* LinkedListFind(NodeItem* head, void* value);
  * @param index Zero-based position to insert at.
  * @return Pointer to the newly inserted node.
  */
-NodeItem* LinkedListInsertAt(NodeItem* head, void* value, uint32_t index);
+NodeItem* LinkedListInsertAt(NodeItem* head, void* value, size_t index);
 
 /**
  * @brief Deletes the node at a given index.
@@ -67,7 +67,7 @@ NodeItem* LinkedListInsertAt(NodeItem* head, void* value, uint32_t index);
  * @param index Zero-based position of the node to delete.
  * @return Pointer to the node that replaced the deleted one, or NULL.
  */
-NodeItem* LinkedListDeleteAt(NodeItem* head, int index);
+NodeItem* LinkedListDeleteAt(NodeItem* head, size_t index);
 
 
 /**
@@ -93,6 +93,6 @@ void LinkedListFree(NodeItem** head);
  * @param head Pointer to the head of the list.
  * @return The total of notes on the list.
  */
-int LinkedListCountNodes(NodeItem* head);
+size_t LinkedListCountNodes(NodeItem* head);
 
 #endif

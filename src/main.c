@@ -49,7 +49,7 @@ int main(void) {
   TEST(1, "Show empty list (expects no output)");
   LinkedListNodes(node, print_int);
   ASSERT(node == NULL, "List is NULL after initialization");
-  ASSERT(CountNodes(node) == 0, "Node count is 0");
+  ASSERT(LinkedListCountNodes(node) == 0, "Node count is 0");
 
   /*Append: individual values*/
   SECTION("Append Individual Values");
@@ -58,7 +58,7 @@ int main(void) {
   LinkedListAppend(&node, &v1);
   LinkedListAppend(&node, &v2);
   LinkedListAppend(&node, &v3);
-  ASSERT(CountNodes(node) == 3, "Node count is 3 after 3 appends");
+  ASSERT(LinkedListCountNodes(node) == 3, "Node count is 3 after 3 appends");
 
   TEST(3, "Listing nodes after individual appends");
   LinkedListNodes(node, print_int);
@@ -71,7 +71,7 @@ int main(void) {
   for (int i = 0; i < values_len; i++) {
     LinkedListAppend(&node, &values[i]);
   }
-  ASSERT(CountNodes(node) == 8, "Node count is 8 after array appends");
+  ASSERT(LinkedListCountNodes(node) == 8, "Node count is 8 after array appends");
 
   TEST(5, "Listing nodes after array appends");
   LinkedListNodes(node, print_int);
@@ -80,11 +80,11 @@ int main(void) {
   SECTION("Pop Operations");
   TEST(6, "Pop Back");
   LinkedListPopBack(&node);
-  ASSERT(CountNodes(node) == 7, "Node count is 7 after PopBack");
+  ASSERT(LinkedListCountNodes(node) == 7, "Node count is 7 after PopBack");
 
   TEST(7, "Pop Front");
   LinkedListPopFront(&node);
-  ASSERT(CountNodes(node) == 6, "Node count is 6 after PopFront");
+  ASSERT(LinkedListCountNodes(node) == 6, "Node count is 6 after PopFront");
 
   DEBUG("Listing nodes after pop operations:");
   LinkedListNodes(node, print_int);
@@ -94,7 +94,7 @@ int main(void) {
   TEST(8, "Freeing all nodes");
   LinkedListFree(&node);
   ASSERT(node == NULL, "List is NULL after LinkedListFree");
-  ASSERT(CountNodes(node) == 0, "Node count is 0 after free");
+  ASSERT(LinkedListCountNodes(node) == 0, "Node count is 0 after free");
 
   printf("\n");
   printf(FOOTER);

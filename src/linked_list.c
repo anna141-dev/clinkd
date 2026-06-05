@@ -3,8 +3,10 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+#define LINKED_LIST_MAX_NODES 100000U
+
 NodeItem* LinkedListCreateNode(void* data) {
-  NodeItem* node = (NodeItem*)malloc(sizeof(NodeItem));
+  NodeItem* node = (NodeItem*)calloc(1, sizeof(NodeItem));
   if (node == NULL) return NULL;
 
   /**
@@ -12,15 +14,18 @@ NodeItem* LinkedListCreateNode(void* data) {
    * Otherwise, if the data is not null, the new node data
    * is set to the data passed to the function
    */
-  node->data = (data != NULL) ? data : NULL;
-  node->next = NULL;
+  node->data = data;
+  // node->next is already NULL because of calloc
 
   return node;
 }
 
 void LinkedListAppend(NodeItem** head, void* value) {
-  NodeItem* new_node = LinkedListCreateNode(value);
+  if (head == NULL) return;
 
+  if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
+
+  NodeItem* new_node = LinkedListCreateNode(value);
   if (new_node == NULL) return;
 
   if (*head == NULL) {
@@ -37,41 +42,62 @@ void LinkedListAppend(NodeItem** head, void* value) {
 }
 
 void LinkedListPopFront(NodeItem** head) {
-  if (*head == NULL) return;
+  if (head == NULL || *head == NULL) return;
 
   NodeItem* temp = *head;
   *head = (*head)->next;
+
+  temp->data = NULL;
+  temp->next = NULL;
   free(temp);
 }
 
 void LinkedListPopBack(NodeItem** head) {
-  if (*head == NULL) return;
+  if (head == NULL || *head == NULL) return;
 
-  // list with a single element
+  // list with a single node.
   if ((*head)->next == NULL) {
+    (*head)->data = NULL;  // zero it before freeing
     free(*head);
-    (*head)->next = NULL;
+    *head = NULL;
     return;
   }
 
+  // list with multiple nodes.
   NodeItem* current = *head;
   while (current->next->next != NULL) {
     current = current->next;
   }
 
-  free(current->next);
+  
+  //use an auxiliary variable to reset it before the free event,
+	// same as PopFront.
+  NodeItem* last = current->next;
+  last->data = NULL;
+  last->next = NULL;
+  free(last);
   current->next = NULL;
 }
 
-NodeItem*LinkedListFind(NodeItem* head, void* value);
+NodeItem* LinkedListFind(NodeItem* head, void* value) {
+  // TODO: Implement search by value.
+  return NULL;
+}
 
-NodeItem* LinkedListInsertAt(NodeItem* head, void* value, uint32_t index);
+NodeItem* LinkedListInsertAt(NodeItem* head, void* value, size_t index) {
+  // TODO: Implement insertion by index.
+  return NULL;
+}
 
-NodeItem* LinkedListDeleteAt(NodeItem* head, int index);
+NodeItem* LinkedListDeleteAt(NodeItem* head, size_t index) {
+  // TODO: Implement deletion by index.
+  return NULL;
+}
 
 void LinkedListNodes(NodeItem* head, void (*print_data)(void*)) {
-  NodeItem* current_item = head;
+  if (print_data == NULL) return;
 
+  NodeItem* current_item = head;
   while (current_item != NULL) {
     print_data(current_item->data);
     if (current_item->next != NULL) {
@@ -83,8 +109,9 @@ void LinkedListNodes(NodeItem* head, void (*print_data)(void*)) {
 }
 
 void LinkedListFree(NodeItem** head) {
-  NodeItem* temp;
+  if (head == NULL) return;
 
+  NodeItem* temp;
   while (*head != NULL) {
     temp = *head;
     *head = (*head)->next;
@@ -94,12 +121,13 @@ void LinkedListFree(NodeItem** head) {
   *head = NULL;
 }
 
-int LinkedListCountNodes(NodeItem* head) {
-  int count = 0;
+size_t LinkedListCountNodes(NodeItem* head) {
+  size_t count = 0;
   NodeItem* current = head;
   while (current != NULL) {
     count++;
     current = current->next;
   }
+
   return count;
 }
