@@ -120,7 +120,7 @@ clinkd/
 │   ├── linked_list.h
 │   └── print_utils.h
 ├── output/
-│   └── app (after running make all)
+│   └── clinkd (after running make)
 ├── Makefile
 ├── LICENSE.md
 └── README.md
