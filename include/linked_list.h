@@ -93,6 +93,6 @@ void LinkedListFree(NodeItem** head);
  * @param head Pointer to the head of the list.
  * @return The total of notes on the list.
  */
-int CountNodes(NodeItem* head);
+int LinkedListCountNodes(NodeItem* head);
 
 #endif

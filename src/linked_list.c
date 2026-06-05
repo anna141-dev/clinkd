@@ -94,7 +94,7 @@ void LinkedListFree(NodeItem** head) {
   *head = NULL;
 }
 
-int CountNodes(NodeItem* head) {
+int LinkedListCountNodes(NodeItem* head) {
   int count = 0;
   NodeItem* current = head;
   while (current != NULL) {

@@ -106,6 +106,7 @@ free(node);
 | `LinkedListFind(list)` | Finds a node by value |
 | `LinkedListInsertAt(list, index)` | Inserts a value at a given index |
 | `LinkedListNodes(list)` | List all nodes on the list |
+| `LinkedListCountNodes(list)` | Count the total of nodes on the list |
 
 ## Project Structure
 
