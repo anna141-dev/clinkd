@@ -33,18 +33,16 @@ void LinkedListAppend(NodeItem** head, void* value);
 void LinkedListPropend(NodeItem** head, void* value);
 
 /**
- * @brief Removes the last node from the list.
- * @param head Pointer to the head of the list.
- * @return Pointer to the new last node, or NULL if the list is now empty.
+ * @brief Removes the first node from the list.
+ * @param head Pointer to a pointer to the head of the list.
  */
-NodeItem* LinkedListPopFront(NodeItem* head);
+void LinkedListPopFront(NodeItem** head);
 
 /**
- * @brief Removes the first node from the list.
- * @param head Pointer to the head of the list.
- * @return Pointer to the new first node, or NULL if the list is now empty.
+ * @brief Removes the last node from the list.
+ * @param head Pointer to a pointer to the head of the list.
  */
-NodeItem* LinkedListPopBack(NodeItem* head);
+void LinkedListPopBack(NodeItem** head);
 
 /**
  * @brief Finds a node by value.
@@ -88,5 +86,13 @@ void LinkedListNodes(NodeItem* head, void (*PrintData)(void*));
  * @param head Pointer to the head of the list.
  */
 void LinkedListFree(NodeItem** head);
+
+/**
+ * Returns the number of nodes in a linked list.
+ *
+ * @param head Pointer to the head of the list.
+ * @return The total of notes on the list.
+ */
+int CountNodes(NodeItem* head);
 
 #endif

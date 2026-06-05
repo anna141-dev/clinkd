@@ -36,7 +36,32 @@ void LinkedListAppend(NodeItem** head, void* value) {
   current_item->next = new_node;
 }
 
-NodeItem* LinkedListPop(NodeItem* head);
+void LinkedListPopFront(NodeItem** head) {
+  if (*head == NULL) return;
+
+  NodeItem* temp = *head;
+  *head = (*head)->next;
+  free(temp);
+}
+
+void LinkedListPopBack(NodeItem** head) {
+  if (*head == NULL) return;
+
+  // list with a single element
+  if ((*head)->next == NULL) {
+    free(*head);
+    (*head)->next = NULL;
+    return;
+  }
+
+  NodeItem* current = *head;
+  while (current->next->next != NULL) {
+    current = current->next;
+  }
+
+  free(current->next);
+  current->next = NULL;
+}
 
 NodeItem*LinkedListFind(NodeItem* head, void* value);
 
@@ -65,5 +90,16 @@ void LinkedListFree(NodeItem** head) {
     *head = (*head)->next;
     free(temp);
   }
+
+  *head = NULL;
 }
 
+int CountNodes(NodeItem* head) {
+  int count = 0;
+  NodeItem* current = head;
+  while (current != NULL) {
+    count++;
+    current = current->next;
+  }
+  return count;
+}
