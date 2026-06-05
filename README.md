@@ -2,7 +2,7 @@
 
 > A lightweight C library for working with linked lists.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE.md)
 [![C Standard](https://img.shields.io/badge/C-C99%2FC11-orange.svg)]()
 [![Status](https://img.shields.io/badge/status-in%20development-yellow.svg)]()
 
