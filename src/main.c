@@ -3,7 +3,7 @@
  *
  * Developer: Anna
  * Github: github.com/anna141-dev
- * Repo: linked-lists-library-c
+ * Repo: clinkd
  */
 
 #include <stdio.h>
