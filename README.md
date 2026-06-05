@@ -101,7 +101,8 @@ free(node);
 | `LinkedListCreateNode(data)` | Creates a new node  |
 | `LinkedListAppend(list, data)` | Appends a node to the end of the list |
 | `LinkedListPropend(list, data)` | Prepends a node to the beginning of the list |
-| `LinkedListPop(list)` | Removes the last node |
+| `LinkedListPopFront(list)` | Removes the last node |
+| `LinkedListPopBack(list)` | Removes the first node |
 | `LinkedListFind(list)` | Finds a node by value |
 | `LinkedListInsertAt(list, index)` | Inserts a value at a given index |
 | `LinkedListNodes(list)` | List all nodes on the list |
