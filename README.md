@@ -61,10 +61,11 @@ your-project/
 └── ...
 ```
 
-Don't forget to include linked_lists.h:
+Don't forget to include linked_lists.h and print_utils.h:
 
 ```c
 #include "linked_lists.h"
+#include "print_utils.h"
 ```
 
 Link against the compiled library:
@@ -77,6 +78,7 @@ gcc -Wall -Wextra -Iinclude -I ../clinkd/include your_program -o your_program -L
 
 ```c
 #include "linked_list.h"
+#include "print_utils.h"
 
 NodeItem* node = NULL;
 LinkedListNodes(node, print_int);
