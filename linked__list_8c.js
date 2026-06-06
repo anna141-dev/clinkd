@@ -10,5 +10,6 @@ var linked__list_8c =
     [ "LinkedListInsertAt", "linked__list_8c.html#a850e964a17c19f829ddacb718b912e2e", null ],
     [ "LinkedListNodes", "linked__list_8c.html#a12499a0ef914624947f2be8a9f55c13e", null ],
     [ "LinkedListPopBack", "linked__list_8c.html#aec4b5969ea197f5f64b14a127cd39e9d", null ],
-    [ "LinkedListPopFront", "linked__list_8c.html#a9bc77e62d716ae25a0b65ba71f60faf3", null ]
+    [ "LinkedListPopFront", "linked__list_8c.html#a9bc77e62d716ae25a0b65ba71f60faf3", null ],
+    [ "LinkedListPropend", "linked__list_8c.html#abff9d746693c40f5fe6fa95148bf1d48", null ]
 ];
