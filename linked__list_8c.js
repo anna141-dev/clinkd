@@ -1,9 +1,9 @@
 var linked__list_8c =
 [
     [ "LINKED_LIST_MAX_NODES", "linked__list_8c.html#a246fce231a91673977547ff456d9dd9a", null ],
-    [ "LinkedListAppend", "linked__list_8c.html#a20965b22713c0509bf1ca917f0b20f3b", null ],
+    [ "LinkedListAppend", "linked__list_8c.html#a155033fe330900bf9e3d1253f4256319", null ],
     [ "LinkedListCountNodes", "linked__list_8c.html#ab8f79fa3b51887002acbc2bd8b47c566", null ],
-    [ "LinkedListCreateNode", "linked__list_8c.html#a21460e1eb588aa1d4aac58b6a0e9d258", null ],
+    [ "LinkedListCreateNode", "linked__list_8c.html#a303b3a26bc8d1af131efb4224b0428d5", null ],
     [ "LinkedListDeleteAt", "linked__list_8c.html#a391f3815af25082f31ad3d15e4c6d273", null ],
     [ "LinkedListFind", "linked__list_8c.html#a79d28692a5ed01f7f739514555f0f97d", null ],
     [ "LinkedListFree", "linked__list_8c.html#a618be113ae7f8b816e4bf178d12b84b5", null ],
