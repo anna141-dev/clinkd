@@ -105,9 +105,8 @@ LinkedListFree(&node);
 | `LinkedListPopBack(list)` | Removes the first node |
 | `LinkedListFind(list)` | Finds a node by value |
 | `LinkedListInsertAt(list, index)` | Inserts a value at a given index |
-| `LinkedListNodes(list)` | List all nodes on the list |
-| `LinkedListCountNodes(list)` | Count the total of nodes on the list |
-| `LinkedListCountNodes(list, data, data_size)` | Find the node with the passed value |
+
+> For more information and additional functions, see the website linked in the repository.
 
 ## Project Structure
 
