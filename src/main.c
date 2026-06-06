@@ -102,12 +102,24 @@ int main(void) {
   ASSERT(LinkedListFind(node, &value_to_search_2) == NULL, "Item Not Found");
 
   /*Propend Operation*/
+  SECTION("Propend Operation");
   TEST(10, "Propend");
   int value_to_propend = 42;
   LinkedListPropend(&node, &value_to_propend, sizeof(int));
   ASSERT(LinkedListCountNodes(node) == 7, "Node count is 7 after Propend");
 
   DEBUG("Listing nodes after propend operations:");
+  LinkedListNodes(node, print_int);
+
+  /*Insert At*/
+  SECTION("Insert At Operation");
+  TEST(11, "Inserting 1111 at index 3.");
+  int value_to_add_at = 1111;
+  LinkedListInsertAt(&node, &value_to_add_at, 3);
+  
+  ASSERT(LinkedListCountNodes(node) == 8, "Node count is 8 after insert");
+
+  DEBUG("Listing nodes after insert operations:");
   LinkedListNodes(node, print_int);
 
   /*Free*/

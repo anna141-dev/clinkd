@@ -106,9 +106,16 @@ NodeItem* LinkedListFind(NodeItem* head, void* value) {
   return NULL;
 }
 
-NodeItem* LinkedListInsertAt(NodeItem* head, void* value, size_t index) {
-  // TODO: Implement insertion by index.
-  return NULL;
+void LinkedListInsertAt(NodeItem** head, void* value, size_t index) {
+  NodeItem* current = *head;
+
+  for (size_t i = 1; i < index - 1 && current != NULL; i++) {
+    current = current->next;
+  }
+
+  NodeItem* new_node = LinkedListCreateNode(value, current->data_size);
+  new_node->next = current->next;
+  current->next = new_node;
 }
 
 NodeItem* LinkedListDeleteAt(NodeItem* head, size_t index) {

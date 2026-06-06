@@ -61,9 +61,8 @@ NodeItem* LinkedListFind(NodeItem* head, void* value);
  * @param head Head of the list.
  * @param value The value to insert.
  * @param index Zero-based position to insert at.
- * @return Pointer to the newly inserted node.
  */
-NodeItem* LinkedListInsertAt(NodeItem* head, void* value, size_t index);
+void LinkedListInsertAt(NodeItem** head, void* value, size_t index);
 
 /**
  * @brief Deletes the node at a given index.
