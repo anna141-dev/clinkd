@@ -15,7 +15,7 @@ typedef struct Node NodeItem;
 /**
  * @brief Create a new node;
  * @param data The value to add on that node.
- * @data_size The size of the value data type
+ * @param data_size The size of the value data type
  * @return Pointer to the head of the list or NULL if allocation fails.
  */
 NodeItem* LinkedListCreateNode(void* data, size_t data_size);
@@ -24,7 +24,7 @@ NodeItem* LinkedListCreateNode(void* data, size_t data_size);
  * @brief Adds a value at the end of the list.
  * @param head Pointer to a pointer to the head node.
  * @param value The value to add.
- * @data_size The size of the value data type
+ * @param data_size The size of the value data type
  */
 void LinkedListAppend(NodeItem** head, void* value, size_t data_size);
 
@@ -32,7 +32,7 @@ void LinkedListAppend(NodeItem** head, void* value, size_t data_size);
  * Adds a value at the start of the list.
  * @param head Pointer to a pointer to the head node.
  * @param value The value to add.
- * @data_size The size of the value data type
+ * @param data_size The size of the value data type
  */
 void LinkedListPropend(NodeItem** head, void* value, size_t data_size);
 
