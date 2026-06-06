@@ -44,6 +44,17 @@ void LinkedListAppend(NodeItem** head, void* value, size_t data_size) {
   current_item->next = new_node;
 }
 
+void LinkedListPropend(NodeItem** head, void* value, size_t data_size) {
+  if (head == NULL) return;
+  if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
+
+  NodeItem* new_node = LinkedListCreateNode(value, data_size);
+  if (new_node == NULL) return;
+
+  new_node->next = *head;
+  *head = new_node;
+}
+
 void LinkedListPopFront(NodeItem** head) {
   if (head == NULL || *head == NULL) return;
 

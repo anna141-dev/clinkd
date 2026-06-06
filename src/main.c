@@ -89,6 +89,7 @@ int main(void) {
   DEBUG("Listing nodes after pop operations:");
   LinkedListNodes(node, print_int);
 
+  /*Search Operations*/
   int value_to_search_1 = 100;
   int value_to_search_2 = 999;
 
@@ -98,7 +99,16 @@ int main(void) {
   ASSERT(LinkedListFind(node, &value_to_search_1) != NULL, "Item Found");
 
   TEST(9, "Search for non-existent value");
-  ASSERT(LinkedListFind(node, &value_to_search_2) != NULL, "Item Found");
+  ASSERT(LinkedListFind(node, &value_to_search_2) == NULL, "Item Not Found");
+
+  /*Propend Operation*/
+  TEST(10, "Propend");
+  int value_to_propend = 42;
+  LinkedListPropend(&node, &value_to_propend, sizeof(int));
+  ASSERT(LinkedListCountNodes(node) == 7, "Node count is 7 after Propend");
+
+  DEBUG("Listing nodes after propend operations:");
+  LinkedListNodes(node, print_int);
 
   /*Free*/
   SECTION("Memory Cleanup");

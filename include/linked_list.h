@@ -31,7 +31,7 @@ void LinkedListAppend(NodeItem** head, void* value, size_t data_size);
  * @param head Pointer to a pointer to the head node.
  * @param The value to add.
  */
-void LinkedListPropend(NodeItem** head, void* value);
+void LinkedListPropend(NodeItem** head, void* value, size_t data_size);
 
 /**
  * @brief Removes the first node from the list.
