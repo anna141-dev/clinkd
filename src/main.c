@@ -47,7 +47,7 @@ int main(void) {
   /*Empty list*/
   SECTION("Empty List");
   TEST(1, "Show empty list (expects no output)");
-  LinkedListNodes(node, print_int);
+  LinkedListNodes(node, PrintInt);
   ASSERT(node == NULL, "List is NULL after initialization");
   ASSERT(LinkedListCountNodes(node) == 0, "Node count is 0");
 
@@ -61,7 +61,7 @@ int main(void) {
   ASSERT(LinkedListCountNodes(node) == 3, "Node count is 3 after 3 appends");
 
   TEST(3, "Listing nodes after individual appends");
-  LinkedListNodes(node, print_int);
+  LinkedListNodes(node, PrintInt);
 
   /*Append: from array*/
   SECTION("Append From Array");
@@ -74,7 +74,7 @@ int main(void) {
   ASSERT(LinkedListCountNodes(node) == 8, "Node count is 8 after array appends");
 
   TEST(5, "Listing nodes after array appends");
-  LinkedListNodes(node, print_int);
+  LinkedListNodes(node, PrintInt);
 
   /*Pop operations*/
   SECTION("Pop Operations");
@@ -87,7 +87,7 @@ int main(void) {
   ASSERT(LinkedListCountNodes(node) == 6, "Node count is 6 after PopFront");
 
   DEBUG("Listing nodes after pop operations:");
-  LinkedListNodes(node, print_int);
+  LinkedListNodes(node, PrintInt);
 
   /*Search Operations*/
   int value_to_search_1 = 100;
@@ -109,7 +109,7 @@ int main(void) {
   ASSERT(LinkedListCountNodes(node) == 7, "Node count is 7 after Propend");
 
   DEBUG("Listing nodes after propend operations:");
-  LinkedListNodes(node, print_int);
+  LinkedListNodes(node, PrintInt);
 
   /*Insert At*/
   SECTION("Insert At Operation");
@@ -120,7 +120,7 @@ int main(void) {
   ASSERT(LinkedListCountNodes(node) == 8, "Node count is 8 after insert");
 
   DEBUG("Listing nodes after insert operations:");
-  LinkedListNodes(node, print_int);
+  LinkedListNodes(node, PrintInt);
 
   /*Free*/
   SECTION("Memory Cleanup");
