@@ -107,13 +107,28 @@ NodeItem* LinkedListFind(NodeItem* head, void* value) {
 }
 
 void LinkedListInsertAt(NodeItem** head, void* value, size_t index) {
-  NodeItem* current = *head;
+  if (head == NULL) return;
+  if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
-  for (size_t i = 1; i < index - 1 && current != NULL; i++) {
+  NodeItem* current = *head;
+  NodeItem* new_node = LinkedListCreateNode(value, current->data_size);
+  if (new_node == NULL) return;
+
+  if (index == 0) {
+    new_node->next = *head;
+    *head = new_node;
+    return;
+  }
+
+  for (size_t i = 0; i < index - 1 && current != NULL; i++) {
     current = current->next;
   }
 
-  NodeItem* new_node = LinkedListCreateNode(value, current->data_size);
+  if (current == NULL) {
+    free(new_node); // index outside the limit
+    return;
+  }
+
   new_node->next = current->next;
   current->next = new_node;
 }
