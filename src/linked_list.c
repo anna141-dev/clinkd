@@ -2,10 +2,13 @@
 
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
+
+#include "print_utils.h"
 
 #define LINKED_LIST_MAX_NODES 100000U
 
-NodeItem* LinkedListCreateNode(void* data) {
+NodeItem* LinkedListCreateNode(void* data, size_t data_size) {
   NodeItem* node = (NodeItem*)calloc(1, sizeof(NodeItem));
   if (node == NULL) return NULL;
 
@@ -15,17 +18,17 @@ NodeItem* LinkedListCreateNode(void* data) {
    * is set to the data passed to the function
    */
   node->data = data;
-  // node->next is already NULL because of calloc
+  node->data_size = data_size;
+    // node->next is already NULL because of calloc
 
   return node;
 }
 
-void LinkedListAppend(NodeItem** head, void* value) {
+void LinkedListAppend(NodeItem** head, void* value, size_t data_size) {
   if (head == NULL) return;
-
   if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
-  NodeItem* new_node = LinkedListCreateNode(value);
+  NodeItem* new_node = LinkedListCreateNode(value, data_size);
   if (new_node == NULL) return;
 
   if (*head == NULL) {
@@ -80,7 +83,15 @@ void LinkedListPopBack(NodeItem** head) {
 }
 
 NodeItem* LinkedListFind(NodeItem* head, void* value) {
-  // TODO: Implement search by value.
+  NodeItem* current = head;
+
+  while (current != NULL) {
+    if (memcmp(value, current->data, current->data_size) == 0) {
+      return current;
+    }
+    current = current->next;
+  }
+
   return NULL;
 }
 

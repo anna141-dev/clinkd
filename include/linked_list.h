@@ -6,6 +6,7 @@
 
 typedef struct Node {
   void* data;
+  size_t data_size;
   struct Node* next;
 } Node;
 
@@ -16,14 +17,14 @@ typedef struct Node NodeItem;
  * @param initial Pointer to an existing node, or NULL to start empty.
  * @return Pointer to the head of the list or NULL if allocation fails.
  */
-NodeItem* LinkedListCreateNode(void* data);
+NodeItem* LinkedListCreateNode(void* data, size_t data_size);
 
 /**
  * @brief Adds a value at the end of the list.
  * @param head Pointer to a pointer to the head node.
  * @param value The value to add.
  */
-void LinkedListAppend(NodeItem** head, void* value);
+void LinkedListAppend(NodeItem** head, void* value, size_t data_size);
 
 /**
  * Adds a value at the start of the list.

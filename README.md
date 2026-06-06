@@ -85,21 +85,21 @@ int value_to_append_1 = 90;
 int value_to_append_2 = 12;
 int value_to_append_3 = 73;
 
-LinkedListAppend(&node, &value_to_append_1);
-LinkedListAppend(&node, &value_to_append_2);
-LinkedListAppend(&node, &value_to_append_3);
+LinkedListAppend(&node, &value_to_append_1, sizeof(int));
+LinkedListAppend(&node, &value_to_append_2, sizeof(int));
+LinkedListAppend(&node, &value_to_append_3, sizeof(int));
 
 LinkedListNodes(node, print_int);
 
-free(node);
+LinkedListFree(&node);
 ```
 
 ## API Reference
 
 | Function | Description |
 |---|---|
-| `LinkedListCreateNode(data)` | Creates a new node  |
-| `LinkedListAppend(list, data)` | Appends a node to the end of the list |
+| `LinkedListCreateNode(data, data_size)` | Creates a new node  |
+| `LinkedListAppend(list, data, data_size)` | Appends a node to the end of the list |
 | `LinkedListPropend(list, data)` | Prepends a node to the beginning of the list |
 | `LinkedListPopFront(list)` | Removes the last node |
 | `LinkedListPopBack(list)` | Removes the first node |
@@ -107,6 +107,7 @@ free(node);
 | `LinkedListInsertAt(list, index)` | Inserts a value at a given index |
 | `LinkedListNodes(list)` | List all nodes on the list |
 | `LinkedListCountNodes(list)` | Count the total of nodes on the list |
+| `LinkedListCountNodes(list, data, data_size)` | Find the node with the passed value |
 
 ## Project Structure
 

@@ -55,9 +55,9 @@ int main(void) {
   SECTION("Append Individual Values");
   TEST(2, "Appending 90, 12 and 73");
   int v1 = 90, v2 = 12, v3 = 73;
-  LinkedListAppend(&node, &v1);
-  LinkedListAppend(&node, &v2);
-  LinkedListAppend(&node, &v3);
+  LinkedListAppend(&node, &v1, sizeof(int));
+  LinkedListAppend(&node, &v2, sizeof(int));
+  LinkedListAppend(&node, &v3, sizeof(int));
   ASSERT(LinkedListCountNodes(node) == 3, "Node count is 3 after 3 appends");
 
   TEST(3, "Listing nodes after individual appends");
@@ -69,7 +69,7 @@ int main(void) {
   int values[] = {100, 200, 300, 400, 500};
   int values_len = (int)(sizeof(values) / sizeof(values[0]));
   for (int i = 0; i < values_len; i++) {
-    LinkedListAppend(&node, &values[i]);
+    LinkedListAppend(&node, &values[i], sizeof(int));
   }
   ASSERT(LinkedListCountNodes(node) == 8, "Node count is 8 after array appends");
 
@@ -88,6 +88,17 @@ int main(void) {
 
   DEBUG("Listing nodes after pop operations:");
   LinkedListNodes(node, print_int);
+
+  int value_to_search_1 = 100;
+  int value_to_search_2 = 999;
+
+  SECTION("Searching a node by value");
+
+  TEST(8, "Search for existing value");
+  ASSERT(LinkedListFind(node, &value_to_search_1) != NULL, "Item Found");
+
+  TEST(9, "Search for non-existent value");
+  ASSERT(LinkedListFind(node, &value_to_search_2) != NULL, "Item Found");
 
   /*Free*/
   SECTION("Memory Cleanup");
