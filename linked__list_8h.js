@@ -1,6 +1,7 @@
 var linked__list_8h =
 [
     [ "Node", "structNode.html", "structNode" ],
+    [ "LINKED_LIST_MAX_NODES", "linked__list_8h.html#a246fce231a91673977547ff456d9dd9a", null ],
     [ "Node", "linked__list_8h.html#a3b09f37e675bcd48a01bf22155996872", null ],
     [ "NodeItem", "linked__list_8h.html#a0abc6f072995e30a0058d7ebd96f62f7", null ],
     [ "LinkedListAppend", "linked__list_8h.html#a155033fe330900bf9e3d1253f4256319", null ],

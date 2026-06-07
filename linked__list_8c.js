@@ -1,6 +1,5 @@
 var linked__list_8c =
 [
-    [ "LINKED_LIST_MAX_NODES", "linked__list_8c.html#a246fce231a91673977547ff456d9dd9a", null ],
     [ "LinkedListAppend", "linked__list_8c.html#a155033fe330900bf9e3d1253f4256319", null ],
     [ "LinkedListCountNodes", "linked__list_8c.html#ab8f79fa3b51887002acbc2bd8b47c566", null ],
     [ "LinkedListCreateNode", "linked__list_8c.html#a303b3a26bc8d1af131efb4224b0428d5", null ],
