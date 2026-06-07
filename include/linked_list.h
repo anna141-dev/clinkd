@@ -68,9 +68,8 @@ void LinkedListInsertAt(NodeItem** head, void* value, size_t index);
  * @brief Deletes the node at a given index.
  * @param head Head of the list.
  * @param index Zero-based position of the node to delete.
- * @return Pointer to the node that replaced the deleted one, or NULL.
  */
-NodeItem* LinkedListDeleteAt(NodeItem* head, size_t index);
+void LinkedListDeleteAt(NodeItem** head, size_t index);
 
 
 /**

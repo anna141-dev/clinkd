@@ -122,6 +122,21 @@ int main(void) {
   DEBUG("Listing nodes after insert operations:");
   LinkedListNodes(node, PrintInt);
 
+  /*Delete At*/
+  SECTION("Delete At Operations");
+  TEST(12, "Deleting index 3");
+  LinkedListDeleteAt(&node, 3);
+
+  ASSERT(LinkedListCountNodes(node) == 7, "Node count is 7 after delete");
+
+  TEST(12, "Deleting index 0");
+  LinkedListDeleteAt(&node, 0);
+
+  ASSERT(LinkedListCountNodes(node) == 6, "Node count is 6 after delete");
+
+  DEBUG("Listing nodes after delete operations:");
+  LinkedListNodes(node, PrintInt);
+
   /*Free*/
   SECTION("Memory Cleanup");
   TEST(8, "Freeing all nodes");

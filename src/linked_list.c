@@ -107,7 +107,7 @@ NodeItem* LinkedListFind(NodeItem* head, void* value) {
 }
 
 void LinkedListInsertAt(NodeItem** head, void* value, size_t index) {
-  if (head == NULL) return;
+  if (head == NULL || *head == NULL) return;
   if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
   NodeItem* current = *head;
@@ -133,9 +133,28 @@ void LinkedListInsertAt(NodeItem** head, void* value, size_t index) {
   current->next = new_node;
 }
 
-NodeItem* LinkedListDeleteAt(NodeItem* head, size_t index) {
-  // TODO: Implement deletion by index.
-  return NULL;
+void LinkedListDeleteAt(NodeItem** head, size_t index) {
+  if (head == NULL || *head == NULL) return;
+
+  NodeItem* to_free;
+
+  if (index == 0) {
+    to_free = *head;
+    (*head) = (*head)->next;
+    free(to_free); // free the old node
+    return;
+  }
+
+  NodeItem* current = *head;
+  for (size_t i = 0; i < index - 1 && current != NULL; i++) {
+    current = current->next;
+  }
+
+  if (current->next == NULL) return; // index outside the likit
+
+  to_free = current->next;
+  current->next = to_free->next;
+  free(to_free);
 }
 
 void LinkedListNodes(NodeItem* head, void (*print_data)(void*)) {
