@@ -6,7 +6,7 @@ var linked__list_8h =
     [ "LinkedListAppend", "linked__list_8h.html#a155033fe330900bf9e3d1253f4256319", null ],
     [ "LinkedListCountNodes", "linked__list_8h.html#ab8f79fa3b51887002acbc2bd8b47c566", null ],
     [ "LinkedListCreateNode", "linked__list_8h.html#a303b3a26bc8d1af131efb4224b0428d5", null ],
-    [ "LinkedListDeleteAt", "linked__list_8h.html#a391f3815af25082f31ad3d15e4c6d273", null ],
+    [ "LinkedListDeleteAt", "linked__list_8h.html#ab0c7fe816dafabe94b424355e80427ab", null ],
     [ "LinkedListFind", "linked__list_8h.html#a79d28692a5ed01f7f739514555f0f97d", null ],
     [ "LinkedListFree", "linked__list_8h.html#a618be113ae7f8b816e4bf178d12b84b5", null ],
     [ "LinkedListInsertAt", "linked__list_8h.html#a8620ac1360462eb0d07c7d4a1d8480e3", null ],
