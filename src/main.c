@@ -1,10 +1,9 @@
-/**
- * Library to assist and facilitate the use of Linked Lists in C.
- *
- * Developer: Anna
- * Github: github.com/anna141-dev
- * Repo: clinkd
- */
+//  Copyright 2026 Anna
+//
+// Clinkd; A library to assist and facilitate the use of Linked Lists in C.
+//
+// Developer: Anna
+// Github: github.com/anna141-dev/clinkd
 
 #include <stdio.h>
 #include <stdlib.h>

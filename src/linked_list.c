@@ -1,3 +1,8 @@
+// Copyright 2026 Anna
+//
+// Implementation of a singly linked list.
+// The public interface and function documentation are in linked_list.h.
+
 #include "linked_list.h"
 
 #include <stdlib.h>
@@ -5,8 +10,6 @@
 #include <stdbool.h>
 
 #include "print_utils.h"
-
-#define LINKED_LIST_MAX_NODES 100000U
 
 NodeItem* LinkedListCreateNode(void* data, size_t data_size) {
   NodeItem* node = (NodeItem*)calloc(1, sizeof(NodeItem));
@@ -31,6 +34,7 @@ void LinkedListAppend(NodeItem** head, void* value, size_t data_size) {
   NodeItem* new_node = LinkedListCreateNode(value, data_size);
   if (new_node == NULL) return;
 
+  // irck f the list is empty, the new node is the head
   if (*head == NULL) {
     *head = new_node;
     return;

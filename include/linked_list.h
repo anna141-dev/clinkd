@@ -4,6 +4,11 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+/**
+ * Defines the limit of nodes in the linked list.
+ */
+#define LINKED_LIST_MAX_NODES 100000U
+
 typedef struct Node {
   void* data;
   size_t data_size;

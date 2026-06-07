@@ -1,3 +1,8 @@
+// Copyright 2026 Anna
+//
+// Implementation of auxiliary printing functions.
+// The public interface and function documentation are in print_utils.h.
+
 #include "print_utils.h"
 
 #include <stdio.h>
