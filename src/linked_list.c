@@ -28,7 +28,7 @@ NodeItem* LinkedListCreateNode(void* data, size_t data_size) {
 }
 
 void LinkedListAppend(NodeItem** head, void* value, size_t data_size) {
-  if (head == NULL) return;
+  if (head == NULL || *head == NULL) return;
   if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
   NodeItem* new_node = LinkedListCreateNode(value, data_size);
@@ -49,7 +49,7 @@ void LinkedListAppend(NodeItem** head, void* value, size_t data_size) {
 }
 
 void LinkedListPropend(NodeItem** head, void* value, size_t data_size) {
-  if (head == NULL) return;
+  if (head == NULL || *head == NULL) return;
   if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
   NodeItem* new_node = LinkedListCreateNode(value, data_size);
@@ -176,7 +176,7 @@ void LinkedListNodes(NodeItem* head, void (*print_data)(void*)) {
 }
 
 void LinkedListFree(NodeItem** head) {
-  if (head == NULL) return;
+  if (head == NULL || *head == NULL) return;
 
   NodeItem* temp;
   while (*head != NULL) {
