@@ -11,7 +11,7 @@
 
 #include "print_utils.h"
 
-NodeItem* LinkedListCreateNode(void* data, size_t data_size) {
+NodeItem* SLLCreateNode(void* data, size_t data_size) {
   NodeItem* node = (NodeItem*)calloc(1, sizeof(NodeItem));
   if (node == NULL) return NULL;
 
@@ -27,11 +27,11 @@ NodeItem* LinkedListCreateNode(void* data, size_t data_size) {
   return node;
 }
 
-void LinkedListAppend(NodeItem** head, void* value, size_t data_size) {
+void SLLAppend(NodeItem** head, void* value, size_t data_size) {
   if (head == NULL) return;
-  if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
+  if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
-  NodeItem* new_node = LinkedListCreateNode(value, data_size);
+  NodeItem* new_node = SLLCreateNode(value, data_size);
   if (new_node == NULL) return;
 
   // irck f the list is empty, the new node is the head
@@ -48,18 +48,18 @@ void LinkedListAppend(NodeItem** head, void* value, size_t data_size) {
   current_item->next = new_node;
 }
 
-void LinkedListPropend(NodeItem** head, void* value, size_t data_size) {
+void SLLPropend(NodeItem** head, void* value, size_t data_size) {
   if (head == NULL) return;
-  if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
+  if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
-  NodeItem* new_node = LinkedListCreateNode(value, data_size);
+  NodeItem* new_node = SLLCreateNode(value, data_size);
   if (new_node == NULL) return;
 
   new_node->next = *head;
   *head = new_node;
 }
 
-void LinkedListPopFront(NodeItem** head) {
+void SLLPopFront(NodeItem** head) {
   if (head == NULL) return;
 
   NodeItem* temp = *head;
@@ -70,7 +70,7 @@ void LinkedListPopFront(NodeItem** head) {
   free(temp);
 }
 
-void LinkedListPopBack(NodeItem** head) {
+void SLLPopBack(NodeItem** head) {
   if (head == NULL) return;
 
   // list with a single node.
@@ -97,7 +97,7 @@ void LinkedListPopBack(NodeItem** head) {
   current->next = NULL;
 }
 
-NodeItem* LinkedListFind(NodeItem* head, void* value) {
+NodeItem* SLLFind(NodeItem* head, void* value) {
   NodeItem* current = head;
 
   while (current != NULL) {
@@ -110,12 +110,12 @@ NodeItem* LinkedListFind(NodeItem* head, void* value) {
   return NULL;
 }
 
-void LinkedListInsertAt(NodeItem** head, void* value, size_t index) {
+void SLLInsertAt(NodeItem** head, void* value, size_t index) {
   if (head == NULL) return;
-  if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
+  if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
   NodeItem* current = *head;
-  NodeItem* new_node = LinkedListCreateNode(value, current->data_size);
+  NodeItem* new_node = SLLCreateNode(value, current->data_size);
   if (new_node == NULL) return;
 
   if (index == 0) {
@@ -137,7 +137,7 @@ void LinkedListInsertAt(NodeItem** head, void* value, size_t index) {
   current->next = new_node;
 }
 
-void LinkedListDeleteAt(NodeItem** head, size_t index) {
+void SLLDeleteAt(NodeItem** head, size_t index) {
   if (head == NULL) return;
 
   NodeItem* to_free;
@@ -161,7 +161,7 @@ void LinkedListDeleteAt(NodeItem** head, size_t index) {
   free(to_free);
 }
 
-void LinkedListNodes(NodeItem* head, void (*print_data)(void*)) {
+void SLLNodes(NodeItem* head, void (*print_data)(void*)) {
   if (print_data == NULL) return;
 
   NodeItem* current_item = head;
@@ -175,7 +175,7 @@ void LinkedListNodes(NodeItem* head, void (*print_data)(void*)) {
   printf(" --> NULL\n");
 }
 
-void LinkedListFree(NodeItem** head) {
+void SLLFree(NodeItem** head) {
   if (head == NULL) return;
 
   NodeItem* temp;
@@ -188,7 +188,7 @@ void LinkedListFree(NodeItem** head) {
   *head = NULL;
 }
 
-size_t LinkedListCountNodes(NodeItem* head) {
+size_t SLLCountNodes(NodeItem* head) {
   size_t count = 0;
   NodeItem* current = head;
   while (current != NULL) {

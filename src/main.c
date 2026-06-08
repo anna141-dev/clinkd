@@ -46,21 +46,21 @@ int main(void) {
   /*Empty list*/
   SECTION("Empty List");
   TEST(1, "Show empty list (expects no output)");
-  LinkedListNodes(node, PrintInt);
+  SLLNodes(node, PrintInt);
   ASSERT(node == NULL, "List is NULL after initialization");
-  ASSERT(LinkedListCountNodes(node) == 0, "Node count is 0");
+  ASSERT(SLLCountNodes(node) == 0, "Node count is 0");
 
   /*Append: individual values*/
   SECTION("Append Individual Values");
   TEST(2, "Appending 90, 12 and 73");
   int v1 = 90, v2 = 12, v3 = 73;
-  LinkedListAppend(&node, &v1, sizeof(int));
-  LinkedListAppend(&node, &v2, sizeof(int));
-  LinkedListAppend(&node, &v3, sizeof(int));
-  ASSERT(LinkedListCountNodes(node) == 3, "Node count is 3 after 3 appends");
+  SLLAppend(&node, &v1, sizeof(int));
+  SLLAppend(&node, &v2, sizeof(int));
+  SLLAppend(&node, &v3, sizeof(int));
+  ASSERT(SLLCountNodes(node) == 3, "Node count is 3 after 3 appends");
 
   TEST(3, "Listing nodes after individual appends");
-  LinkedListNodes(node, PrintInt);
+  SLLNodes(node, PrintInt);
 
   /*Append: from array*/
   SECTION("Append From Array");
@@ -68,25 +68,25 @@ int main(void) {
   int values[] = {100, 200, 300, 400, 500};
   int values_len = (int)(sizeof(values) / sizeof(values[0]));
   for (int i = 0; i < values_len; i++) {
-    LinkedListAppend(&node, &values[i], sizeof(int));
+    SLLAppend(&node, &values[i], sizeof(int));
   }
-  ASSERT(LinkedListCountNodes(node) == 8, "Node count is 8 after array appends");
+  ASSERT(SLLCountNodes(node) == 8, "Node count is 8 after array appends");
 
   TEST(5, "Listing nodes after array appends");
-  LinkedListNodes(node, PrintInt);
+  SLLNodes(node, PrintInt);
 
   /*Pop operations*/
   SECTION("Pop Operations");
   TEST(6, "Pop Back");
-  LinkedListPopBack(&node);
-  ASSERT(LinkedListCountNodes(node) == 7, "Node count is 7 after PopBack");
+  SLLPopBack(&node);
+  ASSERT(SLLCountNodes(node) == 7, "Node count is 7 after PopBack");
 
   TEST(7, "Pop Front");
-  LinkedListPopFront(&node);
-  ASSERT(LinkedListCountNodes(node) == 6, "Node count is 6 after PopFront");
+  SLLPopFront(&node);
+  ASSERT(SLLCountNodes(node) == 6, "Node count is 6 after PopFront");
 
   DEBUG("Listing nodes after pop operations:");
-  LinkedListNodes(node, PrintInt);
+  SLLNodes(node, PrintInt);
 
   /*Search Operations*/
   int value_to_search_1 = 100;
@@ -95,53 +95,53 @@ int main(void) {
   SECTION("Searching a node by value");
 
   TEST(8, "Search for existing value");
-  ASSERT(LinkedListFind(node, &value_to_search_1) != NULL, "Item Found");
+  ASSERT(SLLFind(node, &value_to_search_1) != NULL, "Item Found");
 
   TEST(9, "Search for non-existent value");
-  ASSERT(LinkedListFind(node, &value_to_search_2) == NULL, "Item Not Found");
+  ASSERT(SLLFind(node, &value_to_search_2) == NULL, "Item Not Found");
 
   /*Propend Operation*/
   SECTION("Propend Operation");
   TEST(10, "Propend");
   int value_to_propend = 42;
-  LinkedListPropend(&node, &value_to_propend, sizeof(int));
-  ASSERT(LinkedListCountNodes(node) == 7, "Node count is 7 after Propend");
+  SLLPropend(&node, &value_to_propend, sizeof(int));
+  ASSERT(SLLCountNodes(node) == 7, "Node count is 7 after Propend");
 
   DEBUG("Listing nodes after propend operations:");
-  LinkedListNodes(node, PrintInt);
+  SLLNodes(node, PrintInt);
 
   /*Insert At*/
   SECTION("Insert At Operation");
   TEST(11, "Inserting 1111 at index 3.");
   int value_to_add_at = 1111;
-  LinkedListInsertAt(&node, &value_to_add_at, 3);
+  SLLInsertAt(&node, &value_to_add_at, 3);
   
-  ASSERT(LinkedListCountNodes(node) == 8, "Node count is 8 after insert");
+  ASSERT(SLLCountNodes(node) == 8, "Node count is 8 after insert");
 
   DEBUG("Listing nodes after insert operations:");
-  LinkedListNodes(node, PrintInt);
+  SLLNodes(node, PrintInt);
 
   /*Delete At*/
   SECTION("Delete At Operations");
   TEST(12, "Deleting index 3");
-  LinkedListDeleteAt(&node, 3);
+  SLLDeleteAt(&node, 3);
 
-  ASSERT(LinkedListCountNodes(node) == 7, "Node count is 7 after delete");
+  ASSERT(SLLCountNodes(node) == 7, "Node count is 7 after delete");
 
   TEST(12, "Deleting index 0");
-  LinkedListDeleteAt(&node, 0);
+  SLLDeleteAt(&node, 0);
 
-  ASSERT(LinkedListCountNodes(node) == 6, "Node count is 6 after delete");
+  ASSERT(SLLCountNodes(node) == 6, "Node count is 6 after delete");
 
   DEBUG("Listing nodes after delete operations:");
-  LinkedListNodes(node, PrintInt);
+  SLLNodes(node, PrintInt);
 
   /*Free*/
   SECTION("Memory Cleanup");
   TEST(8, "Freeing all nodes");
-  LinkedListFree(&node);
-  ASSERT(node == NULL, "List is NULL after LinkedListFree");
-  ASSERT(LinkedListCountNodes(node) == 0, "Node count is 0 after free");
+  SLLFree(&node);
+  ASSERT(node == NULL, "List is NULL after SLLFree");
+  ASSERT(SLLCountNodes(node) == 0, "Node count is 0 after free");
 
   printf("\n");
   printf(FOOTER);
