@@ -9,13 +9,13 @@
  */
 #define LINKED_LIST_MAX_NODES 100000U
 
-typedef struct Node {
+typedef struct SinglyLinkedList {
   void* data;
   size_t data_size;
-  struct Node* next;
-} Node;
+  struct SinglyLinkedList* next;
+} SinglyLinkedList;
 
-typedef struct Node NodeItem;
+typedef struct SinglyLinkedList SSLItem;
 
 /**
  * @brief Create a new node;
@@ -23,7 +23,7 @@ typedef struct Node NodeItem;
  * @param data_size The size of the value data type
  * @return Pointer to the head of the list or NULL if allocation fails.
  */
-NodeItem* SLLCreateNode(void* data, size_t data_size);
+SSLItem* SLLCreateSinglyLinkedList(void* data, size_t data_size);
 
 /**
  * @brief Adds a value at the end of the list.
@@ -31,7 +31,7 @@ NodeItem* SLLCreateNode(void* data, size_t data_size);
  * @param value The value to add.
  * @param data_size The size of the value data type
  */
-void SLLAppend(NodeItem** head, void* value, size_t data_size);
+void SLLAppend(SSLItem** head, void* value, size_t data_size);
 
 /**
  * Adds a value at the start of the list.
@@ -39,19 +39,19 @@ void SLLAppend(NodeItem** head, void* value, size_t data_size);
  * @param value The value to add.
  * @param data_size The size of the value data type
  */
-void SLLPropend(NodeItem** head, void* value, size_t data_size);
+void SLLPropend(SSLItem** head, void* value, size_t data_size);
 
 /**
  * @brief Removes the first node from the list.
  * @param head Pointer to a pointer to the head of the list.
  */
-void SLLPopFront(NodeItem** head);
+void SLLPopFront(SSLItem** head);
 
 /**
  * @brief Removes the last node from the list.
  * @param head Pointer to a pointer to the head of the list.
  */
-void SLLPopBack(NodeItem** head);
+void SLLPopBack(SSLItem** head);
 
 /**
  * @brief Finds a node by value.
@@ -59,7 +59,7 @@ void SLLPopBack(NodeItem** head);
  * @param value The value to search for.
  * @return Pointer to the matching node, or NULL if not found.
  */
-NodeItem* SLLFind(NodeItem* head, void* value);
+SSLItem* SLLFind(SSLItem* head, void* value);
 
 /**
  * @brief Inserts a value at a given index.
@@ -67,14 +67,14 @@ NodeItem* SLLFind(NodeItem* head, void* value);
  * @param value The value to insert.
  * @param index Zero-based position to insert at.
  */
-void SLLInsertAt(NodeItem** head, void* value, size_t index);
+void SLLInsertAt(SSLItem** head, void* value, size_t index);
 
 /**
  * @brief Deletes the node at a given index.
  * @param head Head of the list.
  * @param index Zero-based position of the node to delete.
  */
-void SLLDeleteAt(NodeItem** head, size_t index);
+void SLLDeleteAt(SSLItem** head, size_t index);
 
 
 /**
@@ -82,7 +82,7 @@ void SLLDeleteAt(NodeItem** head, size_t index);
  * @param head Head of the list.
  * @param print_data The function corresponding to the type of data to list
  */
-void SLLNodes(NodeItem* head, void (*PrintData)(void*));
+void SLLNodes(SSLItem* head, void (*PrintData)(void*));
 
 /**
  * @brief Deletes all nodes on the list, freeing memory up correctly
@@ -92,7 +92,7 @@ void SLLNodes(NodeItem* head, void (*PrintData)(void*));
  *
  * @param head Pointer to the head of the list.
  */
-void SLLFree(NodeItem** head);
+void SLLFree(SSLItem** head);
 
 /**
  * Returns the number of nodes in a linked list.
@@ -100,7 +100,7 @@ void SLLFree(NodeItem** head);
  * @param head Pointer to the head of the list.
  * @return The total of notes on the list.
  */
-size_t SLLCountNodes(NodeItem* head);
+size_t SLLCountNodes(SSLItem* head);
 
 /**
  * Reverses a linked list.
@@ -108,6 +108,6 @@ size_t SLLCountNodes(NodeItem* head);
  * @param head Pointer to a pointer to the head of the list
  */
 
-void SLLReverse(NodeItem** head);
+void SLLReverse(SSLItem** head);
 
 #endif

@@ -41,7 +41,7 @@
 int main(void) {
   printf(HEADER);
 
-  NodeItem* node = NULL;
+  SinglyLinkedList* node = NULL;
 
   /*Empty list*/
   SECTION("Empty List");

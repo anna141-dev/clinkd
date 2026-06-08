@@ -11,8 +11,9 @@
 
 #include "print_utils.h"
 
-NodeItem* SLLCreateNode(void* data, size_t data_size) {
-  NodeItem* node = (NodeItem*)calloc(1, sizeof(NodeItem));
+SSLItem* SLLCreateSinglyLinkedList(void* data, size_t data_size) {
+
+  SSLItem* node = (SSLItem*)calloc(1, sizeof(SSLItem));
   if (node == NULL) return NULL;
 
   /**
@@ -27,11 +28,11 @@ NodeItem* SLLCreateNode(void* data, size_t data_size) {
   return node;
 }
 
-void SLLAppend(NodeItem** head, void* value, size_t data_size) {
+void SLLAppend(SSLItem** head, void* value, size_t data_size) {
   if (head == NULL) return;
   if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
-  NodeItem* new_node = SLLCreateNode(value, data_size);
+  SSLItem* new_node = SLLCreateSinglyLinkedList(value, data_size);
   if (new_node == NULL) return;
 
   // irck f the list is empty, the new node is the head
@@ -40,7 +41,7 @@ void SLLAppend(NodeItem** head, void* value, size_t data_size) {
     return;
   }
 
-  NodeItem* current_item = *head;
+  SSLItem* current_item = *head;
   while (current_item->next != NULL) {
     current_item = current_item->next;
   }
@@ -48,21 +49,21 @@ void SLLAppend(NodeItem** head, void* value, size_t data_size) {
   current_item->next = new_node;
 }
 
-void SLLPropend(NodeItem** head, void* value, size_t data_size) {
+void SLLPropend(SSLItem** head, void* value, size_t data_size) {
   if (head == NULL) return;
   if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
-  NodeItem* new_node = SLLCreateNode(value, data_size);
+  SSLItem* new_node = SLLCreateSinglyLinkedList(value, data_size);
   if (new_node == NULL) return;
 
   new_node->next = *head;
   *head = new_node;
 }
 
-void SLLPopFront(NodeItem** head) {
+void SLLPopFront(SSLItem** head) {
   if (head == NULL) return;
 
-  NodeItem* temp = *head;
+  SSLItem* temp = *head;
   *head = (*head)->next;
 
   temp->data = NULL;
@@ -70,7 +71,7 @@ void SLLPopFront(NodeItem** head) {
   free(temp);
 }
 
-void SLLPopBack(NodeItem** head) {
+void SLLPopBack(SSLItem** head) {
   if (head == NULL) return;
 
   // list with a single node.
@@ -82,7 +83,7 @@ void SLLPopBack(NodeItem** head) {
   }
 
   // list with multiple nodes.
-  NodeItem* current = *head;
+  SSLItem* current = *head;
   while (current->next->next != NULL) {
     current = current->next;
   }
@@ -90,15 +91,15 @@ void SLLPopBack(NodeItem** head) {
   
   //use an auxiliary variable to reset it before the free event,
 	// same as PopFront.
-  NodeItem* last = current->next;
+  SSLItem* last = current->next;
   last->data = NULL;
   last->next = NULL;
   free(last);
   current->next = NULL;
 }
 
-NodeItem* SLLFind(NodeItem* head, void* value) {
-  NodeItem* current = head;
+SSLItem* SLLFind(SSLItem* head, void* value) {
+  SSLItem* current = head;
 
   while (current != NULL) {
     if (memcmp(value, current->data, current->data_size) == 0) {
@@ -110,12 +111,12 @@ NodeItem* SLLFind(NodeItem* head, void* value) {
   return NULL;
 }
 
-void SLLInsertAt(NodeItem** head, void* value, size_t index) {
+void SLLInsertAt(SSLItem** head, void* value, size_t index) {
   if (head == NULL) return;
   if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
-  NodeItem* current = *head;
-  NodeItem* new_node = SLLCreateNode(value, current->data_size);
+  SSLItem* current = *head;
+  SSLItem* new_node = SLLCreateSinglyLinkedList(value, current->data_size);
   if (new_node == NULL) return;
 
   if (index == 0) {
@@ -137,10 +138,10 @@ void SLLInsertAt(NodeItem** head, void* value, size_t index) {
   current->next = new_node;
 }
 
-void SLLDeleteAt(NodeItem** head, size_t index) {
+void SLLDeleteAt(SSLItem** head, size_t index) {
   if (head == NULL) return;
 
-  NodeItem* to_free;
+  SSLItem* to_free;
 
   if (index == 0) {
     to_free = *head;
@@ -149,7 +150,7 @@ void SLLDeleteAt(NodeItem** head, size_t index) {
     return;
   }
 
-  NodeItem* current = *head;
+  SSLItem* current = *head;
   for (size_t i = 0; i < index - 1 && current != NULL; i++) {
     current = current->next;
   }
@@ -161,10 +162,10 @@ void SLLDeleteAt(NodeItem** head, size_t index) {
   free(to_free);
 }
 
-void SLLNodes(NodeItem* head, void (*print_data)(void*)) {
+void SLLNodes(SSLItem* head, void (*print_data)(void*)) {
   if (print_data == NULL) return;
 
-  NodeItem* current_item = head;
+  SSLItem* current_item = head;
   while (current_item != NULL) {
     print_data(current_item->data);
     if (current_item->next != NULL) {
@@ -175,10 +176,10 @@ void SLLNodes(NodeItem* head, void (*print_data)(void*)) {
   printf(" --> NULL\n");
 }
 
-void SLLFree(NodeItem** head) {
+void SLLFree(SSLItem** head) {
   if (head == NULL) return;
 
-  NodeItem* temp;
+  SSLItem* temp;
   while (*head != NULL) {
     temp = *head;
     *head = (*head)->next;
@@ -188,9 +189,9 @@ void SLLFree(NodeItem** head) {
   *head = NULL;
 }
 
-size_t SLLCountNodes(NodeItem* head) {
+size_t SLLCountNodes(SSLItem* head) {
   size_t count = 0;
-  NodeItem* current = head;
+  SSLItem* current = head;
   while (current != NULL) {
     count++;
     current = current->next;
@@ -199,10 +200,10 @@ size_t SLLCountNodes(NodeItem* head) {
   return count;
 }
 
-void SLLReverse(NodeItem** head) {
-  NodeItem* current = *head;
-  NodeItem* previous = NULL;
-  NodeItem* next = NULL;
+void SLLReverse(SSLItem** head) {
+  SSLItem* current = *head;
+  SSLItem* previous = NULL;
+  SSLItem* next = NULL;
 
   while (current != NULL) {
     next = current->next;
