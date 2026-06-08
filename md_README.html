@@ -147,7 +147,7 @@ Including in your project</h2>
 <div class="fragment"><div class="line">gcc -Wall -Wextra -Iinclude -I ../clinkd/include your_program -o your_program -L../clinkd/output -lclinkd</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
 Usage</h1>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;linked_list.h&quot;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="singly__linked__list_8h.html">singly_linked_list.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="print__utils_8h.html">print_utils.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_struct" href="structNode.html">NodeItem</a>* node = NULL;</div>
@@ -164,6 +164,7 @@ Usage</h1>
 <div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#a3d094fabee13917e207535f8cb175c05">SLLNodes</a>(node, print_int);</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#aa915fcae6519e2d1d051c09fa6979fc6">SLLFree</a>(&amp;node);</div>
+<div class="ttc" id="asingly__linked__list_8h_html"><div class="ttname"><a href="singly__linked__list_8h.html">singly_linked_list.h</a></div></div>
 <div class="ttc" id="asingly__linked__list_8h_html_a3d094fabee13917e207535f8cb175c05"><div class="ttname"><a href="singly__linked__list_8h.html#a3d094fabee13917e207535f8cb175c05">SLLNodes</a></div><div class="ttdeci">void SLLNodes(NodeItem *head, void(*PrintData)(void *))</div><div class="ttdoc">List all nodes on the list.</div><div class="ttdef"><b>Definition</b> singly_linked_list.c:164</div></div>
 <div class="ttc" id="asingly__linked__list_8h_html_aa915fcae6519e2d1d051c09fa6979fc6"><div class="ttname"><a href="singly__linked__list_8h.html#aa915fcae6519e2d1d051c09fa6979fc6">SLLFree</a></div><div class="ttdeci">void SLLFree(NodeItem **head)</div><div class="ttdoc">Deletes all nodes on the list, freeing memory up correctly.</div><div class="ttdef"><b>Definition</b> singly_linked_list.c:178</div></div>
 <div class="ttc" id="asingly__linked__list_8h_html_ab0e4e1a2b233c557d4be9b62e395762e"><div class="ttname"><a href="singly__linked__list_8h.html#ab0e4e1a2b233c557d4be9b62e395762e">SLLAppend</a></div><div class="ttdeci">void SLLAppend(NodeItem **head, void *value, size_t data_size)</div><div class="ttdoc">Adds a value at the end of the list.</div><div class="ttdef"><b>Definition</b> singly_linked_list.c:30</div></div>
@@ -201,10 +202,10 @@ Project Structure</h1>
 <div class="fragment"><div class="line">clinkd/</div>
 <div class="line">├── src/</div>
 <div class="line">│   ├── main.c</div>
-<div class="line">│   ├── linked_list.c</div>
+<div class="line">│   ├── singly_linked_list.c</div>
 <div class="line">│   └── print_utils.c</div>
 <div class="line">├── include/</div>
-<div class="line">│   ├── linked_list.h</div>
+<div class="line">│   ├── singly_linked_list.h</div>
 <div class="line">│   └── print_utils.h</div>
 <div class="line">├── output/</div>
 <div class="line">│   └── clinkd (after running make)</div>
