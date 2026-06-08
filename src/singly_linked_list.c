@@ -162,12 +162,12 @@ void SLLDeleteAt(SSLItem** head, size_t index) {
   free(to_free);
 }
 
-void SLLNodes(SSLItem* head, void (*print_data)(void*)) {
-  if (print_data == NULL) return;
+void SLLNodes(SSLItem* head, void (*PrintData)(void*)) {
+  if (PrintData == NULL) return;
 
   SSLItem* current_item = head;
   while (current_item != NULL) {
-    print_data(current_item->data);
+    PrintData(current_item->data);
     if (current_item->next != NULL) {
       printf(" --> ");
     }
