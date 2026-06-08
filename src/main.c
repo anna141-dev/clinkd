@@ -136,6 +136,15 @@ int main(void) {
   DEBUG("Listing nodes after delete operations:");
   SLLNodes(node, PrintInt);
 
+  /*Reverse singly linked list*/
+  SECTION("Reverse Linked List");
+  TEST(13, "Reversing the linked list");
+
+  SLLReverse(&node);
+
+  DEBUG("Listing nodes after reverse:");
+  SLLNodes(node, PrintInt);
+
   /*Free*/
   SECTION("Memory Cleanup");
   TEST(8, "Freeing all nodes");

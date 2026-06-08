@@ -102,4 +102,12 @@ void SLLFree(NodeItem** head);
  */
 size_t SLLCountNodes(NodeItem* head);
 
+/**
+ * Reverses a linked list.
+ *
+ * @param head Pointer to a pointer to the head of the list
+ */
+
+void SLLReverse(NodeItem** head);
+
 #endif

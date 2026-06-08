@@ -198,3 +198,18 @@ size_t SLLCountNodes(NodeItem* head) {
 
   return count;
 }
+
+void SLLReverse(NodeItem** head) {
+  NodeItem* current = *head;
+  NodeItem* previous = NULL;
+  NodeItem* next = NULL;
+
+  while (current != NULL) {
+    next = current->next;
+    current->next = previous;
+    previous = current;
+    current = next;
+  }
+
+  *head = previous;
+}
