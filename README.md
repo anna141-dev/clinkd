@@ -81,32 +81,36 @@ gcc -Wall -Wextra -Iinclude -I ../clinkd/include your_program -o your_program -L
 #include "print_utils.h"
 
 NodeItem* node = NULL;
-LinkedListNodes(node, print_int);
+SLLNodes(node, print_int);
 
 int value_to_append_1 = 90;
 int value_to_append_2 = 12;
 int value_to_append_3 = 73;
 
-LinkedListAppend(&node, &value_to_append_1, sizeof(int));
-LinkedListAppend(&node, &value_to_append_2, sizeof(int));
-LinkedListAppend(&node, &value_to_append_3, sizeof(int));
+SLLAppend(&node, &value_to_append_1, sizeof(int));
+SLLAppend(&node, &value_to_append_2, sizeof(int));
+SLLAppend(&node, &value_to_append_3, sizeof(int));
 
-LinkedListNodes(node, print_int);
+SLLNodes(node, print_int);
 
-LinkedListFree(&node);
+SLLFree(&node);
 ```
 
 ## API Reference
 
+- SLL is for Singly Linked Lists.
+- DLL is for Doubly Linked Lists.
+- CLL is for Circular Linked Lists. (TODO)
+
 | Function | Description |
 |---|---|
-| `LinkedListCreateNode(data, data_size)` | Creates a new node  |
-| `LinkedListAppend(list, data, data_size)` | Appends a node to the end of the list |
-| `LinkedListPropend(list, data)` | Prepends a node to the beginning of the list |
-| `LinkedListPopFront(list)` | Removes the last node |
-| `LinkedListPopBack(list)` | Removes the first node |
-| `LinkedListFind(list)` | Finds a node by value |
-| `LinkedListInsertAt(list, index)` | Inserts a value at a given index |
+| `SLLCreateNode(data, data_size)` | Creates a new node  |
+| `SLLAppend(list, data, data_size)` | Appends a node to the end of the list |
+| `SLLPropend(list, data)` | Prepends a node to the beginning of the list |
+| `SLLPopFront(list)` | Removes the last node |
+| `SLLPopBack(list)` | Removes the first node |
+| `SLLFind(list)` | Finds a node by value |
+| `SLLInsertAt(list, index)` | Inserts a value at a given index |
 
 > For more information and additional functions, see the website linked in the repository.
 
