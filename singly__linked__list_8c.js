@@ -10,5 +10,6 @@ var singly__linked__list_8c =
     [ "SLLNodes", "singly__linked__list_8c.html#a5a467af4512516924ab2d848e8cf8d1c", null ],
     [ "SLLPopBack", "singly__linked__list_8c.html#aa64190633a5fedd27878b5843deef47a", null ],
     [ "SLLPopFront", "singly__linked__list_8c.html#a8152a58cd26521abcd77cc7682155563", null ],
-    [ "SLLPropend", "singly__linked__list_8c.html#a72603c1a246d135d8a453cf4f56eb382", null ]
+    [ "SLLPropend", "singly__linked__list_8c.html#a72603c1a246d135d8a453cf4f56eb382", null ],
+    [ "SLLReverse", "singly__linked__list_8c.html#a8fddc0fa2bbe5f9a6af3f7129487e19e", null ]
 ];
