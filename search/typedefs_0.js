@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['node_0',['Node',['../singly__linked__list_8h.html#a3b09f37e675bcd48a01bf22155996872',1,'singly_linked_list.h']]],
-  ['nodeitem_1',['NodeItem',['../singly__linked__list_8h.html#a0abc6f072995e30a0058d7ebd96f62f7',1,'singly_linked_list.h']]]
+  ['singlylinkedlist_0',['SinglyLinkedList',['../singly__linked__list_8h.html#a96e3d8e2bd9d77a2724df394ad2f05fb',1,'singly_linked_list.h']]],
+  ['sslitem_1',['SSLItem',['../singly__linked__list_8h.html#a6fe773e040ef48af899cf6c89a9d2a9c',1,'singly_linked_list.h']]]
 ];

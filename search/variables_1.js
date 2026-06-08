@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['next_0',['next',['../structNode.html#af67b110ca1a258b793bf69d306929b22',1,'Node']]]
+  ['next_0',['next',['../structSinglyLinkedList.html#a777c5952d2b728a402622e33392d6811',1,'SinglyLinkedList']]]
 ];

@@ -1,15 +1,15 @@
 var singly__linked__list_8c =
 [
-    [ "SLLAppend", "singly__linked__list_8c.html#ab0e4e1a2b233c557d4be9b62e395762e", null ],
-    [ "SLLCountNodes", "singly__linked__list_8c.html#a81e1f8d33d490d6e3a90111727ad2faa", null ],
-    [ "SLLCreateNode", "singly__linked__list_8c.html#aa263116f3b35ec159ffea40f3b58df69", null ],
-    [ "SLLDeleteAt", "singly__linked__list_8c.html#a8e28678d283284ad369209e41e95d83d", null ],
-    [ "SLLFind", "singly__linked__list_8c.html#a7c3c3dd5dfa6faa6296c59f7f3107392", null ],
-    [ "SLLFree", "singly__linked__list_8c.html#aa915fcae6519e2d1d051c09fa6979fc6", null ],
-    [ "SLLInsertAt", "singly__linked__list_8c.html#a344f0a5cd989de54a7ec57f9f97f0d3c", null ],
-    [ "SLLNodes", "singly__linked__list_8c.html#a5a467af4512516924ab2d848e8cf8d1c", null ],
-    [ "SLLPopBack", "singly__linked__list_8c.html#aa64190633a5fedd27878b5843deef47a", null ],
-    [ "SLLPopFront", "singly__linked__list_8c.html#a8152a58cd26521abcd77cc7682155563", null ],
-    [ "SLLPropend", "singly__linked__list_8c.html#a72603c1a246d135d8a453cf4f56eb382", null ],
-    [ "SLLReverse", "singly__linked__list_8c.html#a8fddc0fa2bbe5f9a6af3f7129487e19e", null ]
+    [ "SLLAppend", "singly__linked__list_8c.html#ab99c3599e8a491140adc930e1055a6dc", null ],
+    [ "SLLCountNodes", "singly__linked__list_8c.html#a4d667444cb07c3390112e05525d8180d", null ],
+    [ "SLLCreateSinglyLinkedList", "singly__linked__list_8c.html#a3027e1e11ec55e1f39c6469b2039fe8e", null ],
+    [ "SLLDeleteAt", "singly__linked__list_8c.html#ac79faaaf74f1e68d6099eda37019badc", null ],
+    [ "SLLFind", "singly__linked__list_8c.html#a4bdab13c9fc7c84d6b1b3bf1e4546fac", null ],
+    [ "SLLFree", "singly__linked__list_8c.html#ae6d8802f26ccde96549248567e9c30fc", null ],
+    [ "SLLInsertAt", "singly__linked__list_8c.html#a2ee3c487d01462c7b67b9d7b8660a72b", null ],
+    [ "SLLNodes", "singly__linked__list_8c.html#a0eba8b770448bdbe216331d7a4b0a24a", null ],
+    [ "SLLPopBack", "singly__linked__list_8c.html#a88ce340f4efc3e5bb035542050704e5c", null ],
+    [ "SLLPopFront", "singly__linked__list_8c.html#ab62ded5bb5102a38b2908e5535d741f4", null ],
+    [ "SLLPropend", "singly__linked__list_8c.html#a84039b7c02271745d596b59403088f97", null ],
+    [ "SLLReverse", "singly__linked__list_8c.html#aec4ff18a299254378eb2ff269bef6c0c", null ]
 ];
