@@ -80,7 +80,7 @@ gcc -Wall -Wextra -Iinclude -I ../clinkd/include your_program -o your_program -L
 #include "singly_linked_list.h"
 #include "print_utils.h"
 
-NodeItem* node = NULL;
+SinglyLinkedList* node = NULL;
 SLLNodes(node, print_int);
 
 int value_to_append_1 = 90;
