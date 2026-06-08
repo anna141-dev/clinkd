@@ -77,7 +77,7 @@ gcc -Wall -Wextra -Iinclude -I ../clinkd/include your_program -o your_program -L
 ## Usage
 
 ```c
-#include "linked_list.h"
+#include "singly_linked_list.h"
 #include "print_utils.h"
 
 NodeItem* node = NULL;
@@ -120,10 +120,10 @@ SLLFree(&node);
 clinkd/
 ├── src/
 │   ├── main.c
-│   ├── linked_list.c
+│   ├── singly_linked_list.c
 │   └── print_utils.c
 ├── include/
-│   ├── linked_list.h
+│   ├── singly_linked_list.h
 │   └── print_utils.h
 ├── output/
 │   └── clinkd (after running make)
