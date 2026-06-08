@@ -3,7 +3,7 @@
 // Implementation of a singly linked list.
 // The public interface and function documentation are in linked_list.h.
 
-#include "linked_list.h"
+#include "singly_linked_list.h"
 
 #include <stdlib.h>
 #include <stdint.h>
@@ -28,7 +28,7 @@ NodeItem* LinkedListCreateNode(void* data, size_t data_size) {
 }
 
 void LinkedListAppend(NodeItem** head, void* value, size_t data_size) {
-  if (head == NULL || *head == NULL) return;
+  if (head == NULL) return;
   if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
   NodeItem* new_node = LinkedListCreateNode(value, data_size);
@@ -49,7 +49,7 @@ void LinkedListAppend(NodeItem** head, void* value, size_t data_size) {
 }
 
 void LinkedListPropend(NodeItem** head, void* value, size_t data_size) {
-  if (head == NULL || *head == NULL) return;
+  if (head == NULL) return;
   if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
   NodeItem* new_node = LinkedListCreateNode(value, data_size);
@@ -60,7 +60,7 @@ void LinkedListPropend(NodeItem** head, void* value, size_t data_size) {
 }
 
 void LinkedListPopFront(NodeItem** head) {
-  if (head == NULL || *head == NULL) return;
+  if (head == NULL) return;
 
   NodeItem* temp = *head;
   *head = (*head)->next;
@@ -71,7 +71,7 @@ void LinkedListPopFront(NodeItem** head) {
 }
 
 void LinkedListPopBack(NodeItem** head) {
-  if (head == NULL || *head == NULL) return;
+  if (head == NULL) return;
 
   // list with a single node.
   if ((*head)->next == NULL) {
@@ -111,7 +111,7 @@ NodeItem* LinkedListFind(NodeItem* head, void* value) {
 }
 
 void LinkedListInsertAt(NodeItem** head, void* value, size_t index) {
-  if (head == NULL || *head == NULL) return;
+  if (head == NULL) return;
   if (LinkedListCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
   NodeItem* current = *head;
@@ -138,7 +138,7 @@ void LinkedListInsertAt(NodeItem** head, void* value, size_t index) {
 }
 
 void LinkedListDeleteAt(NodeItem** head, size_t index) {
-  if (head == NULL || *head == NULL) return;
+  if (head == NULL) return;
 
   NodeItem* to_free;
 
@@ -176,7 +176,7 @@ void LinkedListNodes(NodeItem* head, void (*print_data)(void*)) {
 }
 
 void LinkedListFree(NodeItem** head) {
-  if (head == NULL || *head == NULL) return;
+  if (head == NULL) return;
 
   NodeItem* temp;
   while (*head != NULL) {

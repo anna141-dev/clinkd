@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "linked_list.h"
+#include "singly_linked_list.h"
 #include "print_utils.h"
 
 #define HEADER \
