@@ -2,6 +2,7 @@
 #define SINGLY_LINKED_LIST_H
 
 #include <stdint.h>
+#include <stdbool.h>
 #include <stdlib.h>
 
 /**
@@ -95,7 +96,7 @@ void SLLNodes(SSLItem* head, void (*PrintData)(void*));
 void SLLFree(SSLItem** head);
 
 /**
- * Returns the number of nodes in a linked list.
+ * @brief Returns the number of nodes in a linked list.
  *
  * @param head Pointer to the head of the list.
  * @return The total of notes on the list.
@@ -103,11 +104,23 @@ void SLLFree(SSLItem** head);
 size_t SLLCountNodes(SSLItem* head);
 
 /**
- * Reverses a linked list.
+ * @brief Reverses a linked list.
  *
  * @param head Pointer to a pointer to the head of the list
  */
 
 void SLLReverse(SSLItem** head);
+
+/**
+ * @brief Filters elements based on a function.
+ *
+ * Example, the function IsEven, the new list will store only even values.
+ * Your FilterFunction should cast the element's type. 
+ * See the example in /sr/main.c
+ *
+ * @param head Pointer to the head of the original list.
+ * @param FilterFunction The function used to filter the elements. It must return a boolean value.
+ */
+SinglyLinkedList* SLLFilter(SSLItem* head, bool (*FilterFunction)(void*));
 
 #endif

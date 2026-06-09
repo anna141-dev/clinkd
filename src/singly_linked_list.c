@@ -214,3 +214,18 @@ void SLLReverse(SSLItem** head) {
 
   *head = previous;
 }
+
+SinglyLinkedList* SLLFilter(SSLItem* head, bool (*FilterFunction)(void*)) {
+  SinglyLinkedList* NewList = NULL;
+  SSLItem* current = head;
+
+  while (current != NULL) {
+    if (FilterFunction(current->data)) {
+      SLLAppend(&NewList, current->data, current->data_size);
+    }
+
+    current = current->next;
+  }
+
+  return NewList;
+}

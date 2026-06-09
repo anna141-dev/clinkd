@@ -38,6 +38,14 @@
 
 #define DEBUG(msg) printf("  [DEBUG] %s\n", (msg))
 
+bool IsEven(void* value) {
+  if (*(int*)value % 2 == 0) {
+    return true;
+  }
+
+  return false;
+}
+
 int main(void) {
   printf(HEADER);
 
@@ -144,6 +152,15 @@ int main(void) {
 
   DEBUG("Listing nodes after reverse:");
   SLLNodes(node, PrintInt);
+
+  /*Filter function*/
+  SECTION("Filter Values");
+  TEST(14, "Filter Even Values");
+  SinglyLinkedList* NewList = NULL;
+  NewList = SLLFilter(node, IsEven);
+
+  DEBUG("Listing nodes after filter:");
+  SLLNodes(NewList, PrintInt);
 
   /*Free*/
   SECTION("Memory Cleanup");
