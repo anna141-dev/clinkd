@@ -216,7 +216,7 @@ void SLLReverse(SSLItem** head) {
 }
 
 SinglyLinkedList* SLLFilter(SSLItem* head, bool (*FilterFunction)(void*)) {
-  if (head == NULL) return;
+  if (head == NULL) return NULL;
 
   SinglyLinkedList* NewList = NULL;
   SSLItem* current = head;
