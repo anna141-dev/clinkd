@@ -38,13 +38,8 @@
 
 #define DEBUG(msg) printf("  [DEBUG] %s\n", (msg))
 
-bool IsEven(void* value) {
-  if (*(int*)value % 2 == 0) {
-    return true;
-  }
-
-  return false;
-}
+bool IsEven(void* value) { return *(int*)value % 2 == 0; }
+bool IsOdd(void* value) { return *(int*)value % 2 != 0; }
 
 int main(void) {
   printf(HEADER);
@@ -158,6 +153,13 @@ int main(void) {
   TEST(14, "Filter Even Values");
   SinglyLinkedList* NewList = NULL;
   NewList = SLLFilter(node, IsEven);
+
+  DEBUG("Listing nodes after filter:");
+  SLLNodes(NewList, PrintInt);
+
+  TEST(15, "Filter Odd Values");
+  NewList = NULL;
+  NewList = SLLFilter(node, IsOdd);
 
   DEBUG("Listing nodes after filter:");
   SLLNodes(NewList, PrintInt);
