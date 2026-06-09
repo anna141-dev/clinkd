@@ -133,9 +133,14 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae6d8802f26ccde96549248567e9c30fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all nodes on the list, freeing memory up correctly.  <br /></td></tr>
 <tr class="separator:ae6d8802f26ccde96549248567e9c30fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d667444cb07c3390112e05525d8180d" id="r_a4d667444cb07c3390112e05525d8180d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a4d667444cb07c3390112e05525d8180d">SLLCountNodes</a> (<a class="el" href="singly__linked__list_8h.html#a6fe773e040ef48af899cf6c89a9d2a9c">SSLItem</a> *head)</td></tr>
+<tr class="memdesc:a4d667444cb07c3390112e05525d8180d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of nodes in a linked list.  <br /></td></tr>
 <tr class="separator:a4d667444cb07c3390112e05525d8180d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec4ff18a299254378eb2ff269bef6c0c" id="r_aec4ff18a299254378eb2ff269bef6c0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#aec4ff18a299254378eb2ff269bef6c0c">SLLReverse</a> (<a class="el" href="singly__linked__list_8h.html#a6fe773e040ef48af899cf6c89a9d2a9c">SSLItem</a> **head)</td></tr>
+<tr class="memdesc:aec4ff18a299254378eb2ff269bef6c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses a linked list.  <br /></td></tr>
 <tr class="separator:aec4ff18a299254378eb2ff269bef6c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2a1a0d9534d9081091081d10f516239" id="r_ab2a1a0d9534d9081091081d10f516239"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSinglyLinkedList.html">SinglyLinkedList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#ab2a1a0d9534d9081091081d10f516239">SLLFilter</a> (<a class="el" href="singly__linked__list_8h.html#a6fe773e040ef48af899cf6c89a9d2a9c">SSLItem</a> *head, bool(*FilterFunction)(void *))</td></tr>
+<tr class="memdesc:ab2a1a0d9534d9081091081d10f516239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters elements based on a function.  <br /></td></tr>
+<tr class="separator:ab2a1a0d9534d9081091081d10f516239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ab99c3599e8a491140adc930e1055a6dc" name="ab99c3599e8a491140adc930e1055a6dc"></a>
@@ -197,7 +202,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns the number of nodes in a linked list.</p>
+
+<p>Returns the number of nodes in a linked list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to the head of the list. </td></tr>
@@ -278,6 +284,44 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">head</td><td>Head of the list. </td></tr>
     <tr><td class="paramname">index</td><td>Zero-based position of the node to delete. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab2a1a0d9534d9081091081d10f516239" name="ab2a1a0d9534d9081091081d10f516239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2a1a0d9534d9081091081d10f516239">&#9670;&#160;</a></span>SLLFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSinglyLinkedList.html">SinglyLinkedList</a> * SLLFilter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#a6fe773e040ef48af899cf6c89a9d2a9c">SSLItem</a> *&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool(*)(void *)&#160;</td>
+          <td class="paramname"><em>FilterFunction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filters elements based on a function. </p>
+<p>Example, the function IsEven, the new list will store only even values. Your FilterFunction should cast the element's type. See the example in /sr/main.c</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Pointer to the head of the original list. </td></tr>
+    <tr><td class="paramname">FilterFunction</td><td>The function used to filter the elements. It must return a boolean value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -539,7 +583,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Reverses a linked list.</p>
+
+<p>Reverses a linked list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list </td></tr>
