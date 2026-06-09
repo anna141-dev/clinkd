@@ -125,6 +125,8 @@ void SLLInsertAt(SSLItem** head, void* value, size_t index) {
     return;
   }
 
+  // traverses the list until the node with index - 1
+  // and while current is different from NULL
   for (size_t i = 0; i < index - 1 && current != NULL; i++) {
     current = current->next;
   }
@@ -151,6 +153,8 @@ void SLLDeleteAt(SSLItem** head, size_t index) {
   }
 
   SSLItem* current = *head;
+  // traverses the list until the node with index - 1
+  // and while current is different from NULL
   for (size_t i = 0; i < index - 1 && current != NULL; i++) {
     current = current->next;
   }
