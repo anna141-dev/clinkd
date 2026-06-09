@@ -95,11 +95,11 @@ $(document).ready(function(){initNavTree('singly__linked__list_8c.html',''); ini
   <div class="headertitle"><div class="title">singly_linked_list.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="singly__linked__list_8h_source.html">singly_linked_list.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="singly__linked__list_8h_source.html">../include/singly_linked_list.h</a>&quot;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="print__utils_8h_source.html">print_utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="print__utils_8h_source.html">../include/print_utils.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -141,6 +141,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab2a1a0d9534d9081091081d10f516239" id="r_ab2a1a0d9534d9081091081d10f516239"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSinglyLinkedList.html">SinglyLinkedList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#ab2a1a0d9534d9081091081d10f516239">SLLFilter</a> (<a class="el" href="singly__linked__list_8h.html#a6fe773e040ef48af899cf6c89a9d2a9c">SSLItem</a> *head, bool(*FilterFunction)(void *))</td></tr>
 <tr class="memdesc:ab2a1a0d9534d9081091081d10f516239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters elements based on a function.  <br /></td></tr>
 <tr class="separator:ab2a1a0d9534d9081091081d10f516239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c6f639048d75c809ffb3c6b7fd7f51c" id="r_a5c6f639048d75c809ffb3c6b7fd7f51c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a5c6f639048d75c809ffb3c6b7fd7f51c">SLLMap</a> (<a class="el" href="singly__linked__list_8h.html#a6fe773e040ef48af899cf6c89a9d2a9c">SSLItem</a> **head, void *(*MapFunction)(void *))</td></tr>
+<tr class="memdesc:a5c6f639048d75c809ffb3c6b7fd7f51c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the list elements based on the result of the passed function.  <br /></td></tr>
+<tr class="separator:a5c6f639048d75c809ffb3c6b7fd7f51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ab99c3599e8a491140adc930e1055a6dc" name="ab99c3599e8a491140adc930e1055a6dc"></a>
@@ -325,6 +328,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>The new list with filtered values. </dd></dl>
 
 </div>
 </div>
@@ -431,6 +435,44 @@ Functions</h2></td></tr>
     <tr><td class="paramname">head</td><td>Head of the list. </td></tr>
     <tr><td class="paramname">value</td><td>The value to insert. </td></tr>
     <tr><td class="paramname">index</td><td>Zero-based position to insert at. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5c6f639048d75c809ffb3c6b7fd7f51c" name="a5c6f639048d75c809ffb3c6b7fd7f51c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c6f639048d75c809ffb3c6b7fd7f51c">&#9670;&#160;</a></span>SLLMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SLLMap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#a6fe773e040ef48af899cf6c89a9d2a9c">SSLItem</a> **&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *(*)(void *)&#160;</td>
+          <td class="paramname"><em>MapFunction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Changes the list elements based on the result of the passed function. </p>
+<p>Read the function DoubleValue on /src/main.c to see an example.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list. </td></tr>
+    <tr><td class="paramname">MapFunction</td><td>The function used to map the elements. Must return the same data type as the list element. </td></tr>
   </table>
   </dd>
 </dl>

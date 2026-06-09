@@ -98,8 +98,8 @@ $(document).ready(function(){initNavTree('main_8c.html',''); initResizable(); })
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="singly__linked__list_8h_source.html">singly_linked_list.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="print__utils_8h_source.html">print_utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="singly__linked__list_8h_source.html">singly_linked_list.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -107,9 +107,9 @@ Macros</h2></td></tr>
 <tr class="separator:ab7770a7f0d95e67620ff6ed347a07a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d58a4fcb44314d3a153f82925dcbf2c" id="r_a3d58a4fcb44314d3a153f82925dcbf2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a3d58a4fcb44314d3a153f82925dcbf2c">FOOTER</a></td></tr>
 <tr class="separator:a3d58a4fcb44314d3a153f82925dcbf2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2c44298bc422970bbd81c5622bce3ea" id="r_aa2c44298bc422970bbd81c5622bce3ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aa2c44298bc422970bbd81c5622bce3ea">SECTION</a>(name)&#160;&#160;&#160;  printf(&quot;\n-- %s --\n&quot;, name)</td></tr>
+<tr class="memitem:aa2c44298bc422970bbd81c5622bce3ea" id="r_aa2c44298bc422970bbd81c5622bce3ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aa2c44298bc422970bbd81c5622bce3ea">SECTION</a>(name)&#160;&#160;&#160;printf(&quot;\n-- %s --\n&quot;, name)</td></tr>
 <tr class="separator:aa2c44298bc422970bbd81c5622bce3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f22cf6b02b46dca510adb049eec0431" id="r_a4f22cf6b02b46dca510adb049eec0431"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a4f22cf6b02b46dca510adb049eec0431">TEST</a>(id,  msg)&#160;&#160;&#160;  printf(&quot;\n[TEST %02d] %s\n&quot;, (id), (msg))</td></tr>
+<tr class="memitem:a4f22cf6b02b46dca510adb049eec0431" id="r_a4f22cf6b02b46dca510adb049eec0431"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a4f22cf6b02b46dca510adb049eec0431">TEST</a>(id,  msg)&#160;&#160;&#160;printf(&quot;\n[TEST %02d] %s\n&quot;, (id), (msg))</td></tr>
 <tr class="separator:a4f22cf6b02b46dca510adb049eec0431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6c818ab7aca2e521c97eee817f99f91" id="r_ac6c818ab7aca2e521c97eee817f99f91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ac6c818ab7aca2e521c97eee817f99f91">ASSERT</a>(cond,  msg)</td></tr>
 <tr class="separator:ac6c818ab7aca2e521c97eee817f99f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,6 +122,8 @@ Functions</h2></td></tr>
 <tr class="separator:ad3d999af6dccc2f1838a01650de3e285"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f082c751fb1c0d3c82dead08bae8d86" id="r_a3f082c751fb1c0d3c82dead08bae8d86"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a3f082c751fb1c0d3c82dead08bae8d86">IsOdd</a> (void *value)</td></tr>
 <tr class="separator:a3f082c751fb1c0d3c82dead08bae8d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2436e62dc99d6a511009ee47fb3b72d3" id="r_a2436e62dc99d6a511009ee47fb3b72d3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a2436e62dc99d6a511009ee47fb3b72d3">DoubleValue</a> (void *value)</td></tr>
+<tr class="separator:a2436e62dc99d6a511009ee47fb3b72d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -151,12 +153,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                            \</div>
-<div class="line">    if (cond) {                                                   \</div>
-<div class="line">      printf(<span class="stringliteral">&quot;  [ OK ] %s\n&quot;</span>, (msg));                            \</div>
-<div class="line">    } <span class="keywordflow">else</span> {                                                      \</div>
-<div class="line">      printf(<span class="stringliteral">&quot;  [FAIL] %s (line %d)\n&quot;</span>, (msg), __LINE__);        \</div>
-<div class="line">    }                                                             \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> {                                                    \</div>
+<div class="line">    if (cond) {                                           \</div>
+<div class="line">      printf(<span class="stringliteral">&quot;  [ OK ] %s\n&quot;</span>, (msg));                     \</div>
+<div class="line">    } <span class="keywordflow">else</span> {                                              \</div>
+<div class="line">      printf(<span class="stringliteral">&quot;  [FAIL] %s (line %d)\n&quot;</span>, (msg), __LINE__); \</div>
+<div class="line">    }                                                     \</div>
 <div class="line">  } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment -->
 </div>
@@ -190,7 +192,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="stringliteral">&quot;=-------------------------=\n&quot;</span> \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="stringliteral">&quot;=-------------------------=\n&quot;</span>                          \</div>
 <div class="line">  <span class="stringliteral">&quot;  CLINKD : TEST END                                 \n&quot;</span> \</div>
 <div class="line">  <span class="stringliteral">&quot;=-------------------------=\n&quot;</span></div>
 </div><!-- fragment -->
@@ -207,7 +209,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="stringliteral">&quot;=-------------------------=\n&quot;</span> \</div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="stringliteral">&quot;=-------------------------=\n&quot;</span>                          \</div>
 <div class="line">  <span class="stringliteral">&quot;  CLINKD : TEST START                               \n&quot;</span> \</div>
 <div class="line">  <span class="stringliteral">&quot;=-------------------------=\n&quot;</span></div>
 </div><!-- fragment -->
@@ -224,7 +226,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">name</td><td>)</td>
-          <td>&#160;&#160;&#160;  printf(&quot;\n-- %s --\n&quot;, name)</td>
+          <td>&#160;&#160;&#160;printf(&quot;\n-- %s --\n&quot;, name)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -252,7 +254,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;  printf(&quot;\n[TEST %02d] %s\n&quot;, (id), (msg))</td>
+          <td></td><td>&#160;&#160;&#160;printf(&quot;\n[TEST %02d] %s\n&quot;, (id), (msg))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -260,6 +262,24 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a2436e62dc99d6a511009ee47fb3b72d3" name="a2436e62dc99d6a511009ee47fb3b72d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2436e62dc99d6a511009ee47fb3b72d3">&#9670;&#160;</a></span>DoubleValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * DoubleValue </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad3d999af6dccc2f1838a01650de3e285" name="ad3d999af6dccc2f1838a01650de3e285"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3d999af6dccc2f1838a01650de3e285">&#9670;&#160;</a></span>IsEven()</h2>
 
