@@ -1,4 +1,4 @@
 *.o
 *.bak
 docs/
-mclang-formay
+.clang-format

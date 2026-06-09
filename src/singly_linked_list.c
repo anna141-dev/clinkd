@@ -3,13 +3,13 @@
 // Implementation of a singly linked list.
 // The public interface and function documentation are in linked_list.h.
 
-#include "singly_linked_list.h"
+#include "../include/singly_linked_list.h"
 
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdlib.h>
 
-#include "print_utils.h"
+#include "../include/print_utils.h"
 
 SSLItem* SLLCreateSinglyLinkedList(void* data, size_t data_size) {
   SSLItem* node = (SSLItem*)calloc(1, sizeof(SSLItem));
@@ -234,4 +234,15 @@ SinglyLinkedList* SLLFilter(SSLItem* head, bool (*FilterFunction)(void*)) {
   }
 
   return NewList;
+}
+
+void SLLMap(SSLItem** head, void* (*MapFunction)(void*)) {
+  if (head == NULL) return;
+
+  SSLItem* current = *head;
+
+  while (current != NULL) {
+    current->data = MapFunction(current->data);
+    current = current->next;
+  }
 }

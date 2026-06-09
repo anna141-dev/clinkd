@@ -1,8 +1,8 @@
 #ifndef SINGLY_LINKED_LIST_H
 #define SINGLY_LINKED_LIST_H
 
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdlib.h>
 
 /**
@@ -77,7 +77,6 @@ void SLLInsertAt(SSLItem** head, void* value, size_t index);
  */
 void SLLDeleteAt(SSLItem** head, size_t index);
 
-
 /**
  * @brief List all nodes on the list.
  * @param head Head of the list.
@@ -88,8 +87,9 @@ void SLLNodes(SSLItem* head, void (*PrintData)(void*));
 /**
  * @brief Deletes all nodes on the list, freeing memory up correctly
  *
- * Always use this after you finish operations with the list you are using, it's important to avoid memory leaks.
- * It automatically sets the pointer to the head to NULL, so you don't need to worry about doing it manually.
+ * Always use this after you finish operations with the list you are using, it's
+ * important to avoid memory leaks. It automatically sets the pointer to the
+ * head to NULL, so you don't need to worry about doing it manually.
  *
  * @param head Pointer to the head of the list.
  */
@@ -114,13 +114,27 @@ void SLLReverse(SSLItem** head);
 /**
  * @brief Filters elements based on a function.
  *
- * Example, the function IsEven, the new list will store only even values.
- * Your FilterFunction should cast the element's type. 
+ * Example, the function IsEven, the new list will
+ * store only even values.
+ * Your FilterFunction should cast the element's type.
  * See the example in /sr/main.c
  *
  * @param head Pointer to the head of the original list.
- * @param FilterFunction The function used to filter the elements. It must return a boolean value.
+ * @param FilterFunction The function used to filter the elements. It must
+ * return a boolean value.
+ * @return The new list with filtered values.
  */
 SinglyLinkedList* SLLFilter(SSLItem* head, bool (*FilterFunction)(void*));
+
+/**
+ * @brief Changes the list elements based on the result of the
+ * passed function.
+ *
+ * Read the function DoubleValue on /src/main.c to see an example.
+ *
+ * @param head Pointer to a pointer to the head of the list.
+ * @param MapFunction The function used to map the elements. Must return the same data type as the list element.
+ */
+void SLLMap(SSLItem** head, void* (*MapFunction)(void*));
 
 #endif

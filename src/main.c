@@ -8,38 +8,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "singly_linked_list.h"
 #include "print_utils.h"
+#include "singly_linked_list.h"
 
-#define HEADER \
-  "=-------------------------=\n" \
+#define HEADER                                             \
+  "=-------------------------=\n"                          \
   "  CLINKD : TEST START                               \n" \
   "=-------------------------=\n"
 
-#define FOOTER \
-  "=-------------------------=\n" \
+#define FOOTER                                             \
+  "=-------------------------=\n"                          \
   "  CLINKD : TEST END                                 \n" \
   "=-------------------------=\n"
 
-#define SECTION(name) \
-  printf("\n-- %s --\n", name)
+#define SECTION(name) printf("\n-- %s --\n", name)
 
-#define TEST(id, msg) \
-  printf("\n[TEST %02d] %s\n", (id), (msg))
+#define TEST(id, msg) printf("\n[TEST %02d] %s\n", (id), (msg))
 
-#define ASSERT(cond, msg)                                         \
-  do {                                                            \
-    if (cond) {                                                   \
-      printf("  [ OK ] %s\n", (msg));                            \
-    } else {                                                      \
-      printf("  [FAIL] %s (line %d)\n", (msg), __LINE__);        \
-    }                                                             \
+#define ASSERT(cond, msg)                                 \
+  do {                                                    \
+    if (cond) {                                           \
+      printf("  [ OK ] %s\n", (msg));                     \
+    } else {                                              \
+      printf("  [FAIL] %s (line %d)\n", (msg), __LINE__); \
+    }                                                     \
   } while (0)
 
 #define DEBUG(msg) printf("  [DEBUG] %s\n", (msg))
 
 bool IsEven(void* value) { return *(int*)value % 2 == 0; }
 bool IsOdd(void* value) { return *(int*)value % 2 != 0; }
+void* DoubleValue(void* value) {
+  *(int*)value *= 2;
+  return value;
+}
 
 int main(void) {
   printf(HEADER);
@@ -118,7 +120,7 @@ int main(void) {
   TEST(11, "Inserting 1111 at index 3.");
   int value_to_add_at = 1111;
   SLLInsertAt(&node, &value_to_add_at, 3);
-  
+
   ASSERT(SLLCountNodes(node) == 8, "Node count is 8 after insert");
 
   DEBUG("Listing nodes after insert operations:");
@@ -163,6 +165,14 @@ int main(void) {
 
   DEBUG("Listing nodes after filter:");
   SLLNodes(NewList, PrintInt);
+
+  /*Map function*/
+  SECTION("Map Values");
+  TEST(14, "Doubling all values in the list");
+  SLLMap(&node, DoubleValue);
+
+  DEBUG("Listing nodes after map:");
+  SLLNodes(node, PrintInt);
 
   /*Free*/
   SECTION("Memory Cleanup");
