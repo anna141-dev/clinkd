@@ -5,14 +5,13 @@
 
 #include "singly_linked_list.h"
 
-#include <stdlib.h>
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
 
 #include "print_utils.h"
 
 SSLItem* SLLCreateSinglyLinkedList(void* data, size_t data_size) {
-
   SSLItem* node = (SSLItem*)calloc(1, sizeof(SSLItem));
   if (node == NULL) return NULL;
 
@@ -23,7 +22,7 @@ SSLItem* SLLCreateSinglyLinkedList(void* data, size_t data_size) {
    */
   node->data = data;
   node->data_size = data_size;
-    // node->next is already NULL because of calloc
+  // node->next is already NULL because of calloc
 
   return node;
 }
@@ -88,9 +87,8 @@ void SLLPopBack(SSLItem** head) {
     current = current->next;
   }
 
-  
-  //use an auxiliary variable to reset it before the free event,
-	// same as PopFront.
+  // use an auxiliary variable to reset it before the free event,
+  //  same as PopFront.
   SSLItem* last = current->next;
   last->data = NULL;
   last->next = NULL;
@@ -132,7 +130,7 @@ void SLLInsertAt(SSLItem** head, void* value, size_t index) {
   }
 
   if (current == NULL) {
-    free(new_node); // index outside the limit
+    free(new_node);  // index outside the limit
     return;
   }
 
@@ -148,7 +146,7 @@ void SLLDeleteAt(SSLItem** head, size_t index) {
   if (index == 0) {
     to_free = *head;
     (*head) = (*head)->next;
-    free(to_free); // free the old node
+    free(to_free);  // free the old node
     return;
   }
 
@@ -159,7 +157,7 @@ void SLLDeleteAt(SSLItem** head, size_t index) {
     current = current->next;
   }
 
-  if (current->next == NULL) return; // index outside the likit
+  if (current->next == NULL) return;  // index outside the likit
 
   to_free = current->next;
   current->next = to_free->next;
