@@ -220,6 +220,8 @@ SinglyLinkedList* SLLFilter(SSLItem* head, bool (*FilterFunction)(void*)) {
   SSLItem* current = head;
 
   while (current != NULL) {
+    // for each node data that FilterFunction returned true,
+    // append it on the new list
     if (FilterFunction(current->data)) {
       SLLAppend(&NewList, current->data, current->data_size);
     }
