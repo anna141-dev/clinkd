@@ -168,6 +168,7 @@ int main(void) {
   SECTION("Memory Cleanup");
   TEST(8, "Freeing all nodes");
   SLLFree(&node);
+  SLLFree(&NewList);
   ASSERT(node == NULL, "List is NULL after SLLFree");
   ASSERT(SLLCountNodes(node) == 0, "Node count is 0 after free");
 
