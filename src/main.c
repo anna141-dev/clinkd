@@ -154,33 +154,33 @@ int main(void) {
   /*Filter function*/
   SECTION("Filter Values");
   TEST(14, "Filter Even Values");
-  SinglyLinkedList* NewList = NULL;
-  NewList = SLLFilter(node, IsEven);
+  SinglyLinkedList* new_list = NULL;
+  new_list = SLLFilter(node, IsEven);
 
   DEBUG("Listing nodes after filter:");
-  SLLNodes(NewList, PrintInt);
+  SLLNodes(new_list, PrintInt);
 
   TEST(15, "Filter Odd Values");
-  NewList = NULL;
-  NewList = SLLFilter(node, IsOdd);
+  new_list = NULL;
+  new_list = SLLFilter(node, IsOdd);
 
   DEBUG("Listing nodes after filter:");
-  SLLNodes(NewList, PrintInt);
+  SLLNodes(new_list, PrintInt);
 
   /*Map function*/
   SECTION("Map Values");
   TEST(14, "Doubling all values in the list");
-  NewList = NULL;
-  NewList = SLLMap(node, DoubleValue);
+  new_list = NULL;
+  new_list = SLLMap(node, DoubleValue);
 
   DEBUG("Listing nodes after map:");
-  SLLNodes(NewList, PrintInt);
+  SLLNodes(new_list, PrintInt);
 
   /*Free*/
   SECTION("Memory Cleanup");
   TEST(8, "Freeing all nodes");
   SLLFree(&node);
-  SLLFree(&NewList);
+  SLLFree(&new_list);
   ASSERT(node == NULL, "List is NULL after SLLFree");
   ASSERT(SLLCountNodes(node) == 0, "Node count is 0 after free");
 

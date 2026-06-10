@@ -220,35 +220,35 @@ void SLLReverse(SLLItem** head) {
 SinglyLinkedList* SLLFilter(SLLItem* head, bool (*FilterFunction)(void*)) {
   if (head == NULL) return NULL;
 
-  SinglyLinkedList* NewList = NULL;
+  SinglyLinkedList* new_list = NULL;
   SLLItem* current = head;
 
   while (current != NULL) {
     // for each node data that FilterFunction returned true,
     // append it on the new list
     if (FilterFunction(current->data)) {
-      SLLAppend(&NewList, current->data, current->data_size);
+      SLLAppend(&new_list, current->data, current->data_size);
     }
 
     current = current->next;
   }
 
-  return NewList;
+  return new_list;
 }
 
 SLLItem* SLLMap(SLLItem* head, void* (*MapFunction)(void*)) {
   if (head == NULL) return NULL;
 
-  SinglyLinkedList* NewList = NULL;
+  SinglyLinkedList* new_list = NULL;
   SLLItem* current = head;
 
   while (current != NULL) {
     void* mapped_data = MapFunction(current->data);
-    SLLAppend(&NewList, mapped_data, current->data_size);
+    SLLAppend(&new_list, mapped_data, current->data_size);
     free(mapped_data);
 
     current = current->next;
   }
 
-  return NewList;
+  return new_list;
 }
