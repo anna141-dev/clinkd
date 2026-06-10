@@ -10,12 +10,13 @@
 #include <stdlib.h>
 
 #include "../include/print_utils.h"
+
 SLLItem* SLLCreate(void* data, size_t data_size) {
   SLLItem* node = (SLLItem*)calloc(1, sizeof(SLLItem));
   if (node == NULL) return NULL;
 
   if (data != NULL) {
-    node->data = malloc(data_size);
+    node->data = calloc(1, data_size);
     if (node->data == NULL) {
       free(node);
       return NULL;
@@ -34,7 +35,7 @@ void SLLAppend(SLLItem** head, void* value, size_t data_size) {
   SLLItem* new_node = SLLCreate(value, data_size);
   if (new_node == NULL) return;
 
-  // irck f the list is empty, the new node is the head
+  // if the list is empty, the new node is the head
   if (*head == NULL) {
     *head = new_node;
     return;
