@@ -10,28 +10,28 @@
 #include <stdlib.h>
 
 #include "../include/print_utils.h"
-
-SSLItem* SLLCreateSinglyLinkedList(void* data, size_t data_size) {
-  SSLItem* node = (SSLItem*)calloc(1, sizeof(SSLItem));
+SLLItem* SLLCreate(void* data, size_t data_size) {
+  SLLItem* node = (SLLItem*)calloc(1, sizeof(SLLItem));
   if (node == NULL) return NULL;
 
-  /**
-   * If the data is NULL, the new node starts empty.
-   * Otherwise, if the data is not null, the new node data
-   * is set to the data passed to the function
-   */
-  node->data = data;
-  node->data_size = data_size;
-  // node->next is already NULL because of calloc
+  if (data != NULL) {
+    node->data = malloc(data_size);
+    if (node->data == NULL) {
+      free(node);
+      return NULL;
+    }
+    memcpy(node->data, data, data_size);
+  }
 
+  node->data_size = data_size;
   return node;
 }
 
-void SLLAppend(SSLItem** head, void* value, size_t data_size) {
+void SLLAppend(SLLItem** head, void* value, size_t data_size) {
   if (head == NULL) return;
   if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
-  SSLItem* new_node = SLLCreateSinglyLinkedList(value, data_size);
+  SLLItem* new_node = SLLCreate(value, data_size);
   if (new_node == NULL) return;
 
   // irck f the list is empty, the new node is the head
@@ -40,7 +40,7 @@ void SLLAppend(SSLItem** head, void* value, size_t data_size) {
     return;
   }
 
-  SSLItem* current_item = *head;
+  SLLItem* current_item = *head;
   while (current_item->next != NULL) {
     current_item = current_item->next;
   }
@@ -48,21 +48,21 @@ void SLLAppend(SSLItem** head, void* value, size_t data_size) {
   current_item->next = new_node;
 }
 
-void SLLPropend(SSLItem** head, void* value, size_t data_size) {
+void SLLPropend(SLLItem** head, void* value, size_t data_size) {
   if (head == NULL) return;
   if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
-  SSLItem* new_node = SLLCreateSinglyLinkedList(value, data_size);
+  SLLItem* new_node = SLLCreate(value, data_size);
   if (new_node == NULL) return;
 
   new_node->next = *head;
   *head = new_node;
 }
 
-void SLLPopFront(SSLItem** head) {
+void SLLPopFront(SLLItem** head) {
   if (head == NULL) return;
 
-  SSLItem* temp = *head;
+  SLLItem* temp = *head;
   *head = (*head)->next;
 
   temp->data = NULL;
@@ -70,7 +70,7 @@ void SLLPopFront(SSLItem** head) {
   free(temp);
 }
 
-void SLLPopBack(SSLItem** head) {
+void SLLPopBack(SLLItem** head) {
   if (head == NULL) return;
 
   // list with a single node.
@@ -82,22 +82,22 @@ void SLLPopBack(SSLItem** head) {
   }
 
   // list with multiple nodes.
-  SSLItem* current = *head;
+  SLLItem* current = *head;
   while (current->next->next != NULL) {
     current = current->next;
   }
 
   // use an auxiliary variable to reset it before the free event,
   //  same as PopFront.
-  SSLItem* last = current->next;
+  SLLItem* last = current->next;
   last->data = NULL;
   last->next = NULL;
   free(last);
   current->next = NULL;
 }
 
-SSLItem* SLLFind(SSLItem* head, void* value) {
-  SSLItem* current = head;
+SLLItem* SLLFind(SLLItem* head, void* value) {
+  SLLItem* current = head;
 
   while (current != NULL) {
     if (memcmp(value, current->data, current->data_size) == 0) {
@@ -109,12 +109,12 @@ SSLItem* SLLFind(SSLItem* head, void* value) {
   return NULL;
 }
 
-void SLLInsertAt(SSLItem** head, void* value, size_t index) {
+void SLLInsertAt(SLLItem** head, void* value, size_t index) {
   if (head == NULL) return;
   if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
 
-  SSLItem* current = *head;
-  SSLItem* new_node = SLLCreateSinglyLinkedList(value, current->data_size);
+  SLLItem* current = *head;
+  SLLItem* new_node = SLLCreate(value, current->data_size);
   if (new_node == NULL) return;
 
   if (index == 0) {
@@ -138,10 +138,10 @@ void SLLInsertAt(SSLItem** head, void* value, size_t index) {
   current->next = new_node;
 }
 
-void SLLDeleteAt(SSLItem** head, size_t index) {
+void SLLDeleteAt(SLLItem** head, size_t index) {
   if (head == NULL) return;
 
-  SSLItem* to_free;
+  SLLItem* to_free;
 
   if (index == 0) {
     to_free = *head;
@@ -150,7 +150,7 @@ void SLLDeleteAt(SSLItem** head, size_t index) {
     return;
   }
 
-  SSLItem* current = *head;
+  SLLItem* current = *head;
   // traverses the list until the node with index - 1
   // and while current is different from NULL
   for (size_t i = 0; i < index - 1 && current != NULL; i++) {
@@ -164,10 +164,10 @@ void SLLDeleteAt(SSLItem** head, size_t index) {
   free(to_free);
 }
 
-void SLLNodes(SSLItem* head, void (*PrintData)(void*)) {
+void SLLNodes(SLLItem* head, void (*PrintData)(void*)) {
   if (PrintData == NULL) return;
 
-  SSLItem* current_item = head;
+  SLLItem* current_item = head;
   while (current_item != NULL) {
     PrintData(current_item->data);
     if (current_item->next != NULL) {
@@ -178,10 +178,10 @@ void SLLNodes(SSLItem* head, void (*PrintData)(void*)) {
   printf(" --> NULL\n");
 }
 
-void SLLFree(SSLItem** head) {
+void SLLFree(SLLItem** head) {
   if (head == NULL) return;
 
-  SSLItem* temp;
+  SLLItem* temp;
   while (*head != NULL) {
     temp = *head;
     *head = (*head)->next;
@@ -191,9 +191,9 @@ void SLLFree(SSLItem** head) {
   *head = NULL;
 }
 
-size_t SLLCountNodes(SSLItem* head) {
+size_t SLLCountNodes(SLLItem* head) {
   size_t count = 0;
-  SSLItem* current = head;
+  SLLItem* current = head;
   while (current != NULL) {
     count++;
     current = current->next;
@@ -202,10 +202,10 @@ size_t SLLCountNodes(SSLItem* head) {
   return count;
 }
 
-void SLLReverse(SSLItem** head) {
-  SSLItem* current = *head;
-  SSLItem* previous = NULL;
-  SSLItem* next = NULL;
+void SLLReverse(SLLItem** head) {
+  SLLItem* current = *head;
+  SLLItem* previous = NULL;
+  SLLItem* next = NULL;
 
   while (current != NULL) {
     next = current->next;
@@ -217,11 +217,11 @@ void SLLReverse(SSLItem** head) {
   *head = previous;
 }
 
-SinglyLinkedList* SLLFilter(SSLItem* head, bool (*FilterFunction)(void*)) {
+SinglyLinkedList* SLLFilter(SLLItem* head, bool (*FilterFunction)(void*)) {
   if (head == NULL) return NULL;
 
   SinglyLinkedList* NewList = NULL;
-  SSLItem* current = head;
+  SLLItem* current = head;
 
   while (current != NULL) {
     // for each node data that FilterFunction returned true,
@@ -236,13 +236,19 @@ SinglyLinkedList* SLLFilter(SSLItem* head, bool (*FilterFunction)(void*)) {
   return NewList;
 }
 
-void SLLMap(SSLItem** head, void* (*MapFunction)(void*)) {
-  if (head == NULL) return;
+SLLItem* SLLMap(SLLItem* head, void* (*MapFunction)(void*)) {
+  if (head == NULL) return NULL;
 
-  SSLItem* current = *head;
+  SinglyLinkedList* NewList = NULL;
+  SLLItem* current = head;
 
   while (current != NULL) {
-    current->data = MapFunction(current->data);
+    void* mapped_data = MapFunction(current->data);
+    SLLAppend(&NewList, mapped_data, current->data_size);
+    free(mapped_data);
+
     current = current->next;
   }
+
+  return NewList;
 }

@@ -39,8 +39,9 @@
 bool IsEven(void* value) { return *(int*)value % 2 == 0; }
 bool IsOdd(void* value) { return *(int*)value % 2 != 0; }
 void* DoubleValue(void* value) {
-  *(int*)value *= 2;
-  return value;
+  int* result = malloc(sizeof(int));
+  *result = *(int*)value * 2;
+  return result;
 }
 
 int main(void) {
@@ -169,10 +170,11 @@ int main(void) {
   /*Map function*/
   SECTION("Map Values");
   TEST(14, "Doubling all values in the list");
-  SLLMap(&node, DoubleValue);
+  NewList = NULL;
+  NewList = SLLMap(node, DoubleValue);
 
   DEBUG("Listing nodes after map:");
-  SLLNodes(node, PrintInt);
+  SLLNodes(NewList, PrintInt);
 
   /*Free*/
   SECTION("Memory Cleanup");

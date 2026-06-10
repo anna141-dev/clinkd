@@ -16,7 +16,7 @@ typedef struct SinglyLinkedList {
   struct SinglyLinkedList* next;
 } SinglyLinkedList;
 
-typedef struct SinglyLinkedList SSLItem;
+typedef struct SinglyLinkedList SLLItem;
 
 /**
  * @brief Create a new node;
@@ -24,7 +24,7 @@ typedef struct SinglyLinkedList SSLItem;
  * @param data_size The size of the value data type
  * @return Pointer to the head of the list or NULL if allocation fails.
  */
-SSLItem* SLLCreateSinglyLinkedList(void* data, size_t data_size);
+SLLItem* SLLCreate(void* data, size_t data_size);
 
 /**
  * @brief Adds a value at the end of the list.
@@ -32,7 +32,7 @@ SSLItem* SLLCreateSinglyLinkedList(void* data, size_t data_size);
  * @param value The value to add.
  * @param data_size The size of the value data type
  */
-void SLLAppend(SSLItem** head, void* value, size_t data_size);
+void SLLAppend(SLLItem** head, void* value, size_t data_size);
 
 /**
  * Adds a value at the start of the list.
@@ -40,19 +40,19 @@ void SLLAppend(SSLItem** head, void* value, size_t data_size);
  * @param value The value to add.
  * @param data_size The size of the value data type
  */
-void SLLPropend(SSLItem** head, void* value, size_t data_size);
+void SLLPropend(SLLItem** head, void* value, size_t data_size);
 
 /**
  * @brief Removes the first node from the list.
  * @param head Pointer to a pointer to the head of the list.
  */
-void SLLPopFront(SSLItem** head);
+void SLLPopFront(SLLItem** head);
 
 /**
  * @brief Removes the last node from the list.
  * @param head Pointer to a pointer to the head of the list.
  */
-void SLLPopBack(SSLItem** head);
+void SLLPopBack(SLLItem** head);
 
 /**
  * @brief Finds a node by value.
@@ -60,7 +60,7 @@ void SLLPopBack(SSLItem** head);
  * @param value The value to search for.
  * @return Pointer to the matching node, or NULL if not found.
  */
-SSLItem* SLLFind(SSLItem* head, void* value);
+SLLItem* SLLFind(SLLItem* head, void* value);
 
 /**
  * @brief Inserts a value at a given index.
@@ -68,21 +68,21 @@ SSLItem* SLLFind(SSLItem* head, void* value);
  * @param value The value to insert.
  * @param index Zero-based position to insert at.
  */
-void SLLInsertAt(SSLItem** head, void* value, size_t index);
+void SLLInsertAt(SLLItem** head, void* value, size_t index);
 
 /**
  * @brief Deletes the node at a given index.
  * @param head Head of the list.
  * @param index Zero-based position of the node to delete.
  */
-void SLLDeleteAt(SSLItem** head, size_t index);
+void SLLDeleteAt(SLLItem** head, size_t index);
 
 /**
  * @brief List all nodes on the list.
  * @param head Head of the list.
  * @param print_data The function corresponding to the type of data to list
  */
-void SLLNodes(SSLItem* head, void (*PrintData)(void*));
+void SLLNodes(SLLItem* head, void (*PrintData)(void*));
 
 /**
  * @brief Deletes all nodes on the list, freeing memory up correctly
@@ -93,7 +93,7 @@ void SLLNodes(SSLItem* head, void (*PrintData)(void*));
  *
  * @param head Pointer to the head of the list.
  */
-void SLLFree(SSLItem** head);
+void SLLFree(SLLItem** head);
 
 /**
  * @brief Returns the number of nodes in a linked list.
@@ -101,7 +101,7 @@ void SLLFree(SSLItem** head);
  * @param head Pointer to the head of the list.
  * @return The total of notes on the list.
  */
-size_t SLLCountNodes(SSLItem* head);
+size_t SLLCountNodes(SLLItem* head);
 
 /**
  * @brief Reverses a linked list.
@@ -109,7 +109,7 @@ size_t SLLCountNodes(SSLItem* head);
  * @param head Pointer to a pointer to the head of the list
  */
 
-void SLLReverse(SSLItem** head);
+void SLLReverse(SLLItem** head);
 
 /**
  * @brief Filters elements based on a function.
@@ -124,7 +124,7 @@ void SLLReverse(SSLItem** head);
  * return a boolean value.
  * @return The new list with filtered values.
  */
-SinglyLinkedList* SLLFilter(SSLItem* head, bool (*FilterFunction)(void*));
+SinglyLinkedList* SLLFilter(SLLItem* head, bool (*FilterFunction)(void*));
 
 /**
  * @brief Changes the list elements based on the result of the
@@ -134,7 +134,8 @@ SinglyLinkedList* SLLFilter(SSLItem* head, bool (*FilterFunction)(void*));
  *
  * @param head Pointer to a pointer to the head of the list.
  * @param MapFunction The function used to map the elements. Must return the same data type as the list element.
+ * @return The new list with mapped values.
  */
-void SLLMap(SSLItem** head, void* (*MapFunction)(void*));
+SLLItem* SLLMap(SLLItem* head, void* (*MapFunction)(void*));
 
 #endif
