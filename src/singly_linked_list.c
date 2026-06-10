@@ -146,14 +146,13 @@ void SLLDeleteAt(SLLItem** head, size_t index) {
 
   if (index == 0) {
     to_free = *head;
-    (*head) = (*head)->next;
-    free(to_free);  // free the old node
+    (*head) = (*head)->next;  // advances the head before releasing the node
+    free(to_free);            // free the old node
     return;
   }
 
   SLLItem* current = *head;
-  // traverses the list until the node with index - 1
-  // and while current is different from NULL
+  // traverse to the node with the passed index
   for (size_t i = 0; i < index - 1 && current != NULL; i++) {
     current = current->next;
   }
@@ -252,12 +251,14 @@ SLLItem* SLLMap(SLLItem* head, void* (*MapFunction)(void*)) {
   }
 
   return new_list;
+  v
 }
 
 void SLLEditNode(SLLItem** head, void* new_value, size_t index) {
   if (head == NULL) return;
 
   SLLItem* current = *head;
+  // traverse to the node with the passed index
   for (size_t i = 0; i < index - 1 && current != NULL; i++) {
     current = current->next;
   }
