@@ -164,6 +164,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af6a3b34b50471462ecb64b8b1212a003" id="r_af6a3b34b50471462ecb64b8b1212a003"><td class="memItemLeft" align="right" valign="top"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8h.html#af6a3b34b50471462ecb64b8b1212a003">SLLMap</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *head, void *(*MapFunction)(void *))</td></tr>
 <tr class="memdesc:af6a3b34b50471462ecb64b8b1212a003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the list elements based on the result of the passed function.  <br /></td></tr>
 <tr class="separator:af6a3b34b50471462ecb64b8b1212a003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a987900d36e7bd29828a3f0f164d101cb" id="r_a987900d36e7bd29828a3f0f164d101cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8h.html#a987900d36e7bd29828a3f0f164d101cb">SLLEditNode</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **head, void *new_value, size_t index)</td></tr>
+<tr class="memdesc:a987900d36e7bd29828a3f0f164d101cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies the element with the passed index.  <br /></td></tr>
+<tr class="separator:a987900d36e7bd29828a3f0f164d101cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a246fce231a91673977547ff456d9dd9a" name="a246fce231a91673977547ff456d9dd9a"></a>
@@ -351,6 +354,50 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">head</td><td>Head of the list. </td></tr>
     <tr><td class="paramname">index</td><td>Zero-based position of the node to delete. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a987900d36e7bd29828a3f0f164d101cb" name="a987900d36e7bd29828a3f0f164d101cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a987900d36e7bd29828a3f0f164d101cb">&#9670;&#160;</a></span>SLLEditNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SLLEditNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>new_value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Modifies the element with the passed index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list. </td></tr>
+    <tr><td class="paramname">new_value</td><td>The new value to be set on that node. </td></tr>
+    <tr><td class="paramname">index</td><td>The index to modify. </td></tr>
   </table>
   </dd>
 </dl>
