@@ -266,9 +266,11 @@ void SLLEditNode(SLLItem** head, void* new_value, size_t index) {
 
   SLLItem* current = *head;
   // traverse to the node with the passed index
-  for (size_t i = 0; i < index - 1 && current != NULL; i++) {
+  for (size_t i = 0; i < index && current != NULL; i++) {
     current = current->next;
   }
+
+  if (current == NULL) return; // index out of eange
 
   // assigns the value of new_value to current->data
   memcpy(current->data, new_value, current->data_size);
