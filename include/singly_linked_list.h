@@ -138,4 +138,13 @@ SinglyLinkedList* SLLFilter(SLLItem* head, bool (*FilterFunction)(void*));
  */
 SLLItem* SLLMap(SLLItem* head, void* (*MapFunction)(void*));
 
+/**
+ * @brief Modifies the element with the passed index.
+ *
+ * @param head Pointer to a pointer to the head of the list.
+ * @param new_value The new value to be set on that node.
+ * @param index The index to modify.
+ */
+void SLLEditNode(SLLItem** head, void* new_value, size_t index);
+
 #endif

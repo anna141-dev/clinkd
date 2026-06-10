@@ -253,3 +253,14 @@ SLLItem* SLLMap(SLLItem* head, void* (*MapFunction)(void*)) {
 
   return new_list;
 }
+
+void SLLEditNode(SLLItem** head, void* new_value, size_t index) {
+  if (head == NULL) return;
+
+  SLLItem* current = *head;
+  for (size_t i = 0; i < index - 1 && current != NULL; i++) {
+    current = current->next;
+  }
+
+  memcpy(current->data, new_value, current->data_size);
+}

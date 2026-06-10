@@ -176,6 +176,15 @@ int main(void) {
   DEBUG("Listing nodes after map:");
   SLLNodes(new_list, PrintInt);
 
+  /*Edit Value*/
+  SECTION("Edit Value");
+  TEST(15, "Changing node value at index 3 to 1200");
+  int new_value = 1200;
+  SLLEditNode(&node, &new_value, 3);
+
+  DEBUG("Listing Nodes after Edit:");
+  SLLNodes(node, PrintInt);
+
   /*Free*/
   SECTION("Memory Cleanup");
   TEST(8, "Freeing all nodes");
