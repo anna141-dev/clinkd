@@ -194,6 +194,7 @@ void SLLFree(SLLItem** head) {
 size_t SLLCountNodes(SLLItem* head) {
   size_t count = 0;
   SLLItem* current = head;
+
   while (current != NULL) {
     count++;
     current = current->next;
@@ -207,6 +208,7 @@ void SLLReverse(SLLItem** head) {
   SLLItem* previous = NULL;
   SLLItem* next = NULL;
 
+  // swap the values in the list
   while (current != NULL) {
     next = current->next;
     current->next = previous;
@@ -243,8 +245,14 @@ SLLItem* SLLMap(SLLItem* head, void* (*MapFunction)(void*)) {
   SLLItem* current = head;
 
   while (current != NULL) {
+    // mapped_data: the result of MapFunction in current->data
     void* mapped_data = MapFunction(current->data);
+
+    // add the new data to the new list
     SLLAppend(&new_list, mapped_data, current->data_size);
+
+    // release to make room for the next value 
+    // (and also avoid memory leak)
     free(mapped_data);
 
     current = current->next;
@@ -262,5 +270,6 @@ void SLLEditNode(SLLItem** head, void* new_value, size_t index) {
     current = current->next;
   }
 
+  // assigns the value of new_value to current->data
   memcpy(current->data, new_value, current->data_size);
 }
