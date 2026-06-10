@@ -251,7 +251,6 @@ SLLItem* SLLMap(SLLItem* head, void* (*MapFunction)(void*)) {
   }
 
   return new_list;
-  v
 }
 
 void SLLEditNode(SLLItem** head, void* new_value, size_t index) {
