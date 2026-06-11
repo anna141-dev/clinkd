@@ -76,24 +76,32 @@ gcc -Wall -Wextra -Iinclude -I ../clinkd/include your_program -o your_program -L
 
 ## Usage
 
+> If you want something more in-depth, see /src/main.c
+
 ```c
 #include "singly_linked_list.h"
-#include "print_utils.h"
 
-SinglyLinkedList* node = NULL;
-SLLNodes(node, print_int);
+typedef struct {
+  int value;
+  SLLNode node;
+} MyItem;
 
-int value_to_append_1 = 90;
-int value_to_append_2 = 12;
-int value_to_append_3 = 73;
+static SLLNode* MakeNode(MyItem* item, int value) {
+  item->value = value;
+  item->node.next = NULL;
+  return &item->node;
+}
 
-SLLAppend(&node, &value_to_append_1, sizeof(int));
-SLLAppend(&node, &value_to_append_2, sizeof(int));
-SLLAppend(&node, &value_to_append_3, sizeof(int));
+MyItem items[16];
+int item_idx = 0;
 
-SLLNodes(node, print_int);
+SLLNode* head = NULL;
 
-SLLFree(&node);
+SLLAppend(&head, MakeNode(&items[item_idx++], 90));
+SLLAppend(&head, MakeNode(&items[item_idx++], 12));
+SLLAppend(&head, MakeNode(&items[item_idx++], 73));
+
+SLLClear(&head);
 ```
 
 ## API Reference
@@ -104,13 +112,12 @@ SLLFree(&node);
 
 | Function | Description |
 |---|---|
-| `SLLCreateNode(data, data_size)` | Creates a new node  |
-| `SLLAppend(list, data, data_size)` | Appends a node to the end of the list |
-| `SLLPropend(list, data)` | Prepends a node to the beginning of the list |
-| `SLLPopFront(list)` | Removes the last node |
-| `SLLPopBack(list)` | Removes the first node |
-| `SLLFind(list)` | Finds a node by value |
-| `SLLInsertAt(list, index)` | Inserts a value at a given index |
+| `SLLAppend(head, node)` | Appends a node to the end of the list |
+| `SLLPropend(head, node)` | Prepends a node to the beginning of the list |
+| `SLLPopFront(head)` | Removes the last node |
+| `SLLPopBack(head)` | Removes the first node |
+| `SLLFind(head, predicate, ctx)` | Finds a node by value |
+| `SLLInsertAt(head, node, index)` | Inserts a value at a given index |
 
 > For more information and additional functions, see the website linked in the repository.
 
