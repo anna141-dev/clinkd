@@ -61,11 +61,10 @@ your-project/
 └── ...
 ```
 
-Don't forget to include linked_lists.h and print_utils.h:
+Don't forget to include singly_linked_list.h:
 
 ```c
-#include "linked_lists.h"
-#include "print_utils.h"
+#include "singly_linked_list.h"
 ```
 
 Link against the compiled library:
@@ -107,7 +106,7 @@ SLLClear(&head);
 ## API Reference
 
 - SLL is for Singly Linked Lists.
-- DLL is for Doubly Linked Lists.
+- DLL is for Doubly Linked Lists. (TODO)
 - CLL is for Circular Linked Lists. (TODO)
 
 | Function | Description |
@@ -128,10 +127,8 @@ clinkd/
 ├── src/
 │   ├── main.c
 │   ├── singly_linked_list.c
-│   └── print_utils.c
 ├── include/
 │   ├── singly_linked_list.h
-│   └── print_utils.h
 ├── output/
 │   └── clinkd (after running make)
 ├── Makefile
