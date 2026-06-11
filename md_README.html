@@ -139,9 +139,9 @@ Including in your project</h2>
 <div class="line"> </div>
 <div class="line">your-project/</div>
 <div class="line">└── ...</div>
-</div><!-- fragment --><p>Don't forget to include linked_lists.h and print_utils.h:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;linked_lists.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;print_utils.h&quot;</span></div>
+</div><!-- fragment --><p>Don't forget to include <a class="el" href="singly__linked__list_8h.html">singly_linked_list.h</a>:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="singly__linked__list_8h.html">singly_linked_list.h</a>&quot;</span></div>
+<div class="ttc" id="asingly__linked__list_8h_html"><div class="ttname"><a href="singly__linked__list_8h.html">singly_linked_list.h</a></div></div>
 </div><!-- fragment --><p>Link against the compiled library:</p>
 <div class="fragment"><div class="line">gcc -Wall -Wextra -Iinclude -I ../clinkd/include your_program -o your_program -L../clinkd/output -lclinkd</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
@@ -172,7 +172,6 @@ Usage</h1>
 <div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#a98ef3b212242a5e054fc31672d923564">SLLAppend</a>(&amp;head, MakeNode(&amp;items[item_idx++], 73));</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#a21ba049c656cf13abcec232aeaab3597">SLLClear</a>(&amp;head);</div>
-<div class="ttc" id="asingly__linked__list_8h_html"><div class="ttname"><a href="singly__linked__list_8h.html">singly_linked_list.h</a></div></div>
 <div class="ttc" id="asingly__linked__list_8h_html_a21ba049c656cf13abcec232aeaab3597"><div class="ttname"><a href="singly__linked__list_8h.html#a21ba049c656cf13abcec232aeaab3597">SLLClear</a></div><div class="ttdeci">void SLLClear(SLLNode **head)</div><div class="ttdef"><b>Definition</b> singly_linked_list.c:128</div></div>
 <div class="ttc" id="asingly__linked__list_8h_html_a98ef3b212242a5e054fc31672d923564"><div class="ttname"><a href="singly__linked__list_8h.html#a98ef3b212242a5e054fc31672d923564">SLLAppend</a></div><div class="ttdeci">void SLLAppend(SLLNode **head, SLLNode *node)</div><div class="ttdef"><b>Definition</b> singly_linked_list.c:14</div></div>
 <div class="ttc" id="astructMyItem_html"><div class="ttname"><a href="structMyItem.html">MyItem</a></div><div class="ttdef"><b>Definition</b> main.c:39</div></div>
@@ -184,7 +183,7 @@ Usage</h1>
 API Reference</h1>
 <ul>
 <li>SLL is for Singly Linked Lists.</li>
-<li>DLL is for Doubly Linked Lists.</li>
+<li>DLL is for Doubly Linked Lists. (TODO)</li>
 <li>CLL is for Circular Linked Lists. (TODO)</li>
 </ul>
 <table class="markdownTable">
@@ -212,10 +211,8 @@ Project Structure</h1>
 <div class="line">├── src/</div>
 <div class="line">│   ├── main.c</div>
 <div class="line">│   ├── singly_linked_list.c</div>
-<div class="line">│   └── print_utils.c</div>
 <div class="line">├── include/</div>
 <div class="line">│   ├── singly_linked_list.h</div>
-<div class="line">│   └── print_utils.h</div>
 <div class="line">├── output/</div>
 <div class="line">│   └── clinkd (after running make)</div>
 <div class="line">├── Makefile</div>
