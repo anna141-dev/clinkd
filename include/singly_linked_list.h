@@ -93,8 +93,10 @@ SLLNode *SLLFind(SLLNode *head, bool (*predicate)(SLLNode *, void *),
   * @param head  Pointer to a pointer to the head of the list.
   * @param node  Pointer to the node to insert.
   * @param index Zero based position to insert at.
- void SLLInsertAt(SLLNode **head, SLLNode *node, size_t index);
- 
+  */
+void SLLInsertAt(SLLNode **head, SLLNode *node, size_t index);
+
+  /**
   * Removes the node at a given zero based index.
   *
   * Does not free any memory.
