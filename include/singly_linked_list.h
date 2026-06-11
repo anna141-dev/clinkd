@@ -41,8 +41,11 @@ void SLLAppend(SLLNode **head, SLLNode *node);
   *
   * @param head Pointer to a pointer to the head node.
   * @param node Pointer to the node to prepend.
- void SLLPrepend(SLLNode **head, SLLNode *node);
- 
+  */
+
+void SLLPrepend(SLLNode **head, SLLNode *node);
+
+ /**
   * Removes the first node from the list.
   *
   * Does not free any memory. The caller is responsible 
@@ -131,8 +134,10 @@ void SLLClear(SLLNode **head);
   *
   * @param head Pointer to the head of the list.
   * @return Total number of nodes.
- size_t SLLCountNodes(SLLNode *head);
+ */
+size_t SLLCountNodes(SLLNode *head);
  
+ /**
   * Reverses the list in place.
   *
   * @param head Pointer to a pointer to the head of the list.
