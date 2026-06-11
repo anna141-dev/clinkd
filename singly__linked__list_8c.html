@@ -97,60 +97,39 @@ $(document).ready(function(){initNavTree('singly__linked__list_8c.html',''); ini
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="singly__linked__list_8h_source.html">../include/singly_linked_list.h</a>&quot;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
-<code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="print__utils_8h_source.html">../include/print_utils.h</a>&quot;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afe8847022f040dff6d001d060177179d" id="r_afe8847022f040dff6d001d060177179d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#afe8847022f040dff6d001d060177179d">SLLCreate</a> (void *data, size_t data_size)</td></tr>
-<tr class="memdesc:afe8847022f040dff6d001d060177179d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new node;.  <br /></td></tr>
-<tr class="separator:afe8847022f040dff6d001d060177179d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae09caed5ec1fe6632a2643014a6fa1a9" id="r_ae09caed5ec1fe6632a2643014a6fa1a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#ae09caed5ec1fe6632a2643014a6fa1a9">SLLAppend</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **head, void *value, size_t data_size)</td></tr>
-<tr class="memdesc:ae09caed5ec1fe6632a2643014a6fa1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a value at the end of the list.  <br /></td></tr>
-<tr class="separator:ae09caed5ec1fe6632a2643014a6fa1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ff25ed81ae8d5c76896f9621fd002ce" id="r_a8ff25ed81ae8d5c76896f9621fd002ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a8ff25ed81ae8d5c76896f9621fd002ce">SLLPropend</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **head, void *value, size_t data_size)</td></tr>
-<tr class="separator:a8ff25ed81ae8d5c76896f9621fd002ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11fc915b4ac19794b360fb9555b64afb" id="r_a11fc915b4ac19794b360fb9555b64afb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a11fc915b4ac19794b360fb9555b64afb">SLLPopFront</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **head)</td></tr>
-<tr class="memdesc:a11fc915b4ac19794b360fb9555b64afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first node from the list.  <br /></td></tr>
-<tr class="separator:a11fc915b4ac19794b360fb9555b64afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea879240b4125ca4cf78b3f0ac0d87b5" id="r_aea879240b4125ca4cf78b3f0ac0d87b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#aea879240b4125ca4cf78b3f0ac0d87b5">SLLPopBack</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **head)</td></tr>
-<tr class="memdesc:aea879240b4125ca4cf78b3f0ac0d87b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the last node from the list.  <br /></td></tr>
-<tr class="separator:aea879240b4125ca4cf78b3f0ac0d87b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a819914fe86f35c560ba6c1d65e0e1bdc" id="r_a819914fe86f35c560ba6c1d65e0e1bdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a819914fe86f35c560ba6c1d65e0e1bdc">SLLFind</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *head, void *value)</td></tr>
-<tr class="memdesc:a819914fe86f35c560ba6c1d65e0e1bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a node by value.  <br /></td></tr>
-<tr class="separator:a819914fe86f35c560ba6c1d65e0e1bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82b14a2769adc6071c184dd259949e6b" id="r_a82b14a2769adc6071c184dd259949e6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a82b14a2769adc6071c184dd259949e6b">SLLInsertAt</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **head, void *value, size_t index)</td></tr>
-<tr class="memdesc:a82b14a2769adc6071c184dd259949e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a value at a given index.  <br /></td></tr>
-<tr class="separator:a82b14a2769adc6071c184dd259949e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ed3ee36c38be39d362d64b4012d39bf" id="r_a6ed3ee36c38be39d362d64b4012d39bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a6ed3ee36c38be39d362d64b4012d39bf">SLLDeleteAt</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **head, size_t index)</td></tr>
-<tr class="memdesc:a6ed3ee36c38be39d362d64b4012d39bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the node at a given index.  <br /></td></tr>
-<tr class="separator:a6ed3ee36c38be39d362d64b4012d39bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b03643f597315fe33e9303928526b81" id="r_a4b03643f597315fe33e9303928526b81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a4b03643f597315fe33e9303928526b81">SLLNodes</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *head, void(*PrintData)(void *))</td></tr>
-<tr class="memdesc:a4b03643f597315fe33e9303928526b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">List all nodes on the list.  <br /></td></tr>
-<tr class="separator:a4b03643f597315fe33e9303928526b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13e7e4b433862f810b45625467e79f66" id="r_a13e7e4b433862f810b45625467e79f66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a13e7e4b433862f810b45625467e79f66">SLLFree</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **head)</td></tr>
-<tr class="memdesc:a13e7e4b433862f810b45625467e79f66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all nodes on the list, freeing memory up correctly.  <br /></td></tr>
-<tr class="separator:a13e7e4b433862f810b45625467e79f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c19c9c9e098bedd6384df410651a2e9" id="r_a3c19c9c9e098bedd6384df410651a2e9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a3c19c9c9e098bedd6384df410651a2e9">SLLCountNodes</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *head)</td></tr>
-<tr class="memdesc:a3c19c9c9e098bedd6384df410651a2e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of nodes in a linked list.  <br /></td></tr>
-<tr class="separator:a3c19c9c9e098bedd6384df410651a2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abda938b3a8b90d517c768e21540a7fd1" id="r_abda938b3a8b90d517c768e21540a7fd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#abda938b3a8b90d517c768e21540a7fd1">SLLReverse</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **head)</td></tr>
-<tr class="memdesc:abda938b3a8b90d517c768e21540a7fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses a linked list.  <br /></td></tr>
-<tr class="separator:abda938b3a8b90d517c768e21540a7fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7dcc7b52b7e342f383666ba67c2eb0a" id="r_ad7dcc7b52b7e342f383666ba67c2eb0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSinglyLinkedList.html">SinglyLinkedList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#ad7dcc7b52b7e342f383666ba67c2eb0a">SLLFilter</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *head, bool(*FilterFunction)(void *))</td></tr>
-<tr class="memdesc:ad7dcc7b52b7e342f383666ba67c2eb0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters elements based on a function.  <br /></td></tr>
-<tr class="separator:ad7dcc7b52b7e342f383666ba67c2eb0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6a3b34b50471462ecb64b8b1212a003" id="r_af6a3b34b50471462ecb64b8b1212a003"><td class="memItemLeft" align="right" valign="top"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#af6a3b34b50471462ecb64b8b1212a003">SLLMap</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *head, void *(*MapFunction)(void *))</td></tr>
-<tr class="memdesc:af6a3b34b50471462ecb64b8b1212a003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the list elements based on the result of the passed function.  <br /></td></tr>
-<tr class="separator:af6a3b34b50471462ecb64b8b1212a003"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a987900d36e7bd29828a3f0f164d101cb" id="r_a987900d36e7bd29828a3f0f164d101cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a987900d36e7bd29828a3f0f164d101cb">SLLEditNode</a> (<a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **head, void *new_value, size_t index)</td></tr>
-<tr class="memdesc:a987900d36e7bd29828a3f0f164d101cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies the element with the passed index.  <br /></td></tr>
-<tr class="separator:a987900d36e7bd29828a3f0f164d101cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ef3b212242a5e054fc31672d923564" id="r_a98ef3b212242a5e054fc31672d923564"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a98ef3b212242a5e054fc31672d923564">SLLAppend</a> (<a class="el" href="structSLLNode.html">SLLNode</a> **head, <a class="el" href="structSLLNode.html">SLLNode</a> *node)</td></tr>
+<tr class="separator:a98ef3b212242a5e054fc31672d923564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a176dbd959d3fcfa49452bd9126d568b7" id="r_a176dbd959d3fcfa49452bd9126d568b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a176dbd959d3fcfa49452bd9126d568b7">SLLPrepend</a> (<a class="el" href="structSLLNode.html">SLLNode</a> **head, <a class="el" href="structSLLNode.html">SLLNode</a> *node)</td></tr>
+<tr class="separator:a176dbd959d3fcfa49452bd9126d568b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f3dd9426258d3a02100e095fdaade58" id="r_a2f3dd9426258d3a02100e095fdaade58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a2f3dd9426258d3a02100e095fdaade58">SLLPopFront</a> (<a class="el" href="structSLLNode.html">SLLNode</a> **head)</td></tr>
+<tr class="separator:a2f3dd9426258d3a02100e095fdaade58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a1eaa161ed445582c45f3d05b63f1a2" id="r_a2a1eaa161ed445582c45f3d05b63f1a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a2a1eaa161ed445582c45f3d05b63f1a2">SLLPopBack</a> (<a class="el" href="structSLLNode.html">SLLNode</a> **head)</td></tr>
+<tr class="separator:a2a1eaa161ed445582c45f3d05b63f1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad951a022687074e765b8c62a46f254" id="r_a9ad951a022687074e765b8c62a46f254"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSLLNode.html">SLLNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a9ad951a022687074e765b8c62a46f254">SLLFind</a> (<a class="el" href="structSLLNode.html">SLLNode</a> *head, bool(*predicate)(<a class="el" href="structSLLNode.html">SLLNode</a> *, void *), void *ctx)</td></tr>
+<tr class="separator:a9ad951a022687074e765b8c62a46f254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b4ef73e2ba1bb2d3ed487830f35063" id="r_a84b4ef73e2ba1bb2d3ed487830f35063"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a84b4ef73e2ba1bb2d3ed487830f35063">SLLInsertAt</a> (<a class="el" href="structSLLNode.html">SLLNode</a> **head, <a class="el" href="structSLLNode.html">SLLNode</a> *node, size_t index)</td></tr>
+<tr class="separator:a84b4ef73e2ba1bb2d3ed487830f35063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a970e1f32d0c2ad7eb18657a1a5c1463f" id="r_a970e1f32d0c2ad7eb18657a1a5c1463f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a970e1f32d0c2ad7eb18657a1a5c1463f">SLLDeleteAt</a> (<a class="el" href="structSLLNode.html">SLLNode</a> **head, size_t index)</td></tr>
+<tr class="separator:a970e1f32d0c2ad7eb18657a1a5c1463f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8274495e153046726cd1e8641d640053" id="r_a8274495e153046726cd1e8641d640053"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a8274495e153046726cd1e8641d640053">SLLNodes</a> (<a class="el" href="structSLLNode.html">SLLNode</a> *head, void(*print_node)(<a class="el" href="structSLLNode.html">SLLNode</a> *))</td></tr>
+<tr class="separator:a8274495e153046726cd1e8641d640053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21ba049c656cf13abcec232aeaab3597" id="r_a21ba049c656cf13abcec232aeaab3597"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a21ba049c656cf13abcec232aeaab3597">SLLClear</a> (<a class="el" href="structSLLNode.html">SLLNode</a> **head)</td></tr>
+<tr class="separator:a21ba049c656cf13abcec232aeaab3597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa769da761ac727c01b9aa41d8b3580fc" id="r_aa769da761ac727c01b9aa41d8b3580fc"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#aa769da761ac727c01b9aa41d8b3580fc">SLLCountNodes</a> (<a class="el" href="structSLLNode.html">SLLNode</a> *head)</td></tr>
+<tr class="separator:aa769da761ac727c01b9aa41d8b3580fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0458730d80a92ea54f5615b97dfc91ba" id="r_a0458730d80a92ea54f5615b97dfc91ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a0458730d80a92ea54f5615b97dfc91ba">SLLReverse</a> (<a class="el" href="structSLLNode.html">SLLNode</a> **head)</td></tr>
+<tr class="separator:a0458730d80a92ea54f5615b97dfc91ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68e83d1aff6db0479f2702ba6a4ec41a" id="r_a68e83d1aff6db0479f2702ba6a4ec41a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSLLNode.html">SLLNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8c.html#a68e83d1aff6db0479f2702ba6a4ec41a">SLLFilter</a> (<a class="el" href="structSLLNode.html">SLLNode</a> *head, bool(*predicate)(<a class="el" href="structSLLNode.html">SLLNode</a> *))</td></tr>
+<tr class="separator:a68e83d1aff6db0479f2702ba6a4ec41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae09caed5ec1fe6632a2643014a6fa1a9" name="ae09caed5ec1fe6632a2643014a6fa1a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae09caed5ec1fe6632a2643014a6fa1a9">&#9670;&#160;</a></span>SLLAppend()</h2>
+<a id="a98ef3b212242a5e054fc31672d923564" name="a98ef3b212242a5e054fc31672d923564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ef3b212242a5e054fc31672d923564">&#9670;&#160;</a></span>SLLAppend()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,20 +137,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void SLLAppend </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> **&#160;</td>
           <td class="paramname"><em>head</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>data_size</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> *&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -180,21 +153,46 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Adds a value at the end of the list. </p>
+<p>Adds a node at the end of the list.</p>
+<p>The node must be embedded in a user allocated struct. The library does not allocate or copy any data.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to a pointer to the head node. </td></tr>
-    <tr><td class="paramname">value</td><td>The value to add. </td></tr>
-    <tr><td class="paramname">data_size</td><td>The size of the value data type </td></tr>
+    <tr><td class="paramname">node</td><td>Pointer to the node to append. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a3c19c9c9e098bedd6384df410651a2e9" name="a3c19c9c9e098bedd6384df410651a2e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c19c9c9e098bedd6384df410651a2e9">&#9670;&#160;</a></span>SLLCountNodes()</h2>
+<a id="a21ba049c656cf13abcec232aeaab3597" name="a21ba049c656cf13abcec232aeaab3597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21ba049c656cf13abcec232aeaab3597">&#9670;&#160;</a></span>SLLClear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SLLClear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> **&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Detaches all nodes from the list by setting head to NULL.</p>
+<p>Does NOT free any memory, the caller owns each parent struct and is responsible for releasing them. This function only resets the list state.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa769da761ac727c01b9aa41d8b3580fc" name="aa769da761ac727c01b9aa41d8b3580fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa769da761ac727c01b9aa41d8b3580fc">&#9670;&#160;</a></span>SLLCountNodes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,64 +200,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">size_t SLLCountNodes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> *&#160;</td>
           <td class="paramname"><em>head</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Returns the number of nodes in a linked list. </p>
+<p>Returns the number of nodes in the list.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to the head of the list. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The total of notes on the list. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Total number of nodes. </dd></dl>
 
 </div>
 </div>
-<a id="afe8847022f040dff6d001d060177179d" name="afe8847022f040dff6d001d060177179d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe8847022f040dff6d001d060177179d">&#9670;&#160;</a></span>SLLCreate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> * SLLCreate </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>data_size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Create a new node;. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>The value to add on that node. </td></tr>
-    <tr><td class="paramname">data_size</td><td>The size of the value data type </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the head of the list or NULL if allocation fails. </dd></dl>
-
-</div>
-</div>
-<a id="a6ed3ee36c38be39d362d64b4012d39bf" name="a6ed3ee36c38be39d362d64b4012d39bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ed3ee36c38be39d362d64b4012d39bf">&#9670;&#160;</a></span>SLLDeleteAt()</h2>
+<a id="a970e1f32d0c2ad7eb18657a1a5c1463f" name="a970e1f32d0c2ad7eb18657a1a5c1463f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a970e1f32d0c2ad7eb18657a1a5c1463f">&#9670;&#160;</a></span>SLLDeleteAt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -267,7 +226,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void SLLDeleteAt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> **&#160;</td>
           <td class="paramname"><em>head</em>, </td>
         </tr>
         <tr>
@@ -283,79 +242,35 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Deletes the node at a given index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">head</td><td>Head of the list. </td></tr>
-    <tr><td class="paramname">index</td><td>Zero-based position of the node to delete. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a987900d36e7bd29828a3f0f164d101cb" name="a987900d36e7bd29828a3f0f164d101cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a987900d36e7bd29828a3f0f164d101cb">&#9670;&#160;</a></span>SLLEditNode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SLLEditNode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **&#160;</td>
-          <td class="paramname"><em>head</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>new_value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modifies the element with the passed index. </p>
+<p>Removes the node at a given zero based index.</p>
+<p>Does not free any memory.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list. </td></tr>
-    <tr><td class="paramname">new_value</td><td>The new value to be set on that node. </td></tr>
-    <tr><td class="paramname">index</td><td>The index to modify. </td></tr>
+    <tr><td class="paramname">index</td><td>Zero based position of the node to remove. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ad7dcc7b52b7e342f383666ba67c2eb0a" name="ad7dcc7b52b7e342f383666ba67c2eb0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7dcc7b52b7e342f383666ba67c2eb0a">&#9670;&#160;</a></span>SLLFilter()</h2>
+<a id="a68e83d1aff6db0479f2702ba6a4ec41a" name="a68e83d1aff6db0479f2702ba6a4ec41a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68e83d1aff6db0479f2702ba6a4ec41a">&#9670;&#160;</a></span>SLLFilter()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structSinglyLinkedList.html">SinglyLinkedList</a> * SLLFilter </td>
+          <td class="memname"><a class="el" href="structSLLNode.html">SLLNode</a> * SLLFilter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> *&#160;</td>
           <td class="paramname"><em>head</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool(*)(void *)&#160;</td>
-          <td class="paramname"><em>FilterFunction</em>&#160;</td>
+          <td class="paramtype">bool(*)(<a class="el" href="structSLLNode.html">SLLNode</a> *)&#160;</td>
+          <td class="paramname"><em>predicate</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -364,37 +279,42 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Filters elements based on a function. </p>
-<p>Example, the function IsEven, the new list will store only even values. Your FilterFunction should cast the element's type. See the example in /sr/main.c</p>
+<p>Builds a new list containing only nodes for which the predicate returns true.</p>
+<p>The new list reuses the same nodes, no allocation is performed. Because of this, each node can only belong to one list at a time after filtering. If you need to keep the original list intact, do not use this function.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to the head of the original list. </td></tr>
-    <tr><td class="paramname">FilterFunction</td><td>The function used to filter the elements. It must return a boolean value. </td></tr>
+    <tr><td class="paramname">predicate</td><td>Function that returns true for nodes to keep. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The new list with filtered values. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the head of the filtered list, or NULL if empty. </dd></dl>
 
 </div>
 </div>
-<a id="a819914fe86f35c560ba6c1d65e0e1bdc" name="a819914fe86f35c560ba6c1d65e0e1bdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a819914fe86f35c560ba6c1d65e0e1bdc">&#9670;&#160;</a></span>SLLFind()</h2>
+<a id="a9ad951a022687074e765b8c62a46f254" name="a9ad951a022687074e765b8c62a46f254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad951a022687074e765b8c62a46f254">&#9670;&#160;</a></span>SLLFind()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> * SLLFind </td>
+          <td class="memname"><a class="el" href="structSLLNode.html">SLLNode</a> * SLLFind </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> *&#160;</td>
           <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool(*)(<a class="el" href="structSLLNode.html">SLLNode</a> *, void *)&#160;</td>
+          <td class="paramname"><em>predicate</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
+          <td class="paramname"><em>ctx</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -403,48 +323,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Finds a node by value. </p>
+<p>Finds the first node for which the predicate returns true.</p>
+<p>The predicate receives each SLLNode* and an optional context pointer (ctx), which can be used to pass comparison data without globals.</p>
+<p>Example:</p>
+<p>bool MatchValue(SLLNode *n, void *ctx) { <a class="el" href="structMyItem.html">MyItem</a> *item = <a class="el" href="singly__linked__list_8h.html#af8c317a42292b61c93aae91e59118a46">container_of(n, MyItem, node)</a>; return item-&gt;value == *(int *)ctx; }</p>
+<p>int target = 42; <a class="el" href="structSLLNode.html">SLLNode</a> *found = SLLFind(head, MatchValue, &amp;target);</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to the head node. </td></tr>
-    <tr><td class="paramname">value</td><td>The value to search for. </td></tr>
+    <tr><td class="paramname">predicate</td><td>Function that returns true when the target is found. </td></tr>
+    <tr><td class="paramname">ctx</td><td>Optional context pointer forwarded to the predicate. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the matching node, or NULL if not found. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the first matching node, or NULL if not found. </dd></dl>
 
 </div>
 </div>
-<a id="a13e7e4b433862f810b45625467e79f66" name="a13e7e4b433862f810b45625467e79f66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13e7e4b433862f810b45625467e79f66">&#9670;&#160;</a></span>SLLFree()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SLLFree </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **&#160;</td>
-          <td class="paramname"><em>head</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deletes all nodes on the list, freeing memory up correctly. </p>
-<p>Always use this after you finish operations with the list you are using, it's important to avoid memory leaks. It automatically sets the pointer to the head to NULL, so you don't need to worry about doing it manually.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">head</td><td>Pointer to the head of the list. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a82b14a2769adc6071c184dd259949e6b" name="a82b14a2769adc6071c184dd259949e6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82b14a2769adc6071c184dd259949e6b">&#9670;&#160;</a></span>SLLInsertAt()</h2>
+<a id="a84b4ef73e2ba1bb2d3ed487830f35063" name="a84b4ef73e2ba1bb2d3ed487830f35063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84b4ef73e2ba1bb2d3ed487830f35063">&#9670;&#160;</a></span>SLLInsertAt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -452,14 +349,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void SLLInsertAt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> **&#160;</td>
           <td class="paramname"><em>head</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> *&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -474,60 +371,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Inserts a value at a given index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">head</td><td>Head of the list. </td></tr>
-    <tr><td class="paramname">value</td><td>The value to insert. </td></tr>
-    <tr><td class="paramname">index</td><td>Zero-based position to insert at. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="af6a3b34b50471462ecb64b8b1212a003" name="af6a3b34b50471462ecb64b8b1212a003"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6a3b34b50471462ecb64b8b1212a003">&#9670;&#160;</a></span>SLLMap()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> * SLLMap </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *&#160;</td>
-          <td class="paramname"><em>head</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *(*)(void *)&#160;</td>
-          <td class="paramname"><em>MapFunction</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Changes the list elements based on the result of the passed function. </p>
-<p>Read the function DoubleValue on /src/main.c to see an example.</p>
+<p>Inserts a node at a given zero based index.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list. </td></tr>
-    <tr><td class="paramname">MapFunction</td><td>The function used to map the elements. Must return the same data type as the list element. </td></tr>
+    <tr><td class="paramname">node</td><td>Pointer to the node to insert. </td></tr>
+    <tr><td class="paramname">index</td><td>Zero based position to insert at. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The new list with mapped values. </dd></dl>
 
 </div>
 </div>
-<a id="a4b03643f597315fe33e9303928526b81" name="a4b03643f597315fe33e9303928526b81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b03643f597315fe33e9303928526b81">&#9670;&#160;</a></span>SLLNodes()</h2>
+<a id="a8274495e153046726cd1e8641d640053" name="a8274495e153046726cd1e8641d640053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8274495e153046726cd1e8641d640053">&#9670;&#160;</a></span>SLLNodes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -535,14 +392,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void SLLNodes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> *&#160;</td>
           <td class="paramname"><em>head</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void(*)(void *)&#160;</td>
-          <td class="paramname"><em>PrintData</em>&#160;</td>
+          <td class="paramtype">void(*)(<a class="el" href="structSLLNode.html">SLLNode</a> *)&#160;</td>
+          <td class="paramname"><em>print_node</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -551,20 +408,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>List all nodes on the list. </p>
+<p>Iterates over the list, calling print_node for each node.</p>
+<p>The caller uses container_of inside print_node to access the parent struct.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">head</td><td>Head of the list. </td></tr>
-    <tr><td class="paramname">print_data</td><td>The function corresponding to the type of data to list </td></tr>
+    <tr><td class="paramname">head</td><td>Pointer to the head of the list. </td></tr>
+    <tr><td class="paramname">print_node</td><td>Function called for each node. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aea879240b4125ca4cf78b3f0ac0d87b5" name="aea879240b4125ca4cf78b3f0ac0d87b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea879240b4125ca4cf78b3f0ac0d87b5">&#9670;&#160;</a></span>SLLPopBack()</h2>
+<a id="a2a1eaa161ed445582c45f3d05b63f1a2" name="a2a1eaa161ed445582c45f3d05b63f1a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a1eaa161ed445582c45f3d05b63f1a2">&#9670;&#160;</a></span>SLLPopBack()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -572,14 +429,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void SLLPopBack </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> **&#160;</td>
           <td class="paramname"><em>head</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Removes the last node from the list. </p>
+<p>Removes the last node from the list.</p>
+<p>Does not free any memory. The caller is responsible for freeing the parent struct if needed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list. </td></tr>
@@ -589,8 +446,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a11fc915b4ac19794b360fb9555b64afb" name="a11fc915b4ac19794b360fb9555b64afb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11fc915b4ac19794b360fb9555b64afb">&#9670;&#160;</a></span>SLLPopFront()</h2>
+<a id="a2f3dd9426258d3a02100e095fdaade58" name="a2f3dd9426258d3a02100e095fdaade58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f3dd9426258d3a02100e095fdaade58">&#9670;&#160;</a></span>SLLPopFront()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -598,14 +455,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void SLLPopFront </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> **&#160;</td>
           <td class="paramname"><em>head</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Removes the first node from the list. </p>
+<p>Removes the first node from the list.</p>
+<p>Does not free any memory. The caller is responsible for freeing the parent struct if needed. Use container_of to recover it before calling this.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list. </td></tr>
@@ -615,29 +472,23 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8ff25ed81ae8d5c76896f9621fd002ce" name="a8ff25ed81ae8d5c76896f9621fd002ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ff25ed81ae8d5c76896f9621fd002ce">&#9670;&#160;</a></span>SLLPropend()</h2>
+<a id="a176dbd959d3fcfa49452bd9126d568b7" name="a176dbd959d3fcfa49452bd9126d568b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a176dbd959d3fcfa49452bd9126d568b7">&#9670;&#160;</a></span>SLLPrepend()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SLLPropend </td>
+          <td class="memname">void SLLPrepend </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> **&#160;</td>
           <td class="paramname"><em>head</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>data_size</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> *&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -646,19 +497,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds a value at the start of the list. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Adds a node at the start of the list.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to a pointer to the head node. </td></tr>
-    <tr><td class="paramname">value</td><td>The value to add. </td></tr>
-    <tr><td class="paramname">data_size</td><td>The size of the value data type </td></tr>
+    <tr><td class="paramname">node</td><td>Pointer to the node to prepend. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="abda938b3a8b90d517c768e21540a7fd1" name="abda938b3a8b90d517c768e21540a7fd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abda938b3a8b90d517c768e21540a7fd1">&#9670;&#160;</a></span>SLLReverse()</h2>
+<a id="a0458730d80a92ea54f5615b97dfc91ba" name="a0458730d80a92ea54f5615b97dfc91ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0458730d80a92ea54f5615b97dfc91ba">&#9670;&#160;</a></span>SLLReverse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -666,17 +517,16 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void SLLReverse </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="singly__linked__list_8h.html#aee94df893e28446d17db1b68bbc8c987">SLLItem</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="structSLLNode.html">SLLNode</a> **&#160;</td>
           <td class="paramname"><em>head</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Reverses a linked list. </p>
+<p>Reverses the list in place.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list </td></tr>
+    <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list. </td></tr>
   </table>
   </dd>
 </dl>

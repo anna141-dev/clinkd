@@ -1,4 +1,5 @@
 var annotated_dup =
 [
-    [ "SinglyLinkedList", "structSinglyLinkedList.html", "structSinglyLinkedList" ]
+    [ "MyItem", "structMyItem.html", "structMyItem" ],
+    [ "SLLNode", "structSLLNode.html", "structSLLNode" ]
 ];

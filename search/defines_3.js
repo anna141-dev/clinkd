@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['header_0',['HEADER',['../main_8c.html#ab7770a7f0d95e67620ff6ed347a07a56',1,'main.c']]]
+  ['footer_0',['FOOTER',['../main_8c.html#a3d58a4fcb44314d3a153f82925dcbf2c',1,'main.c']]]
 ];

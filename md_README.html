@@ -139,36 +139,47 @@ Including in your project</h2>
 <div class="line"> </div>
 <div class="line">your-project/</div>
 <div class="line">└── ...</div>
-</div><!-- fragment --><p>Don't forget to include linked_lists.h and <a class="el" href="print__utils_8h.html">print_utils.h</a>:</p>
+</div><!-- fragment --><p>Don't forget to include linked_lists.h and print_utils.h:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;linked_lists.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="print__utils_8h.html">print_utils.h</a>&quot;</span></div>
-<div class="ttc" id="aprint__utils_8h_html"><div class="ttname"><a href="print__utils_8h.html">print_utils.h</a></div></div>
+<div class="line"><span class="preprocessor">#include &quot;print_utils.h&quot;</span></div>
 </div><!-- fragment --><p>Link against the compiled library:</p>
 <div class="fragment"><div class="line">gcc -Wall -Wextra -Iinclude -I ../clinkd/include your_program -o your_program -L../clinkd/output -lclinkd</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
 Usage</h1>
+<blockquote class="doxtable">
+<p>&zwj;If you want something more in-depth, see /src/main.c </p>
+</blockquote>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="singly__linked__list_8h.html">singly_linked_list.h</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="print__utils_8h.html">print_utils.h</a>&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_struct" href="structSinglyLinkedList.html">SinglyLinkedList</a>* node = NULL;</div>
-<div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#a4b03643f597315fe33e9303928526b81">SLLNodes</a>(node, print_int);</div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">  <span class="keywordtype">int</span> value;</div>
+<div class="line">  <a class="code hl_struct" href="structSLLNode.html">SLLNode</a> node;</div>
+<div class="line">} <a class="code hl_struct" href="structMyItem.html">MyItem</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> value_to_append_1 = 90;</div>
-<div class="line"><span class="keywordtype">int</span> value_to_append_2 = 12;</div>
-<div class="line"><span class="keywordtype">int</span> value_to_append_3 = 73;</div>
+<div class="line"><span class="keyword">static</span> <a class="code hl_struct" href="structSLLNode.html">SLLNode</a>* MakeNode(<a class="code hl_struct" href="structMyItem.html">MyItem</a>* item, <span class="keywordtype">int</span> value) {</div>
+<div class="line">  item-&gt;<a class="code hl_variable" href="structMyItem.html#a9c4b6875a5e4b66113e16381865349df">value</a> = value;</div>
+<div class="line">  item-&gt;<a class="code hl_variable" href="structMyItem.html#a6737f62823885f9cf208ab694812cd9e">node</a>.<a class="code hl_variable" href="structSLLNode.html#a042eb7eb6523baf644d13c9c3d0dc60a">next</a> = NULL;</div>
+<div class="line">  <span class="keywordflow">return</span> &amp;item-&gt;<a class="code hl_variable" href="structMyItem.html#a6737f62823885f9cf208ab694812cd9e">node</a>;</div>
+<div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#ae09caed5ec1fe6632a2643014a6fa1a9">SLLAppend</a>(&amp;node, &amp;value_to_append_1, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#ae09caed5ec1fe6632a2643014a6fa1a9">SLLAppend</a>(&amp;node, &amp;value_to_append_2, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#ae09caed5ec1fe6632a2643014a6fa1a9">SLLAppend</a>(&amp;node, &amp;value_to_append_3, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><a class="code hl_struct" href="structMyItem.html">MyItem</a> items[16];</div>
+<div class="line"><span class="keywordtype">int</span> item_idx = 0;</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#a4b03643f597315fe33e9303928526b81">SLLNodes</a>(node, print_int);</div>
+<div class="line"><a class="code hl_struct" href="structSLLNode.html">SLLNode</a>* head = NULL;</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#a13e7e4b433862f810b45625467e79f66">SLLFree</a>(&amp;node);</div>
+<div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#a98ef3b212242a5e054fc31672d923564">SLLAppend</a>(&amp;head, MakeNode(&amp;items[item_idx++], 90));</div>
+<div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#a98ef3b212242a5e054fc31672d923564">SLLAppend</a>(&amp;head, MakeNode(&amp;items[item_idx++], 12));</div>
+<div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#a98ef3b212242a5e054fc31672d923564">SLLAppend</a>(&amp;head, MakeNode(&amp;items[item_idx++], 73));</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="singly__linked__list_8h.html#a21ba049c656cf13abcec232aeaab3597">SLLClear</a>(&amp;head);</div>
 <div class="ttc" id="asingly__linked__list_8h_html"><div class="ttname"><a href="singly__linked__list_8h.html">singly_linked_list.h</a></div></div>
-<div class="ttc" id="asingly__linked__list_8h_html_a13e7e4b433862f810b45625467e79f66"><div class="ttname"><a href="singly__linked__list_8h.html#a13e7e4b433862f810b45625467e79f66">SLLFree</a></div><div class="ttdeci">void SLLFree(SLLItem **head)</div><div class="ttdoc">Deletes all nodes on the list, freeing memory up correctly.</div><div class="ttdef"><b>Definition</b> singly_linked_list.c:181</div></div>
-<div class="ttc" id="asingly__linked__list_8h_html_a4b03643f597315fe33e9303928526b81"><div class="ttname"><a href="singly__linked__list_8h.html#a4b03643f597315fe33e9303928526b81">SLLNodes</a></div><div class="ttdeci">void SLLNodes(SLLItem *head, void(*PrintData)(void *))</div><div class="ttdoc">List all nodes on the list.</div><div class="ttdef"><b>Definition</b> singly_linked_list.c:167</div></div>
-<div class="ttc" id="asingly__linked__list_8h_html_ae09caed5ec1fe6632a2643014a6fa1a9"><div class="ttname"><a href="singly__linked__list_8h.html#ae09caed5ec1fe6632a2643014a6fa1a9">SLLAppend</a></div><div class="ttdeci">void SLLAppend(SLLItem **head, void *value, size_t data_size)</div><div class="ttdoc">Adds a value at the end of the list.</div><div class="ttdef"><b>Definition</b> singly_linked_list.c:31</div></div>
-<div class="ttc" id="astructSinglyLinkedList_html"><div class="ttname"><a href="structSinglyLinkedList.html">SinglyLinkedList</a></div><div class="ttdef"><b>Definition</b> singly_linked_list.h:13</div></div>
+<div class="ttc" id="asingly__linked__list_8h_html_a21ba049c656cf13abcec232aeaab3597"><div class="ttname"><a href="singly__linked__list_8h.html#a21ba049c656cf13abcec232aeaab3597">SLLClear</a></div><div class="ttdeci">void SLLClear(SLLNode **head)</div><div class="ttdef"><b>Definition</b> singly_linked_list.c:128</div></div>
+<div class="ttc" id="asingly__linked__list_8h_html_a98ef3b212242a5e054fc31672d923564"><div class="ttname"><a href="singly__linked__list_8h.html#a98ef3b212242a5e054fc31672d923564">SLLAppend</a></div><div class="ttdeci">void SLLAppend(SLLNode **head, SLLNode *node)</div><div class="ttdef"><b>Definition</b> singly_linked_list.c:14</div></div>
+<div class="ttc" id="astructMyItem_html"><div class="ttname"><a href="structMyItem.html">MyItem</a></div><div class="ttdef"><b>Definition</b> main.c:39</div></div>
+<div class="ttc" id="astructMyItem_html_a6737f62823885f9cf208ab694812cd9e"><div class="ttname"><a href="structMyItem.html#a6737f62823885f9cf208ab694812cd9e">MyItem::node</a></div><div class="ttdeci">SLLNode node</div><div class="ttdef"><b>Definition</b> main.c:41</div></div>
+<div class="ttc" id="astructMyItem_html_a9c4b6875a5e4b66113e16381865349df"><div class="ttname"><a href="structMyItem.html#a9c4b6875a5e4b66113e16381865349df">MyItem::value</a></div><div class="ttdeci">int value</div><div class="ttdef"><b>Definition</b> main.c:40</div></div>
+<div class="ttc" id="astructSLLNode_html"><div class="ttname"><a href="structSLLNode.html">SLLNode</a></div><div class="ttdef"><b>Definition</b> singly_linked_list.h:24</div></div>
+<div class="ttc" id="astructSLLNode_html_a042eb7eb6523baf644d13c9c3d0dc60a"><div class="ttname"><a href="structSLLNode.html#a042eb7eb6523baf644d13c9c3d0dc60a">SLLNode::next</a></div><div class="ttdeci">struct SLLNode * next</div><div class="ttdef"><b>Definition</b> singly_linked_list.h:25</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
 API Reference</h1>
 <ul>
@@ -180,19 +191,17 @@ API Reference</h1>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Function   </th><th class="markdownTableHeadNone">Description    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>SLLCreateNode(data, data_size)</code>   </td><td class="markdownTableBodyNone">Creates a new node    </td></tr>
+<td class="markdownTableBodyNone"><code>SLLAppend(head, node)</code>   </td><td class="markdownTableBodyNone">Appends a node to the end of the list    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>SLLAppend(list, data, data_size)</code>   </td><td class="markdownTableBodyNone">Appends a node to the end of the list    </td></tr>
+<td class="markdownTableBodyNone"><code>SLLPropend(head, node)</code>   </td><td class="markdownTableBodyNone">Prepends a node to the beginning of the list    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>SLLPropend(list, data)</code>   </td><td class="markdownTableBodyNone">Prepends a node to the beginning of the list    </td></tr>
+<td class="markdownTableBodyNone"><code>SLLPopFront(head)</code>   </td><td class="markdownTableBodyNone">Removes the last node    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>SLLPopFront(list)</code>   </td><td class="markdownTableBodyNone">Removes the last node    </td></tr>
+<td class="markdownTableBodyNone"><code>SLLPopBack(head)</code>   </td><td class="markdownTableBodyNone">Removes the first node    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>SLLPopBack(list)</code>   </td><td class="markdownTableBodyNone">Removes the first node    </td></tr>
+<td class="markdownTableBodyNone"><code>SLLFind(head, predicate, ctx)</code>   </td><td class="markdownTableBodyNone">Finds a node by value    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>SLLFind(list)</code>   </td><td class="markdownTableBodyNone">Finds a node by value    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>SLLInsertAt(list, index)</code>   </td><td class="markdownTableBodyNone">Inserts a value at a given index   </td></tr>
+<td class="markdownTableBodyNone"><code>SLLInsertAt(head, node, index)</code>   </td><td class="markdownTableBodyNone">Inserts a value at a given index   </td></tr>
 </table>
 <blockquote class="doxtable">
 <p>&zwj;For more information and additional functions, see the website linked in the repository. </p>

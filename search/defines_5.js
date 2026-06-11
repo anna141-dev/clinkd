@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['section_0',['SECTION',['../main_8c.html#aa2c44298bc422970bbd81c5622bce3ea',1,'main.c']]]
+  ['linked_5flist_5fmax_5fnodes_0',['LINKED_LIST_MAX_NODES',['../singly__linked__list_8h.html#a246fce231a91673977547ff456d9dd9a',1,'singly_linked_list.h']]]
 ];
