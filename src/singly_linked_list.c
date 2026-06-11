@@ -1,7 +1,9 @@
+//
 // Copyright 2026 Anna
 //
 // Implementation of a singly linked list.
 // The public interface and function documentation are in singly_linked_list.h.
+//
 
 #include "../include/singly_linked_list.h"
 
