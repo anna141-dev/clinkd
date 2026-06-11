@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Linked List C", "index.html", [
+  [ "Clinkd", "index.html", [
     [ "LICENSE", "md_LICENSE.html", null ],
     [ "clinkd", "md_README.html", [
       [ "Overview", "md_README.html#autotoc_md1", null ],
