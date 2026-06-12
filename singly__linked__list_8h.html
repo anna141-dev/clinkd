@@ -110,8 +110,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:af8c317a42292b61c93aae91e59118a46" id="r_af8c317a42292b61c93aae91e59118a46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8h.html#af8c317a42292b61c93aae91e59118a46">container_of</a>(ptr,  type,  member)&#160;&#160;&#160;  ((type *)((char *)(ptr)-offsetof(type, member)))</td></tr>
-<tr class="separator:af8c317a42292b61c93aae91e59118a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37cdb5f05a04f4f9d1555ff362190522" id="r_a37cdb5f05a04f4f9d1555ff362190522"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8h.html#a37cdb5f05a04f4f9d1555ff362190522">clinkd_container_of</a>(ptr,  type,  member)&#160;&#160;&#160;  ((type *)((char *)(ptr)-offsetof(type, member)))</td></tr>
+<tr class="separator:a37cdb5f05a04f4f9d1555ff362190522"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a246fce231a91673977547ff456d9dd9a" id="r_a246fce231a91673977547ff456d9dd9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="singly__linked__list_8h.html#a246fce231a91673977547ff456d9dd9a">LINKED_LIST_MAX_NODES</a>&#160;&#160;&#160;100000U</td></tr>
 <tr class="separator:a246fce231a91673977547ff456d9dd9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -148,14 +148,14 @@ Functions</h2></td></tr>
 <tr class="separator:a68e83d1aff6db0479f2702ba6a4ec41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="af8c317a42292b61c93aae91e59118a46" name="af8c317a42292b61c93aae91e59118a46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8c317a42292b61c93aae91e59118a46">&#9670;&#160;</a></span>container_of</h2>
+<a id="a37cdb5f05a04f4f9d1555ff362190522" name="a37cdb5f05a04f4f9d1555ff362190522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37cdb5f05a04f4f9d1555ff362190522">&#9670;&#160;</a></span>clinkd_container_of</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define container_of</td>
+          <td class="memname">#define clinkd_container_of</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">ptr, </td>
@@ -420,7 +420,7 @@ Functions</h2></td></tr>
 <p>Finds the first node for which the predicate returns true.</p>
 <p>The predicate receives each SLLNode* and an optional context pointer (ctx), which can be used to pass comparison data without globals.</p>
 <p>Example:</p>
-<p>bool MatchValue(SLLNode *n, void *ctx) { <a class="el" href="structMyItem.html">MyItem</a> *item = <a class="el" href="singly__linked__list_8h.html#af8c317a42292b61c93aae91e59118a46">container_of(n, MyItem, node)</a>; return item-&gt;value == *(int *)ctx; }</p>
+<p>bool MatchValue(SLLNode *n, void *ctx) { <a class="el" href="structMyItem.html">MyItem</a> *item = <a class="el" href="singly__linked__list_8h.html#a37cdb5f05a04f4f9d1555ff362190522">clinkd_container_of(n, MyItem, node)</a>; return item-&gt;value == *(int *)ctx; }</p>
 <p>int target = 42; <a class="el" href="structSLLNode.html">SLLNode</a> *found = SLLFind(head, MatchValue, &amp;target);</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -503,7 +503,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Iterates over the list, calling print_node for each node.</p>
-<p>The caller uses container_of inside print_node to access the parent struct.</p>
+<p>The caller uses clinkd_container_of inside print_node to access the parent struct.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to the head of the list. </td></tr>
@@ -556,7 +556,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Removes the first node from the list.</p>
-<p>Does not free any memory. The caller is responsible for freeing the parent struct if needed. Use container_of to recover it before calling this.</p>
+<p>Does not free any memory. The caller is responsible for freeing the parent struct if needed. Use clinkd_container_of to recover it before calling this.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list. </td></tr>
