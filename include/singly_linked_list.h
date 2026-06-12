@@ -8,6 +8,10 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
  /**
   * Recovers a pointer to the parent struct from a pointer to one of its members.
   *
@@ -156,5 +160,9 @@ void SLLReverse(SLLNode **head);
   * @return Pointer to the head of the filtered list, or NULL if empty.
   */
 SLLNode *SLLFilter(SLLNode *head, bool (*predicate)(SLLNode *));
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
