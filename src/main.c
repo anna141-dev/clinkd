@@ -50,23 +50,23 @@ static SLLNode* MakeNode(MyItem* item, int value) {
 }
 
 static void PrintItem(SLLNode* n) {
-  MyItem* item = container_of(n, MyItem, node);
+  MyItem* item = clinkd_container_of(n, MyItem, node);
   printf("%d", item->value);
 }
 
 static bool IsEven(SLLNode* n) {
-  MyItem* item = container_of(n, MyItem, node);
+  MyItem* item = clinkd_container_of(n, MyItem, node);
   return item->value % 2 == 0;
 }
 
 static bool IsOdd(SLLNode* n) {
-  MyItem* item = container_of(n, MyItem, node);
+  MyItem* item = clinkd_container_of(n, MyItem, node);
   return item->value % 2 != 0;
 }
 
 // Predicate for SLLFind: matches nodes whose value equals *(int *)ctx.
 static bool MatchValue(SLLNode* n, void* ctx) {
-  MyItem* item = container_of(n, MyItem, node);
+  MyItem* item = clinkd_container_of(n, MyItem, node);
   return item->value == *(int*)ctx;
 }
 

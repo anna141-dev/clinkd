@@ -15,7 +15,7 @@
   * @param type   Type of the parent struct.
   * @param member Name of the member inside the parent struct.
   */
-#define container_of(ptr, type, member) \
+#define clinkd_container_of(ptr, type, member) \
   ((type *)((char *)(ptr)-offsetof(type, member)))
 
  /** Defines the maximum number of nodes allowed in a list */
@@ -50,7 +50,7 @@ void SLLPrepend(SLLNode **head, SLLNode *node);
   *
   * Does not free any memory. The caller is responsible 
   * for freeing the parent struct if needed. 
-  * Use container_of to recover it before calling this.
+  * Use clinkd_container_of to recover it before calling this.
   *
   * @param head Pointer to a pointer to the head of the list.
   */
@@ -75,7 +75,7 @@ void SLLPopBack(SLLNode **head);
   * Example:
   *
   *   bool MatchValue(SLLNode *n, void *ctx) {
-  *     MyItem *item = container_of(n, MyItem, node);
+  *     MyItem *item = clinkd_container_of(n, MyItem, node);
   *     return item->value == *(int *)ctx;
   *   }
   *
@@ -112,7 +112,7 @@ void SLLDeleteAt(SLLNode **head, size_t index);
  /**
   * Iterates over the list, calling print_node for each node.
   *
-  * The caller uses container_of inside print_node to access the parent struct.
+  * The caller uses clinkd_container_of inside print_node to access the parent struct.
   *
   * @param head       Pointer to the head of the list.
   * @param print_node Function called for each node.
