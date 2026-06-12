@@ -5,7 +5,7 @@
 // The public interface and function documentation are in singly_linked_list.h.
 //
 
-#include "../include/singly_linked_list.h"
+#include "singly_linked_list.h"
 
 #include <stdbool.h>
 #include <stddef.h>
