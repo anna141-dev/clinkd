@@ -1,8 +1,6 @@
 var singly__linked__list_8h =
 [
     [ "SLLNode", "structSLLNode.html", "structSLLNode" ],
-    [ "clinkd_container_of", "singly__linked__list_8h.html#a37cdb5f05a04f4f9d1555ff362190522", null ],
-    [ "LINKED_LIST_MAX_NODES", "singly__linked__list_8h.html#a246fce231a91673977547ff456d9dd9a", null ],
     [ "SLLNode", "singly__linked__list_8h.html#a303dd3d40f3642f29eeeb61a9c22eb2c", null ],
     [ "SLLAppend", "singly__linked__list_8h.html#a98ef3b212242a5e054fc31672d923564", null ],
     [ "SLLClear", "singly__linked__list_8h.html#a21ba049c656cf13abcec232aeaab3597", null ],
