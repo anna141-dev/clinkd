@@ -122,19 +122,25 @@ SLLClear(&head);
 
 ## Project Structure
 
+> This section will likely be removed or moved to a separate file if the project starts to get too big.
+
 ```
 clinkd/
 ├── src/
-│   ├── main.c
 │   ├── singly_linked_list.c
 ├── include/
 │   ├── singly_linked_list.h
+│   ├── doubly_linked_list.h
 │   ├── clinkd_common.h
+├── tests/
+│   ├── test_helpers.h
+│   ├── test_singly.c
+│   ├── main.c
 ├── output/
-│   └── clinkd (after running make)
+│   └── test_runner (after running make)
 ├── Makefile
 ├── LICENSE.md
-└── README.md
+└── README.mds
 ```
 
 ## Contributing
