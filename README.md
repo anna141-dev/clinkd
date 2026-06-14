@@ -129,6 +129,7 @@ clinkd/
 │   ├── singly_linked_list.c
 ├── include/
 │   ├── singly_linked_list.h
+│   ├── clinkd_common.h
 ├── output/
 │   └── clinkd (after running make)
 ├── Makefile
