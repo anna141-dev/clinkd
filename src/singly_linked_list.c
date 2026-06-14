@@ -11,6 +11,8 @@
 #include <stddef.h>
 #include <stdio.h>
 
+#include "clinkd_common.h"
+
 void SLLAppend(SLLNode** head, SLLNode* node) {
   if (head == NULL || node == NULL) return;
   if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
