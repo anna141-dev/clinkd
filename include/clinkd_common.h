@@ -1,6 +1,10 @@
 #ifndef CLINKD_COMMON_H
 #define CLINKD_COMMON_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stddef.h>
 
  /**
@@ -15,5 +19,9 @@
 
 /** Defines the maximum number of nodes allowed in a list */
 #define LINKED_LIST_MAX_NODES 100000U
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

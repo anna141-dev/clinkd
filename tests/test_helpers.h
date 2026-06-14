@@ -1,6 +1,10 @@
 #ifndef TEST_HELPERS_H
 #define TEST_HELPERS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdio.h>
 
 #define HEADER(title)                                      \
@@ -31,5 +35,9 @@
 
 extern int clinkd_pass_count;
 extern int clinkd_fail_count;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
