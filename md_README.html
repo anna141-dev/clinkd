@@ -207,18 +207,25 @@ API Reference</h1>
 </blockquote>
 <h1><a class="anchor" id="autotoc_md9"></a>
 Project Structure</h1>
+<blockquote class="doxtable">
+<p>&zwj;This section will likely be removed or moved to a separate file if the project starts to get too big. </p>
+</blockquote>
 <div class="fragment"><div class="line">clinkd/</div>
 <div class="line">├── src/</div>
-<div class="line">│   ├── main.c</div>
 <div class="line">│   ├── singly_linked_list.c</div>
 <div class="line">├── include/</div>
 <div class="line">│   ├── singly_linked_list.h</div>
+<div class="line">│   ├── doubly_linked_list.h</div>
 <div class="line">│   ├── clinkd_common.h</div>
+<div class="line">├── tests/</div>
+<div class="line">│   ├── test_helpers.h</div>
+<div class="line">│   ├── test_singly.c</div>
+<div class="line">│   ├── main.c</div>
 <div class="line">├── output/</div>
-<div class="line">│   └── clinkd (after running make)</div>
+<div class="line">│   └── test_runner (after running make)</div>
 <div class="line">├── Makefile</div>
 <div class="line">├── LICENSE.md</div>
-<div class="line">└── README.md</div>
+<div class="line">└── README.mds</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
 Contributing</h1>
 <p>Contributions are welcome. Feel free to open issues or pull requests. Please follow the <a href="https://google.github.io/styleguide/cppguide.html">Google C++ Style Guide</a> (even though it's c) for all contributions.</p>

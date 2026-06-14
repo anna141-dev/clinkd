@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['value_0',['value',['../structMyItem.html#a9c4b6875a5e4b66113e16381865349df',1,'MyItem']]]
+  ['next_0',['next',['../structDLLNode.html#a74ad27b249d8d96f8d44ecdd39a70325',1,'DLLNode::next'],['../structSLLNode.html#a042eb7eb6523baf644d13c9c3d0dc60a',1,'SLLNode::next']]],
+  ['node_1',['node',['../structMyItem.html#a6737f62823885f9cf208ab694812cd9e',1,'MyItem']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['license_2emd_0',['LICENSE.md',['../LICENSE_8md.html',1,'']]]
+  ['doubly_5flinked_5flist_2eh_0',['doubly_linked_list.h',['../doubly__linked__list_8h.html',1,'']]]
 ];
