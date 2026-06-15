@@ -14,7 +14,7 @@ extern "C" {
 #endif
 
 typedef struct SLLNode {
-  int size;             // The total of nodes in the list.
+  size_t size;          // The total of nodes in the list. Autoincrement/decrement
   struct SLLNode *next; // Next element in the list.
 } SLLNode;
 
