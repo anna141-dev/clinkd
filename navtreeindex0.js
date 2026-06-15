@@ -79,6 +79,7 @@ var NAVTREEINDEX0 =
 "structMyItem.html#a9c4b6875a5e4b66113e16381865349df":[2,0,1,1],
 "structSLLNode.html":[2,0,2],
 "structSLLNode.html#a042eb7eb6523baf644d13c9c3d0dc60a":[2,0,2,0],
+"structSLLNode.html#a08148d4688a082c31892ccbb3ce27c17":[2,0,2,1],
 "test__helpers_8h.html":[3,0,2,1],
 "test__helpers_8h.html#a2a731b593ed759da8c77964779aabcf7":[3,0,2,1,3],
 "test__helpers_8h.html#a37df9ac9451632bcb57713a610d17117":[3,0,2,1,2],

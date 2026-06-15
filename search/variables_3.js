@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_0',['value',['../structMyItem.html#a9c4b6875a5e4b66113e16381865349df',1,'MyItem']]]
+  ['size_0',['size',['../structSLLNode.html#a08148d4688a082c31892ccbb3ce27c17',1,'SLLNode']]]
 ];
