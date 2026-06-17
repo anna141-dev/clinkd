@@ -12,9 +12,9 @@
 
 #include "clinkd_common.h"
 
-void DLLAppend(DLLNode** head, DLLNode* node) {
+ClinkdStatus DLLAppend(DLLNode** head, DLLNode* node) {
   // reject null pointers, avoiding undefined behavior
-  if (head == NULL || node == NULL) return;
+  if (head == NULL || node == NULL) return CLINKD_ERROR;
 
   // initialize the isolated node (without neighbors and size)
   node->size = 0;
@@ -27,11 +27,12 @@ void DLLAppend(DLLNode** head, DLLNode* node) {
     *head = node;
     (*head)->size = 1;
     (*head)-> tail = node;
-    return;
+    return CLINKD_OK;
   }
 
   // respects the maximum number of nodes defined by the lib
-  if ((*head)->size >= LINKED_LIST_MAX_NODES) return;
+  if ((*head)->size >= LINKED_LIST_MAX_NODES)
+      return CLINKD_FULL;
 
   // chain the new node directly to the tail
   node->prev = (*head)->tail;
@@ -40,6 +41,8 @@ void DLLAppend(DLLNode** head, DLLNode* node) {
 
   // increase the node count in the list
   (*head)->size++;
+  
+  return CLINKD_OK;
 }
 
 void DLLNodes(DLLNode* head, void(*print_node)(DLLNode*)) {
