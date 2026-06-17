@@ -46,7 +46,7 @@ void DLLNodes(DLLNode* head, void(*print_node)(DLLNode *));
 /**
  * Returns the number of nodes in the list
  *
- * @param gead Pointer to the head of the list
+ * @param head Pointer to the head of the list
  * @return The total number of nodes in the list
  */
 size_t DLLCountNodes(DLLNode* head);
