@@ -27,17 +27,23 @@ typedef struct SLLNode {
   *
   * @param head Pointer to a pointer to the head node.
   * @param node Pointer to the node to append.
+  * @return CLINKD_OK in success,
+  *         CLINKD_ERROR if head or node is NULL,
+  *         CLINKD_FULL if the node limit has been reached
   */
-void SLLAppend(SLLNode **head, SLLNode *node);
+ClinkdStatus SLLAppend(SLLNode **head, SLLNode *node);
 
  /**
   * Adds a node at the start of the list.
   *
   * @param head Pointer to a pointer to the head node.
   * @param node Pointer to the node to prepend.
+  * @return CLINKD_OK in success,
+  *         CLINKD_ERROR if head or node is NULL,
+  *         CLINKD_FULL if the node limit has been reached
   */
 
-void SLLPrepend(SLLNode **head, SLLNode *node);
+ClinkdStatus SLLPrepend(SLLNode **head, SLLNode *node);
 
  /**
   * Removes the first node from the list.
@@ -47,8 +53,10 @@ void SLLPrepend(SLLNode **head, SLLNode *node);
   * Use clinkd_container_of to recover it before calling this.
   *
   * @param head Pointer to a pointer to the head of the list.
+  * @return CLINKD_OK in success,
+  *         CLINKD_ERROR if head or node is NULL,
   */
-void SLLPopFront(SLLNode **head);
+ClinkdStatus SLLPopFront(SLLNode **head);
 
  /**
   * Removes the last node from the list.
@@ -57,8 +65,10 @@ void SLLPopFront(SLLNode **head);
   * struct if needed.
   *
   * @param head Pointer to a pointer to the head of the list.
+  * @return CLINKD_OK in success,
+  *         CLINKD_ERROR if head or node is NULL,
   */
-void SLLPopBack(SLLNode **head);
+ClinkdStatus SLLPopBack(SLLNode **head);
 
  /**
   * Finds the first node for which the predicate returns true.
@@ -90,8 +100,12 @@ SLLNode *SLLFind(SLLNode *head, bool (*predicate)(SLLNode *, void *),
   * @param head  Pointer to a pointer to the head of the list.
   * @param node  Pointer to the node to insert.
   * @param index Zero based position to insert at.
+  * @return CLINKD_OK in success,
+  *         CLINKD_ERROR if head or node is NULL,
+  *         CLINKD_OUT_OF_BOUNDS if the passed index is
+  *                               out of bounds
   */
-void SLLInsertAt(SLLNode **head, SLLNode *node, size_t index);
+ClinkdStatus SLLInsertAt(SLLNode **head, SLLNode *node, size_t index);
 
   /**
   * Removes the node at a given zero based index.
@@ -100,8 +114,12 @@ void SLLInsertAt(SLLNode **head, SLLNode *node, size_t index);
   *
   * @param head  Pointer to a pointer to the head of the list.
   * @param index Zero based position of the node to remove.
+  * @return CLINKD_OK in success,
+  *         CLINKD_ERROR if head or node is NULL,
+  *         CLINKD_OUT_OF_BOUNDS if the passed index is
+  *                               out of bounds
   */
-void SLLDeleteAt(SLLNode **head, size_t index);
+ClinkdStatus SLLDeleteAt(SLLNode **head, size_t index);
 
  /**
   * Iterates over the list, calling print_node for each node.
@@ -120,8 +138,10 @@ void SLLNodes(SLLNode *head, void (*print_node)(SLLNode *));
   * responsible for releasing them. This function only resets the list state.
   *
   * @param head Pointer to a pointer to the head of the list.
+  * @return CLINKD_OK in success,
+  *         CLINKD_ERROR if head or node is NULL,
   */
-void SLLClear(SLLNode **head);
+ClinkdStatus SLLClear(SLLNode **head);
 
  /**
   * Returns the number of nodes in the list.
@@ -135,8 +155,10 @@ size_t SLLCountNodes(SLLNode *head);
   * Reverses the list in place.
   *
   * @param head Pointer to a pointer to the head of the list.
+  * @return CLINKD_OK in success,
+  *         CLINKD_ERROR if head or node is NULL,
   */
-void SLLReverse(SLLNode **head);
+ClinkdStatus SLLReverse(SLLNode **head);
 
  /**
   * Builds a new list containing only nodes for which the predicate returns true.

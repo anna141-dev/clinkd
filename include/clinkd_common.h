@@ -24,9 +24,10 @@ extern "C" {
  * Represents the return codes for functions.
  */
 typedef enum {
-  CLINKD_OK    = 0,  /**< Successful operation */
-  CLINKD_ERROR = -1, /**< Generic error */
-  CLINKD_FULL  = -2  /**< Data limit reached */
+  CLINKD_OK    = 0,          /**< Successful operation */
+  CLINKD_ERROR = -1,         /**< Generic error */
+  CLINKD_FULL  = -2,         /**< Data limit reached */
+  CLINKD_OUT_OF_BOUNDS = -3  /**< Index out of range */
 } ClinkdStatus;
 
 #ifdef __cplusplus

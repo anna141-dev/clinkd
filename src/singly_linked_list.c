@@ -12,9 +12,10 @@
 
 #include "clinkd_common.h"
 
-void SLLAppend(SLLNode** head, SLLNode* node) {
-  if (head == NULL || node == NULL) return;
-  if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
+ClinkdStatus SLLAppend(SLLNode** head, SLLNode* node) {
+  if (head == NULL || node == NULL) return CLINKD_ERROR;
+  if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) 
+      return CLINKD_FULL;
 
   node->size = 0;
   node->next = NULL; 
@@ -24,26 +25,31 @@ void SLLAppend(SLLNode** head, SLLNode* node) {
     *head = node;
     (*head)->size = 1;
     (*head)->tail = node; // tail points to itself
-    return;
+    return CLINKD_OK;
   }
 
   (*head)->tail->next = node;
   (*head)->tail = node; // updates tail
   (*head)->size++; // Increases the node counter
+
+  return CLINKD_OK;
 }
 
-void SLLPrepend(SLLNode** head, SLLNode* node) {
-  if (head == NULL || node == NULL) return;
-  if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
+ClinkdStatus SLLPrepend(SLLNode** head, SLLNode* node) {
+  if (head == NULL || node == NULL) return CLINKD_ERROR;
+  if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES)
+      return CLINKD_FULL;
 
   size_t current_size = (*head != NULL) ? (*head)->size : 0;
   node->next = *head;
   *head = node;
   (*head)->size = current_size + 1; // Increases the node counter
+
+  return CLINKD_OK;
 }
 
-void SLLPopFront(SLLNode** head) {
-  if (head == NULL || *head == NULL) return;
+ClinkdStatus SLLPopFront(SLLNode** head) {
+  if (head == NULL || *head == NULL) return CLINKD_ERROR;
 
   // save the new total of nodes
   size_t new_size = (*head)->size;
@@ -53,10 +59,12 @@ void SLLPopFront(SLLNode** head) {
   if (*head != NULL) {
     (*head)->size = new_size - 1;
   }
+
+  return CLINKD_OK;
 }
 
-void SLLPopBack(SLLNode** head) {
-  if (head == NULL || *head == NULL) return;
+ClinkdStatus SLLPopBack(SLLNode** head) {
+  if (head == NULL || *head == NULL) return CLINKD_ERROR;
 
   // save the new total of nodes
   size_t new_size = (*head)->size - 1;
@@ -64,7 +72,7 @@ void SLLPopBack(SLLNode** head) {
   // List with a single node.
   if ((*head)->next == NULL) {
     *head = NULL;
-    return;
+    return CLINKD_OK;
   }
 
   // List with multiple nodes: traverse to the second-to-last.
@@ -74,8 +82,9 @@ void SLLPopBack(SLLNode** head) {
   }
 
   current->next = NULL;
-
   (*head)->size = new_size;
+
+  return CLINKD_OK;;
 }
 
 SLLNode* SLLFind(SLLNode* head, bool (*predicate)(SLLNode*, void*), void* ctx) {
@@ -90,16 +99,17 @@ SLLNode* SLLFind(SLLNode* head, bool (*predicate)(SLLNode*, void*), void* ctx) {
   return NULL;
 }
 
-void SLLInsertAt(SLLNode** head, SLLNode* node, size_t index) {
-  if (head == NULL || node == NULL) return;
-  if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) return;
+ClinkdStatus SLLInsertAt(SLLNode** head, SLLNode* node, size_t index) {
+  if (head == NULL || node == NULL) return CLINKD_ERROR;
+  if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES)
+      return CLINKD_FULL;
 
   if (index == 0) {
     size_t current_size = (*head != NULL) ? (*head)->size : 0;
     node->next = *head;
     *head = node;
     (*head)->size = current_size + 1;
-    return;
+    return CLINKD_OK;
   }
 
   SLLNode* current = *head;
@@ -107,20 +117,22 @@ void SLLInsertAt(SLLNode** head, SLLNode* node, size_t index) {
     current = current->next;
   }
 
-  if (current == NULL) return;  // Index outside the list bounds.
+  if (current == NULL) return CLINKD_OUT_OF_BOUNDS;
 
   node->next = current->next;
   current->next = node;
 
   (*head)->size++; // Increases the node counter
+
+  return CLINKD_OK;
 }
 
-void SLLDeleteAt(SLLNode** head, size_t index) {
-  if (head == NULL || *head == NULL) return;
+ClinkdStatus SLLDeleteAt(SLLNode** head, size_t index) {
+  if (head == NULL || *head == NULL) return CLINKD_ERROR;
 
   if (index == 0) {
     *head = (*head)->next;
-    return;
+    return CLINKD_OK;
   }
 
   SLLNode* current = *head;
@@ -128,11 +140,12 @@ void SLLDeleteAt(SLLNode** head, size_t index) {
     current = current->next;
   }
 
-  if (current->next == NULL) return;  // Index outside the list bounds.
+  if (current->next == NULL) return CLINKD_OUT_OF_BOUNDS;
 
   current->next = current->next->next;
-
   (*head)->size--; // Decreases the node counter
+
+  return CLINKD_OK;
 }
 
 void SLLNodes(SLLNode* head, void (*print_node)(SLLNode*)) {
@@ -147,9 +160,11 @@ void SLLNodes(SLLNode* head, void (*print_node)(SLLNode*)) {
   printf(" --> NULL\n");
 }
 
-void SLLClear(SLLNode** head) {
-  if (head == NULL) return;
+ClinkdStatus SLLClear(SLLNode** head) {
+  if (head == NULL) return CLINKD_ERROR;
   *head = NULL;
+
+  return CLINKD_OK;
 }
 
 size_t SLLCountNodes(SLLNode* head) {
@@ -158,8 +173,8 @@ size_t SLLCountNodes(SLLNode* head) {
   return head->size;
 }
 
-void SLLReverse(SLLNode** head) {
-  if (head == NULL) return;
+ClinkdStatus SLLReverse(SLLNode** head) {
+  if (head == NULL) return CLINKD_ERROR;
 
   SLLNode* current = *head;
   SLLNode* previous = NULL;
@@ -173,6 +188,8 @@ void SLLReverse(SLLNode** head) {
   }
 
   *head = previous;
+
+  return CLINKD_OK;
 }
 
 SLLNode* SLLFilter(SLLNode* head, bool (*predicate)(SLLNode*)) {
