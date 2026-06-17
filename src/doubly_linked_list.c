@@ -20,11 +20,13 @@ void DLLAppend(DLLNode** head, DLLNode* node) {
   node->size = 0;
   node->prev = NULL;
   node->next = NULL;
+  node->tail = NULL;
 
   // empty list: the node becomes the head of the list
   if (*head == NULL) {
     *head = node;
     (*head)->size = 1;
+    (*head)-> tail = node;
     return;
   }
 
@@ -42,6 +44,7 @@ void DLLAppend(DLLNode** head, DLLNode* node) {
   node->prev = current;
   current->next = node;
   (*head)->size++;
+  (*head)->tail = node;
 }
 
 void DLLNodes(DLLNode* head, void(*print_node)(DLLNode*)) {
