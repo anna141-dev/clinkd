@@ -20,6 +20,15 @@ extern "C" {
 /** Defines the maximum number of nodes allowed in a list */
 #define LINKED_LIST_MAX_NODES 100000U
 
+/**
+ * Represents the return codes for functions.
+ */
+typedef enum {
+  CLINKD_OK    = 0,  /**< Successful operation */
+  CLINKD_ERROR = -1, /**< Generic error */
+  CLINKD_FULL  = -2  /**< Data limit reached */
+} ClinkdStatus;
+
 #ifdef __cplusplus
 }
 #endif
