@@ -19,18 +19,16 @@ void SLLAppend(SLLNode** head, SLLNode* node) {
   node->size = 0;
   node->next = NULL; 
 
+  // empty list
   if (*head == NULL) {
     *head = node;
     (*head)->size = 1;
+    (*head)->tail = node; // tail points to itself
     return;
   }
 
-  SLLNode* current = *head;
-  while (current->next != NULL) {
-    current = current->next;
-  }
-
-  current->next = node;
+  (*head)->tail->next = node;
+  (*head)->tail = node; // updates tail
   (*head)->size++; // Increases the node counter
 }
 
