@@ -15,11 +15,10 @@ extern "C" {
 
 /** Template struct of a doubly linked list */
 typedef struct DLLNode {
-  struct DLLNode* prev; // Previous Node
-  struct DLLNode* next; // Next Node
-  struct DLLNode* tail; // Last Node
-  size_t size;          // Total nodes in the list,
-                        // auto increment/decrement
+  struct DLLNode* prev; /**< Previous Node */
+  struct DLLNode* next; /**< Next Node */
+  struct DLLNode* tail; /**< Last Node */
+  size_t size;          /**< Total nodes in the list, auto increment/decrement */
 } DLLNode;
 
 /**
