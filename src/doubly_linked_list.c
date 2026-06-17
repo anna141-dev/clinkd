@@ -33,18 +33,13 @@ void DLLAppend(DLLNode** head, DLLNode* node) {
   // respects the maximum number of nodes defined by the lib
   if ((*head)->size >= LINKED_LIST_MAX_NODES) return;
 
-  // traverse to the last node
-  DLLNode* current = *head;
-  while (current->next != NULL) {
-    current = current->next;
-  }
+  // chain the new node directly to the tail
+  node->prev = (*head)->tail;
+  (*head)->tail->next = node;
+  (*head)->tail = node; // head updates its tail
 
-  // Chain the new node to the end and update the counter
-  // in the head
-  node->prev = current;
-  current->next = node;
+  // increase the node count in the list
   (*head)->size++;
-  (*head)->tail = node;
 }
 
 void DLLNodes(DLLNode* head, void(*print_node)(DLLNode*)) {
