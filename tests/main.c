@@ -12,6 +12,7 @@ int main(void) {
   printf("=———————————————————————————————————=\n\n");
 
   run_singly_tests();
+  run_doubly_tests();
 
   printf("\n=———————————————————————————————————=\n");
   printf(" SUMMARY\n");

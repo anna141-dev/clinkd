@@ -31,10 +31,30 @@ static void PrintItem(DLLNode* n) {
 void run_doubly_tests(void) {
   HEADER("DLL Tests");
 
-
   // Each value needs its own MyItem so the node stays valid in the list
   MyItem items[16];
   int item_idx = 0;
 
   DLLNode* head = NULL;
+
+  /*Empty List*/
+  SECTION("Empty List");
+
+  TEST(1, "Show empty List (expect <-> NULL)");
+  DLLNodes(head, PrintItem);
+  ASSERT(head == NULL, "List is NULL after initialization");
+  ASSERT(DLLCountNodes(head) == 0, "Node count is 0");
+
+  /*Append Individual Values*/
+  SECTION("Append individual values");
+
+  TEST(2, "Appending 80, 90, 70");
+  DLLAppend(&head, MakeNode(&items[item_idx++], 80));
+  DLLAppend(&head, MakeNode(&items[item_idx++], 90));
+  DLLAppend(&head, MakeNode(&items[item_idx++], 70));
+
+  ASSERT(DLLCountNodes(head) == 3, "Node count is 3 after appending");
+
+  TEST(3, "Printing Nodes after individual appends");
+  DLLNodes(head, PrintItem);
 }

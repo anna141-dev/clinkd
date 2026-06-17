@@ -33,6 +33,24 @@ typedef struct DLLNode {
  */
 void DLLAppend(DLLNode** head, DLLNode* node);
 
+/**
+ * Iterates through the list, calling print_node for each node.
+ *
+ * The caller uses clinkd_container_of inside print_node to access the parent struct.
+ *
+ * @param head Pointer to the head of the list.
+ * @param print_node Function called to each node.
+ */
+void DLLNodes(DLLNode* head, void(*print_node)(DLLNode *));
+
+/**
+ * Returns the number of nodes in the list
+ *
+ * @param gead Pointer to the head of the list
+ * @return The total number of nodes in the list
+ */
+size_t DLLCountNodes(DLLNode* head);
+
 #ifdef __cplusplus
 }
 #endif
