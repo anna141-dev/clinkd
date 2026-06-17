@@ -3,7 +3,7 @@ var searchData=
   ['section_0',['section',['../src_2main_8c.html#aa2c44298bc422970bbd81c5622bce3ea',1,'SECTION:&#160;main.c'],['../test__helpers_8h.html#aa2c44298bc422970bbd81c5622bce3ea',1,'SECTION:&#160;test_helpers.h']]],
   ['singly_5flinked_5flist_2ec_1',['singly_linked_list.c',['../singly__linked__list_8c.html',1,'']]],
   ['singly_5flinked_5flist_2eh_2',['singly_linked_list.h',['../singly__linked__list_8h.html',1,'']]],
-  ['size_3',['size',['../structSLLNode.html#a08148d4688a082c31892ccbb3ce27c17',1,'SLLNode']]],
+  ['size_3',['size',['../structDLLNode.html#a82eff9f3cd772a8c5b5f760c102f4d35',1,'DLLNode::size'],['../structSLLNode.html#a08148d4688a082c31892ccbb3ce27c17',1,'SLLNode::size']]],
   ['sllappend_4',['sllappend',['../singly__linked__list_8h.html#a98ef3b212242a5e054fc31672d923564',1,'SLLAppend(SLLNode **head, SLLNode *node):&#160;singly_linked_list.c'],['../singly__linked__list_8c.html#a98ef3b212242a5e054fc31672d923564',1,'SLLAppend(SLLNode **head, SLLNode *node):&#160;singly_linked_list.c']]],
   ['sllclear_5',['sllclear',['../singly__linked__list_8h.html#a21ba049c656cf13abcec232aeaab3597',1,'SLLClear(SLLNode **head):&#160;singly_linked_list.c'],['../singly__linked__list_8c.html#a21ba049c656cf13abcec232aeaab3597',1,'SLLClear(SLLNode **head):&#160;singly_linked_list.c']]],
   ['sllcountnodes_6',['sllcountnodes',['../singly__linked__list_8h.html#aa769da761ac727c01b9aa41d8b3580fc',1,'SLLCountNodes(SLLNode *head):&#160;singly_linked_list.c'],['../singly__linked__list_8c.html#aa769da761ac727c01b9aa41d8b3580fc',1,'SLLCountNodes(SLLNode *head):&#160;singly_linked_list.c']]],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Clinkd: include/doubly_linked_list.h File Reference</title>
+<title>Clinkd: src/doubly_linked_list.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('doubly__linked__list_8h.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('doubly__linked__list_8c.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -91,52 +91,24 @@ $(document).ready(function(){initNavTree('doubly__linked__list_8h.html',''); ini
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">doubly_linked_list.h File Reference</div></div>
+  <div class="headertitle"><div class="title">doubly_linked_list.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="doubly__linked__list_8h_source.html">doubly_linked_list.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="clinkd__common_8h_source.html">clinkd_common.h</a>&quot;</code><br />
-</div>
-<p><a href="doubly__linked__list_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDLLNode.html">DLLNode</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ac6f2730837a0c45f7f337cf76c4aabb2" id="r_ac6f2730837a0c45f7f337cf76c4aabb2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structDLLNode.html">DLLNode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8h.html#ac6f2730837a0c45f7f337cf76c4aabb2">DLLNode</a></td></tr>
-<tr class="separator:ac6f2730837a0c45f7f337cf76c4aabb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1ada9760fd59e44558060d1c73f4d76d" id="r_a1ada9760fd59e44558060d1c73f4d76d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8h.html#a1ada9760fd59e44558060d1c73f4d76d">DLLAppend</a> (<a class="el" href="structDLLNode.html">DLLNode</a> **head, <a class="el" href="structDLLNode.html">DLLNode</a> *node)</td></tr>
+<tr class="memitem:a1ada9760fd59e44558060d1c73f4d76d" id="r_a1ada9760fd59e44558060d1c73f4d76d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#a1ada9760fd59e44558060d1c73f4d76d">DLLAppend</a> (<a class="el" href="structDLLNode.html">DLLNode</a> **head, <a class="el" href="structDLLNode.html">DLLNode</a> *node)</td></tr>
 <tr class="separator:a1ada9760fd59e44558060d1c73f4d76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03f46ea9b5a0f29e8ab8bfc8a55ecdb0" id="r_a03f46ea9b5a0f29e8ab8bfc8a55ecdb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8h.html#a03f46ea9b5a0f29e8ab8bfc8a55ecdb0">DLLNodes</a> (<a class="el" href="structDLLNode.html">DLLNode</a> *head, void(*print_node)(<a class="el" href="structDLLNode.html">DLLNode</a> *))</td></tr>
+<tr class="memitem:a03f46ea9b5a0f29e8ab8bfc8a55ecdb0" id="r_a03f46ea9b5a0f29e8ab8bfc8a55ecdb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#a03f46ea9b5a0f29e8ab8bfc8a55ecdb0">DLLNodes</a> (<a class="el" href="structDLLNode.html">DLLNode</a> *head, void(*print_node)(<a class="el" href="structDLLNode.html">DLLNode</a> *))</td></tr>
 <tr class="separator:a03f46ea9b5a0f29e8ab8bfc8a55ecdb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c40cdd675d5d87b64f8744d3513841e" id="r_a8c40cdd675d5d87b64f8744d3513841e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8h.html#a8c40cdd675d5d87b64f8744d3513841e">DLLCountNodes</a> (<a class="el" href="structDLLNode.html">DLLNode</a> *head)</td></tr>
+<tr class="memitem:a8c40cdd675d5d87b64f8744d3513841e" id="r_a8c40cdd675d5d87b64f8744d3513841e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#a8c40cdd675d5d87b64f8744d3513841e">DLLCountNodes</a> (<a class="el" href="structDLLNode.html">DLLNode</a> *head)</td></tr>
 <tr class="separator:a8c40cdd675d5d87b64f8744d3513841e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="ac6f2730837a0c45f7f337cf76c4aabb2" name="ac6f2730837a0c45f7f337cf76c4aabb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6f2730837a0c45f7f337cf76c4aabb2">&#9670;&#160;</a></span>DLLNode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structDLLNode.html">DLLNode</a> <a class="el" href="structDLLNode.html">DLLNode</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Template struct of a doubly linked list </p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a1ada9760fd59e44558060d1c73f4d76d" name="a1ada9760fd59e44558060d1c73f4d76d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ada9760fd59e44558060d1c73f4d76d">&#9670;&#160;</a></span>DLLAppend()</h2>
@@ -243,7 +215,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="doubly__linked__list_8h.html">doubly_linked_list.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="doubly__linked__list_8c.html">doubly_linked_list.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
