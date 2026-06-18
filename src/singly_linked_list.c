@@ -13,10 +13,14 @@
 #include "clinkd_common.h"
 
 ClinkdStatus SLLAppend(SLLNode** head, SLLNode* node) {
+  // rejects null pointers, avoiding undefined behavior
   if (head == NULL || node == NULL) return CLINKD_ERROR;
+
+  // respects the node limit
   if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) 
       return CLINKD_FULL;
 
+  // initialize list data
   node->size = 0;
   node->next = NULL; 
 
@@ -36,15 +40,21 @@ ClinkdStatus SLLAppend(SLLNode** head, SLLNode* node) {
 }
 
 ClinkdStatus SLLPrepend(SLLNode** head, SLLNode* node) {
+  // rejects null pointers, avoiding undefined behavior
   if (head == NULL || node == NULL) return CLINKD_ERROR;
+
+  // respects the node limit
   if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES)
       return CLINKD_FULL;
 
+  // if the head is not empty, the node counter
+  // remains at the current one, otherwise it remains at 0
   size_t current_size = (*head != NULL) ? (*head)->size : 0;
+
   node->next = *head;
   *head = node;
   (*head)->size = current_size + 1; // Increases the node counter
-
+  
   return CLINKD_OK;
 }
 
@@ -52,7 +62,10 @@ ClinkdStatus SLLPopFront(SLLNode** head) {
   if (head == NULL || *head == NULL) return CLINKD_ERROR;
 
   // save the new total of nodes
-  size_t new_size = (*head)->size;
+  // if the head is not empty, the node counter
+  // remains at the current one - 1, otherwise it remains at 0
+  size_t current_size = (*head != NULL) ? (*head)->size : 0;
+
   *head = (*head)->next;
 
   // If the list is not empty, update the size 
@@ -67,7 +80,9 @@ ClinkdStatus SLLPopBack(SLLNode** head) {
   if (head == NULL || *head == NULL) return CLINKD_ERROR;
 
   // save the new total of nodes
-  size_t new_size = (*head)->size - 1;
+  // if the head is not empty, the node counter
+  // remains at the current one - 1, otherwise it remains at 0
+  size_t current_size = (*head != NULL) ? (*head)->size - 1 : 0;
 
   // List with a single node.
   if ((*head)->next == NULL) {
@@ -82,12 +97,13 @@ ClinkdStatus SLLPopBack(SLLNode** head) {
   }
 
   current->next = NULL;
-  (*head)->size = new_size;
+  (*head)->size = new_size; // updates the total of nodes
 
   return CLINKD_OK;;
 }
 
 SLLNode* SLLFind(SLLNode* head, bool (*predicate)(SLLNode*, void*), void* ctx) {
+  // rejects null pointers, avoiding undefined behavior
   if (predicate == NULL) return NULL;
 
   SLLNode* current = head;
@@ -100,19 +116,26 @@ SLLNode* SLLFind(SLLNode* head, bool (*predicate)(SLLNode*, void*), void* ctx) {
 }
 
 ClinkdStatus SLLInsertAt(SLLNode** head, SLLNode* node, size_t index) {
+  // rejects null pointers, avoiding undefined behavior
   if (head == NULL || node == NULL) return CLINKD_ERROR;
+
+  // respects the node limit
   if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES)
       return CLINKD_FULL;
 
   if (index == 0) {
+    // if the head is not empty, the node counter
+    // remains at the current one, otherwise it remains at 0
     size_t current_size = (*head != NULL) ? (*head)->size : 0;
+
     node->next = *head;
     *head = node;
-    (*head)->size = current_size + 1;
+    (*head)->size = current_size + 1; // updates the total of nodes
     return CLINKD_OK;
   }
 
   SLLNode* current = *head;
+  // traverse to the second-to-last node
   for (size_t i = 0; i < index - 1 && current != NULL; i++) {
     current = current->next;
   }
@@ -128,6 +151,7 @@ ClinkdStatus SLLInsertAt(SLLNode** head, SLLNode* node, size_t index) {
 }
 
 ClinkdStatus SLLDeleteAt(SLLNode** head, size_t index) {
+  // rejects null pointers, avoiding undefined behavior
   if (head == NULL || *head == NULL) return CLINKD_ERROR;
 
   if (index == 0) {
@@ -136,6 +160,7 @@ ClinkdStatus SLLDeleteAt(SLLNode** head, size_t index) {
   }
 
   SLLNode* current = *head;
+  // traverse to the second-to-last node
   for (size_t i = 0; i < index - 1 && current->next != NULL; i++) {
     current = current->next;
   }
