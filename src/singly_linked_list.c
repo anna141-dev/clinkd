@@ -64,7 +64,7 @@ ClinkdStatus SLLPopFront(SLLNode** head) {
   // save the new total of nodes
   // if the head is not empty, the node counter
   // remains at the current one - 1, otherwise it remains at 0
-  size_t current_size = (*head != NULL) ? (*head)->size : 0;
+  size_t new_size = (*head != NULL) ? (*head)->size : 0;
 
   *head = (*head)->next;
 
@@ -82,7 +82,7 @@ ClinkdStatus SLLPopBack(SLLNode** head) {
   // save the new total of nodes
   // if the head is not empty, the node counter
   // remains at the current one - 1, otherwise it remains at 0
-  size_t current_size = (*head != NULL) ? (*head)->size - 1 : 0;
+  size_t new_size = (*head != NULL) ? (*head)->size - 1 : 0;
 
   // List with a single node.
   if ((*head)->next == NULL) {
