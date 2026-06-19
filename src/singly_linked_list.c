@@ -15,7 +15,6 @@
 ClinkdStatus SLLAppend(SLLNode** head, SLLNode* node) {
   // rejects null pointers, avoiding undefined behavior
   if (head == NULL || node == NULL) return CLINKD_ERROR;
-  if (head == NULL || node == NULL) return CLINKD_ERROR;
   if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES) 
       return CLINKD_FULL;
 
@@ -45,8 +44,6 @@ ClinkdStatus SLLAppend(SLLNode** head, SLLNode* node) {
 ClinkdStatus SLLPrepend(SLLNode** head, SLLNode* node) {
   // rejects null pointers, avoiding undefined behavior
   if (head == NULL || node == NULL) return CLINKD_ERROR;
-  if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES)
-      return CLINKD_FULL;
 
   // respects the node limit
   if (SLLCountNodes(*head) >= LINKED_LIST_MAX_NODES)
