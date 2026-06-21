@@ -70,4 +70,15 @@ void run_doubly_tests(void) {
 
   TEST(5, "Printing Nodes after Individual prepends");
   DLLNodes(head, PrintItem);
+
+  /*Pop Operations*/
+  SECTION("Pop Operations");
+
+  TEST(6, "Pop Front");
+  DLLPopFront(&head);
+
+  ASSERT(DLLCountNodes(head) == 5, "Node count is 5 after PopFront");
+
+  TEST(7, "Printing Nodes after PopFront");
+  DLLNodes(head, PrintItem);
 }

@@ -39,7 +39,6 @@ ClinkdStatus DLLAppend(DLLNode** head, DLLNode* node) {
   (*head)->tail->next = node;
   (*head)->tail = node; // head updates its tail
 
-  // increase the node count in the list
   (*head)->size++;
   
   return CLINKD_OK;
@@ -65,7 +64,22 @@ ClinkdStatus DLLPrepend(DLLNode** head, DLLNode* node) {
   *head = node;
   node->prev = NULL;
 
+  // increase the node count in the list
   node->size = current_size;
+
+  return CLINKD_OK;
+}
+
+ClinkdStatus DLLPopFront(DLLNode** head) {
+  if (head == NULL) return CLINKD_ERROR;
+
+  size_t current_size = (*head) != NULL ? (*head)->size - 1: 0;
+
+  *head = (*head)->next;
+
+  if (*head != NULL) {
+    (*head)->size = current_size;
+  }
 
   return CLINKD_OK;
 }
