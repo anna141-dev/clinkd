@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('doubly__linked__list_8c.html',''); ini
 Functions</h2></td></tr>
 <tr class="memitem:a563f330fb4299d21ff4e9d73c4afeb85" id="r_a563f330fb4299d21ff4e9d73c4afeb85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="clinkd__common_8h.html#a519ac7e28361997c3734ca31c4dfe2e0">ClinkdStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#a563f330fb4299d21ff4e9d73c4afeb85">DLLAppend</a> (<a class="el" href="structDLLNode.html">DLLNode</a> **head, <a class="el" href="structDLLNode.html">DLLNode</a> *node)</td></tr>
 <tr class="separator:a563f330fb4299d21ff4e9d73c4afeb85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b6367a4b44d30691c1d80f57bd1e49" id="r_af6b6367a4b44d30691c1d80f57bd1e49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="clinkd__common_8h.html#a519ac7e28361997c3734ca31c4dfe2e0">ClinkdStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#af6b6367a4b44d30691c1d80f57bd1e49">DLLPrepend</a> (<a class="el" href="structDLLNode.html">DLLNode</a> **head, <a class="el" href="structDLLNode.html">DLLNode</a> *node)</td></tr>
+<tr class="separator:af6b6367a4b44d30691c1d80f57bd1e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03f46ea9b5a0f29e8ab8bfc8a55ecdb0" id="r_a03f46ea9b5a0f29e8ab8bfc8a55ecdb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#a03f46ea9b5a0f29e8ab8bfc8a55ecdb0">DLLNodes</a> (<a class="el" href="structDLLNode.html">DLLNode</a> *head, void(*print_node)(<a class="el" href="structDLLNode.html">DLLNode</a> *))</td></tr>
 <tr class="separator:a03f46ea9b5a0f29e8ab8bfc8a55ecdb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c40cdd675d5d87b64f8744d3513841e" id="r_a8c40cdd675d5d87b64f8744d3513841e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#a8c40cdd675d5d87b64f8744d3513841e">DLLCountNodes</a> (<a class="el" href="structDLLNode.html">DLLNode</a> *head)</td></tr>
@@ -208,6 +210,43 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="af6b6367a4b44d30691c1d80f57bd1e49" name="af6b6367a4b44d30691c1d80f57bd1e49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6b6367a4b44d30691c1d80f57bd1e49">&#9670;&#160;</a></span>DLLPrepend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="clinkd__common_8h.html#a519ac7e28361997c3734ca31c4dfe2e0">ClinkdStatus</a> DLLPrepend </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structDLLNode.html">DLLNode</a> **&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structDLLNode.html">DLLNode</a> *&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a node on the start of the list.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Pointer to a pointer to the head or the function </td></tr>
+    <tr><td class="paramname">node</td><td>Pointer to the node to append </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>CLINKD_OK on success, CLINKD_ERROR if head or node is null CLINKD_FULL if the node limit is reached </dd></dl>
 
 </div>
 </div>
