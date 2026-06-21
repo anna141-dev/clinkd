@@ -2,12 +2,13 @@ var searchData=
 [
   ['debug_0',['debug',['../src_2main_8c.html#aecc1f7a8a2493b9e021e5bff76a00a5b',1,'DEBUG:&#160;main.c'],['../test__helpers_8h.html#aecc1f7a8a2493b9e021e5bff76a00a5b',1,'DEBUG:&#160;test_helpers.h']]],
   ['dllappend_1',['dllappend',['../doubly__linked__list_8h.html#a563f330fb4299d21ff4e9d73c4afeb85',1,'DLLAppend(DLLNode **head, DLLNode *node):&#160;doubly_linked_list.c'],['../doubly__linked__list_8c.html#a563f330fb4299d21ff4e9d73c4afeb85',1,'DLLAppend(DLLNode **head, DLLNode *node):&#160;doubly_linked_list.c']]],
-  ['dllcountnodes_2',['dllcountnodes',['../doubly__linked__list_8h.html#a8c40cdd675d5d87b64f8744d3513841e',1,'DLLCountNodes(DLLNode *head):&#160;doubly_linked_list.c'],['../doubly__linked__list_8c.html#a8c40cdd675d5d87b64f8744d3513841e',1,'DLLCountNodes(DLLNode *head):&#160;doubly_linked_list.c']]],
+  ['dllcountnodes_2',['dllcountnodes',['../doubly__linked__list_8c.html#a8c40cdd675d5d87b64f8744d3513841e',1,'DLLCountNodes(DLLNode *head):&#160;doubly_linked_list.c'],['../doubly__linked__list_8h.html#a8c40cdd675d5d87b64f8744d3513841e',1,'DLLCountNodes(DLLNode *head):&#160;doubly_linked_list.c']]],
   ['dllnode_3',['dllnode',['../structDLLNode.html',1,'DLLNode'],['../doubly__linked__list_8h.html#ac6f2730837a0c45f7f337cf76c4aabb2',1,'DLLNode:&#160;doubly_linked_list.h']]],
   ['dllnodes_4',['dllnodes',['../doubly__linked__list_8h.html#a03f46ea9b5a0f29e8ab8bfc8a55ecdb0',1,'DLLNodes(DLLNode *head, void(*print_node)(DLLNode *)):&#160;doubly_linked_list.c'],['../doubly__linked__list_8c.html#a03f46ea9b5a0f29e8ab8bfc8a55ecdb0',1,'DLLNodes(DLLNode *head, void(*print_node)(DLLNode *)):&#160;doubly_linked_list.c']]],
-  ['dllpopfront_5',['dllpopfront',['../doubly__linked__list_8h.html#a124d5cfd9f1ec9561e254286462f2521',1,'DLLPopFront(DLLNode **head):&#160;doubly_linked_list.c'],['../doubly__linked__list_8c.html#a124d5cfd9f1ec9561e254286462f2521',1,'DLLPopFront(DLLNode **head):&#160;doubly_linked_list.c']]],
-  ['dllprepend_6',['dllprepend',['../doubly__linked__list_8c.html#af6b6367a4b44d30691c1d80f57bd1e49',1,'DLLPrepend(DLLNode **head, DLLNode *node):&#160;doubly_linked_list.c'],['../doubly__linked__list_8h.html#af6b6367a4b44d30691c1d80f57bd1e49',1,'DLLPrepend(DLLNode **head, DLLNode *node):&#160;doubly_linked_list.c']]],
-  ['documentation_7',['Documentation',['../md_README.html#autotoc_md5',1,'']]],
-  ['doubly_5flinked_5flist_2ec_8',['doubly_linked_list.c',['../doubly__linked__list_8c.html',1,'']]],
-  ['doubly_5flinked_5flist_2eh_9',['doubly_linked_list.h',['../doubly__linked__list_8h.html',1,'']]]
+  ['dllpopback_5',['dllpopback',['../doubly__linked__list_8h.html#ab92a9d7dba0545fe35669f87b1382d8e',1,'DLLPopBack(DLLNode **head):&#160;doubly_linked_list.c'],['../doubly__linked__list_8c.html#ab92a9d7dba0545fe35669f87b1382d8e',1,'DLLPopBack(DLLNode **head):&#160;doubly_linked_list.c']]],
+  ['dllpopfront_6',['dllpopfront',['../doubly__linked__list_8h.html#a124d5cfd9f1ec9561e254286462f2521',1,'DLLPopFront(DLLNode **head):&#160;doubly_linked_list.c'],['../doubly__linked__list_8c.html#a124d5cfd9f1ec9561e254286462f2521',1,'DLLPopFront(DLLNode **head):&#160;doubly_linked_list.c']]],
+  ['dllprepend_7',['dllprepend',['../doubly__linked__list_8c.html#af6b6367a4b44d30691c1d80f57bd1e49',1,'DLLPrepend(DLLNode **head, DLLNode *node):&#160;doubly_linked_list.c'],['../doubly__linked__list_8h.html#af6b6367a4b44d30691c1d80f57bd1e49',1,'DLLPrepend(DLLNode **head, DLLNode *node):&#160;doubly_linked_list.c']]],
+  ['documentation_8',['Documentation',['../md_README.html#autotoc_md5',1,'']]],
+  ['doubly_5flinked_5flist_2ec_9',['doubly_linked_list.c',['../doubly__linked__list_8c.html',1,'']]],
+  ['doubly_5flinked_5flist_2eh_10',['doubly_linked_list.h',['../doubly__linked__list_8h.html',1,'']]]
 ];
