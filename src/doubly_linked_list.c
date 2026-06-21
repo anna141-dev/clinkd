@@ -84,6 +84,33 @@ ClinkdStatus DLLPopFront(DLLNode** head) {
   return CLINKD_OK;
 }
 
+ClinkdStatus DLLPopBack(DLLNode** head) {
+  if (head == NULL) return CLINKD_ERROR;
+
+  size_t current_size = (*head) != NULL ? (*head)->size - 1: 0;
+
+  // first case: list with a single node
+  if ((*head)->next == NULL) {
+    *head = NULL;
+    return CLINKD_OK;
+  }
+
+  // second case: list with multiple nodes
+  DLLNode* current = *head;
+
+  // traverses to the last-to-last node
+  while (current->next->next != NULL) {
+    current = current->next;
+  }
+
+  current->next = NULL;
+  current->prev = current;
+
+  (*head)->size = current_size;
+
+  return CLINKD_OK;
+}
+
 void DLLNodes(DLLNode* head, void(*print_node)(DLLNode*)) {
   if (print_node == NULL) return;
 

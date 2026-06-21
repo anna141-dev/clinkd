@@ -79,6 +79,11 @@ void run_doubly_tests(void) {
 
   ASSERT(DLLCountNodes(head) == 5, "Node count is 5 after PopFront");
 
-  TEST(7, "Printing Nodes after PopFront");
+  TEST(7, "Pop Back");
+  DLLPopBack(&head);
+
+  ASSERT(DLLCountNodes(head) == 4, "Node count is 4 after PopBack");
+
+  TEST(8, "Printing Nodes after Pop Operations");
   DLLNodes(head, PrintItem);
 }

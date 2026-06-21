@@ -56,6 +56,15 @@ ClinkdStatus DLLPrepend(DLLNode** head, DLLNode* node);
 ClinkdStatus DLLPopFront(DLLNode** head);
 
 /**
+ * Removes the node on the end of the list.
+ *
+ * @param head Pointer to a pointer to the head of the list
+ * @return CLINKD_OK on success,
+ *         CLINKD_ERROR if head or node is null
+ */
+ClinkdStatus DLLPopBack(DLLNode** head);
+
+/**
  * Iterates through the list, calling print_node for each node.
  *
  * The caller uses clinkd_container_of inside print_node to access the parent struct.
