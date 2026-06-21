@@ -57,4 +57,17 @@ void run_doubly_tests(void) {
 
   TEST(3, "Printing Nodes after individual appends");
   DLLNodes(head, PrintItem);
+
+  /*Prepend Values*/
+  SECTION("Prepend individual values");
+
+  TEST(4, "Prependint 100, 110, 120");
+  DLLPrepend(&head, MakeNode(&items[item_idx++], 100));
+  DLLPrepend(&head, MakeNode(&items[item_idx++], 110));
+  DLLPrepend(&head, MakeNode(&items[item_idx++], 120));
+
+  ASSERT(DLLCountNodes(head) == 6, "Node count is 6 after prepeding");
+
+  TEST(5, "Printing Nodes after Individual prepends");
+  DLLNodes(head, PrintItem);
 }

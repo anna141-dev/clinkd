@@ -30,10 +30,21 @@ typedef struct DLLNode {
  * @param head Pointer to a pointer to the head node.
  * @param node Pointer to the node to append.
  * @return CLINKD_OK on success,
- *          CLINKD_ERROR if head or node is null
- *          CLINKD_FULL if the node limit is reached
+ *         CLINKD_ERROR if head or node is null
+ *         CLINKD_FULL if the node limit is reached
  */
 ClinkdStatus DLLAppend(DLLNode** head, DLLNode* node);
+
+/**
+ * Adds a node on the start of the list.
+ *
+ * @param head Pointer to a pointer to the head or the function
+ * @param node Pointer to the node to append
+ * @return CLINKD_OK on success,
+ *         CLINKD_ERROR if head or node is null
+ *         CLINKD_FULL if the node limit is reached
+ */
+ClinkdStatus DLLPrepend(DLLNode** head, DLLNode* node);
 
 /**
  * Iterates through the list, calling print_node for each node.

@@ -45,6 +45,31 @@ ClinkdStatus DLLAppend(DLLNode** head, DLLNode* node) {
   return CLINKD_OK;
 }
 
+ClinkdStatus DLLPrepend(DLLNode** head, DLLNode* node) {
+  if (head == NULL || node == NULL) return CLINKD_ERROR;
+
+  size_t current_size = (*head) != NULL ? (*head)->size + 1 : 0;
+
+  // first case: empty list
+  if (*head == NULL) {
+    *head = node;
+    (*head)->size = 1;
+    return CLINKD_OK;
+  }
+
+  if (DLLCountNodes(*head) >= LINKED_LIST_MAX_NODES)
+      return CLINKD_FULL;
+
+  // second case: list with multiple nodes
+  node->next = *head;
+  *head = node;
+  node->prev = NULL;
+
+  node->size = current_size;
+
+  return CLINKD_OK;
+}
+
 void DLLNodes(DLLNode* head, void(*print_node)(DLLNode*)) {
   if (print_node == NULL) return;
 
