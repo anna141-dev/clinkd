@@ -110,6 +110,10 @@ Functions</h2></td></tr>
 <tr class="separator:a124d5cfd9f1ec9561e254286462f2521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab92a9d7dba0545fe35669f87b1382d8e" id="r_ab92a9d7dba0545fe35669f87b1382d8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="clinkd__common_8h.html#a519ac7e28361997c3734ca31c4dfe2e0">ClinkdStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#ab92a9d7dba0545fe35669f87b1382d8e">DLLPopBack</a> (<a class="el" href="structDLLNode.html">DLLNode</a> **head)</td></tr>
 <tr class="separator:ab92a9d7dba0545fe35669f87b1382d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78fd58f5a04cc33bd962ca307db66fe3" id="r_a78fd58f5a04cc33bd962ca307db66fe3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="clinkd__common_8h.html#a519ac7e28361997c3734ca31c4dfe2e0">ClinkdStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#a78fd58f5a04cc33bd962ca307db66fe3">DLLInsertAt</a> (<a class="el" href="structDLLNode.html">DLLNode</a> **head, <a class="el" href="structDLLNode.html">DLLNode</a> *node, size_t index)</td></tr>
+<tr class="separator:a78fd58f5a04cc33bd962ca307db66fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d4eefc1fb73c49972234f9e4c1b2f96" id="r_a2d4eefc1fb73c49972234f9e4c1b2f96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="clinkd__common_8h.html#a519ac7e28361997c3734ca31c4dfe2e0">ClinkdStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#a2d4eefc1fb73c49972234f9e4c1b2f96">DLLDeleteAt</a> (<a class="el" href="structDLLNode.html">DLLNode</a> **head, size_t index)</td></tr>
+<tr class="separator:a2d4eefc1fb73c49972234f9e4c1b2f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03f46ea9b5a0f29e8ab8bfc8a55ecdb0" id="r_a03f46ea9b5a0f29e8ab8bfc8a55ecdb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#a03f46ea9b5a0f29e8ab8bfc8a55ecdb0">DLLNodes</a> (<a class="el" href="structDLLNode.html">DLLNode</a> *head, void(*print_node)(<a class="el" href="structDLLNode.html">DLLNode</a> *))</td></tr>
 <tr class="separator:a03f46ea9b5a0f29e8ab8bfc8a55ecdb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c40cdd675d5d87b64f8744d3513841e" id="r_a8c40cdd675d5d87b64f8744d3513841e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#a8c40cdd675d5d87b64f8744d3513841e">DLLCountNodes</a> (<a class="el" href="structDLLNode.html">DLLNode</a> *head)</td></tr>
@@ -177,6 +181,87 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The total number of nodes in the list </dd></dl>
+
+</div>
+</div>
+<a id="a2d4eefc1fb73c49972234f9e4c1b2f96" name="a2d4eefc1fb73c49972234f9e4c1b2f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d4eefc1fb73c49972234f9e4c1b2f96">&#9670;&#160;</a></span>DLLDeleteAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="clinkd__common_8h.html#a519ac7e28361997c3734ca31c4dfe2e0">ClinkdStatus</a> DLLDeleteAt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structDLLNode.html">DLLNode</a> **&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Deletes a node at a given index</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list </td></tr>
+    <tr><td class="paramname">index</td><td>Zero-based position to delete at </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>CLINKD_OK on success, CLINKD_ERROR if head or node is null, CLINKD_FULL if the node limit is reached, CLINKD_OUT_OF_BOUNDS if the given index is out of bounds </dd></dl>
+
+</div>
+</div>
+<a id="a78fd58f5a04cc33bd962ca307db66fe3" name="a78fd58f5a04cc33bd962ca307db66fe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78fd58f5a04cc33bd962ca307db66fe3">&#9670;&#160;</a></span>DLLInsertAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="clinkd__common_8h.html#a519ac7e28361997c3734ca31c4dfe2e0">ClinkdStatus</a> DLLInsertAt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structDLLNode.html">DLLNode</a> **&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structDLLNode.html">DLLNode</a> *&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Inserts a node at a given index</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list </td></tr>
+    <tr><td class="paramname">node</td><td>Pointer to the node to append </td></tr>
+    <tr><td class="paramname">index</td><td>Zero-based position to insert at </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>CLINKD_OK on success, CLINKD_ERROR if head or node is null, CLINKD_FULL if the node limit is reached, CLINKD_OUT_OF_BOUNDS if the given index is out of bounds </dd></dl>
 
 </div>
 </div>
