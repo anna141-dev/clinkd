@@ -100,6 +100,13 @@ void run_doubly_tests(void) {
 
   ASSERT(DLLCountNodes(head) == 4, "Node count is 4 after DeleteAt");
 
-  TEST(11, "Printint Nodes after InsertAt/DeleteAt");
+  TEST(11, "Printing Nodes after InsertAt/DeleteAt");
   DLLNodes(head, PrintItem);
+
+  /*Memory cleanup*/
+  SECTION("Memory Cleanup");
+  TEST(12, "Clearing all lists");
+  DLLClear(&head);
+
+  ASSERT(head == NULL, "List head is NULL after DLLClear");
 }

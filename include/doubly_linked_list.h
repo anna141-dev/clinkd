@@ -107,6 +107,19 @@ void DLLNodes(DLLNode* head, void(*print_node)(DLLNode *));
  */
 size_t DLLCountNodes(DLLNode* head);
 
+
+/**
+ * Detaches all nodes from the list by setting head to NULL
+ *
+ * Does NOT free any memory, the caller owns each parent struct and is
+ * responsible for releasing them. This function only resets the list state.
+ *
+ * @param head Pointer to a pointer to the head of the list.
+ * @return CLINKD_OK on success,
+ *         CLINKD_ERROR if the head is null
+ */
+ClinkdStatus DLLClear(DLLNode** head);
+
 #ifdef __cplusplus
 }
 #endif

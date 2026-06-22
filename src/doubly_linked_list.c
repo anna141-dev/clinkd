@@ -195,3 +195,11 @@ size_t DLLCountNodes(DLLNode* head) {
 
   return head->size;
 }
+
+ClinkdStatus DLLClear(DLLNode** head) {
+  if (head == NULL) return CLINKD_ERROR;
+
+  *head = NULL;
+
+  return CLINKD_OK;
+}
