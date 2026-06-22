@@ -118,6 +118,8 @@ Functions</h2></td></tr>
 <tr class="separator:a03f46ea9b5a0f29e8ab8bfc8a55ecdb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c40cdd675d5d87b64f8744d3513841e" id="r_a8c40cdd675d5d87b64f8744d3513841e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#a8c40cdd675d5d87b64f8744d3513841e">DLLCountNodes</a> (<a class="el" href="structDLLNode.html">DLLNode</a> *head)</td></tr>
 <tr class="separator:a8c40cdd675d5d87b64f8744d3513841e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8614b247a1e62351d925c46e414c7e82" id="r_a8614b247a1e62351d925c46e414c7e82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="clinkd__common_8h.html#a519ac7e28361997c3734ca31c4dfe2e0">ClinkdStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doubly__linked__list_8c.html#a8614b247a1e62351d925c46e414c7e82">DLLClear</a> (<a class="el" href="structDLLNode.html">DLLNode</a> **head)</td></tr>
+<tr class="separator:a8614b247a1e62351d925c46e414c7e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a563f330fb4299d21ff4e9d73c4afeb85" name="a563f330fb4299d21ff4e9d73c4afeb85"></a>
@@ -155,6 +157,33 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>CLINKD_OK on success, CLINKD_ERROR if head or node is null CLINKD_FULL if the node limit is reached </dd></dl>
+
+</div>
+</div>
+<a id="a8614b247a1e62351d925c46e414c7e82" name="a8614b247a1e62351d925c46e414c7e82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8614b247a1e62351d925c46e414c7e82">&#9670;&#160;</a></span>DLLClear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="clinkd__common_8h.html#a519ac7e28361997c3734ca31c4dfe2e0">ClinkdStatus</a> DLLClear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structDLLNode.html">DLLNode</a> **&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Detaches all nodes from the list by setting head to NULL</p>
+<p>Does NOT free any memory, the caller owns each parent struct and is responsible for releasing them. This function only resets the list state.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Pointer to a pointer to the head of the list. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>CLINKD_OK on success, CLINKD_ERROR if the head is null </dd></dl>
 
 </div>
 </div>
