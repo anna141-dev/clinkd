@@ -86,4 +86,20 @@ void run_doubly_tests(void) {
 
   TEST(8, "Printing Nodes after Pop Operations");
   DLLNodes(head, PrintItem);
+
+  /*Insert At/Delete At*/
+  SECTION("Insert At/Delete At Operation");
+
+  TEST(9, "Inserting '42' at index 2");
+  DLLInsertAt(&head, MakeNode(&items[item_idx++], 42), 2);
+
+  ASSERT(DLLCountNodes(head) == 5, "Node count is 5 after InsertAt");
+
+  TEST(10, "Inserting the node at index 3");
+  DLLDeleteAt(&head, 3);
+
+  ASSERT(DLLCountNodes(head) == 4, "Node count is 4 after DeleteAt");
+
+  TEST(11, "Printint Nodes after InsertAt/DeleteAt");
+  DLLNodes(head, PrintItem);
 }

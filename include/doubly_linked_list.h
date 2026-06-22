@@ -65,6 +65,31 @@ ClinkdStatus DLLPopFront(DLLNode** head);
 ClinkdStatus DLLPopBack(DLLNode** head);
 
 /**
+ * Inserts a node at a given index
+ *
+ * @param head Pointer to a pointer to the head of the list
+ * @param node Pointer to the node to append
+ * @param index Zero-based position to insert at
+ * @return CLINKD_OK on success,
+ *         CLINKD_ERROR if head or node is null,
+ *         CLINKD_FULL if the node limit is reached,
+ *         CLINKD_OUT_OF_BOUNDS if the given index is out of bounds
+ */
+ClinkdStatus DLLInsertAt(DLLNode** head, DLLNode* node, size_t index);
+
+/**
+ * Deletes a node at a given index
+ *
+ * @param head Pointer to a pointer to the head of the list
+ * @param index Zero-based position to delete at
+ * @return CLINKD_OK on success,
+ *         CLINKD_ERROR if head or node is null,
+ *         CLINKD_FULL if the node limit is reached,
+ *         CLINKD_OUT_OF_BOUNDS if the given index is out of bounds
+ */
+ClinkdStatus DLLDeleteAt(DLLNode** head, size_t index);
+
+/**
  * Iterates through the list, calling print_node for each node.
  *
  * The caller uses clinkd_container_of inside print_node to access the parent struct.

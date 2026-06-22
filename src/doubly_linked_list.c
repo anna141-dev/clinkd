@@ -65,7 +65,7 @@ ClinkdStatus DLLPrepend(DLLNode** head, DLLNode* node) {
   node->prev = NULL;
 
   // increase the node count in the list
-  node->size = current_size;
+  (*head)->size = current_size;
 
   return CLINKD_OK;
 }
@@ -107,6 +107,73 @@ ClinkdStatus DLLPopBack(DLLNode** head) {
   current->prev = current;
 
   (*head)->size = current_size;
+
+  return CLINKD_OK;
+}
+
+ClinkdStatus DLLInsertAt(DLLNode** head, DLLNode* node, size_t index) {
+  if (head == NULL || node == NULL) return CLINKD_ERROR;
+
+  // first case: index == 0
+  if (index == 0) {
+    size_t current_size = *head != NULL ? (*head)->size + 1 : 0;
+
+    node->next = *head;
+    node->prev = NULL;
+
+    // updates the node counter
+    (*head)->size = current_size + 1;
+
+    return CLINKD_OK;
+  }
+
+  if (DLLCountNodes(*head) >= LINKED_LIST_MAX_NODES)
+      return CLINKD_FULL;
+
+  // traverses to the last-to-last node
+  DLLNode* current = *head;
+  for (size_t i = 0; i < index - 1 && current != NULL; i++) {
+    current = current->next;
+  }
+
+  if (current == NULL) return CLINKD_OUT_OF_BOUNDS;
+
+  node->next = current->next;
+  current->next = node;
+  current->next->prev = current;
+
+  (*head)->size++;
+
+  return CLINKD_OK;
+}
+
+ClinkdStatus DLLDeleteAt(DLLNode** head, size_t index) {
+  if (head == NULL) return CLINKD_ERROR;
+
+  if (index == 0) {
+    size_t current_size = (*head) != NULL ? (*head)->size : 0;
+
+    (*head) = (*head)->next;
+    (*head)->prev = NULL;
+
+    (*head)->size = current_size - 1;
+  }
+
+  if (DLLCountNodes(*head) >= LINKED_LIST_MAX_NODES)
+      return CLINKD_FULL;
+
+  // traverses to the last-to-last node
+  DLLNode* current = *head;
+  for (size_t i = 0; i < index - 1 && current != NULL; i++) {
+    current = current->next;
+  }
+
+  if (current == NULL) return CLINKD_OUT_OF_BOUNDS;
+
+  current->next = current->next->next;
+  current->prev = current->prev->prev;
+
+  (*head)->size--;
 
   return CLINKD_OK;
 }
