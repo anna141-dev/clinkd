@@ -117,7 +117,8 @@ SLLNode* SLLFind(SLLNode* head, bool (*predicate)(SLLNode*, void*), void* ctx) {
 }
 
 ClinkdStatus SLLInsertAt(SLLNode** head, SLLNode* node, size_t index) {
-  // rejects null pointers, avoiding undefined behavior
+  // Reject null pointers; *head == NULL is valid (empty list),
+  // but node == NULL cannot be inserted.
   if (head == NULL || node == NULL) return CLINKD_ERROR;
 
   // respects the node limit
@@ -125,24 +126,30 @@ ClinkdStatus SLLInsertAt(SLLNode** head, SLLNode* node, size_t index) {
       return CLINKD_FULL;
 
   if (index == 0) {
-    // if the head is not empty, the node counter
-    // remains at the current one, otherwise it remains at 0
+    // preserve the current size before reassigning *head
     size_t current_size = (*head != NULL) ? (*head)->size : 0;
 
-    node->next = *head;
-    *head = node;
-    (*head)->size = current_size + 1; // updates the total of nodes
+    node->next = *head; // chain the current list after the new node
+    *head = node; // new node becomes the head
+    (*head)->size = current_size + 1;
     return CLINKD_OK;
   }
 
   SLLNode* current = *head;
-  // traverse to the second-to-last node
+  // advances to the node immediately before the target (index - 1).
+  // the condition current->next != NULL avoids going beyond the end of the list
+  // when index is greater than its length.
   for (size_t i = 0; i < index - 1 && current != NULL; i++) {
     current = current->next;
   }
 
+  // current == NULL means that index points beyond the end of the list.
+  // unlike SLLDeleteAt, here we do not check current->next, as
+  // inserting after the last node (append) is a legitimate case
   if (current == NULL) return CLINKD_OUT_OF_BOUNDS;
 
+  // snap the new node between current and current->next
+  // if current->next is NULL (insertion at the end), node->next is NULL
   node->next = current->next;
   current->next = node;
 
@@ -156,24 +163,31 @@ ClinkdStatus SLLDeleteAt(SLLNode** head, size_t index) {
   if (head == NULL || *head == NULL) return CLINKD_ERROR;
 
   if (index == 0) {
-    // if the head is not empty, the node counter
-    // remains at the current one, otherwise it remains at 0
+    // Preserve the current size before reassigning *head
     size_t current_size = (*head != NULL) ? (*head)->size : 0;
 
+    // special case: redirects head to the second node without traversing the list
     *head = (*head)->next;
+
     (*head)->size = current_size - 1;
     return CLINKD_OK;
   }
 
   SLLNode* current = *head;
-  // traverse to the second-to-last node
+  // advances to the node immediately before the target (index - 1).
+  // the condition current->next != NULL avoids going beyond the end of the list
+  // when index is greater than its length.
   for (size_t i = 0; i < index - 1 && current->next != NULL; i++) {
     current = current->next;
   }
 
+  // if current->next is NULL, the requested index is beyond the last node
   if (current->next == NULL) return CLINKD_OUT_OF_BOUNDS;
 
+  // current->next becomes the node following the removed one.
+  // the removed node is not freed here, its caller's responsibility
   current->next = current->next->next;
+
   (*head)->size--; // Decreases the node counter
 
   return CLINKD_OK;
