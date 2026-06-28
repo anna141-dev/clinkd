@@ -156,7 +156,12 @@ ClinkdStatus SLLDeleteAt(SLLNode** head, size_t index) {
   if (head == NULL || *head == NULL) return CLINKD_ERROR;
 
   if (index == 0) {
+    // if the head is not empty, the node counter
+    // remains at the current one, otherwise it remains at 0
+    size_t current_size = (*head != NULL) ? (*head)->size : 0;
+
     *head = (*head)->next;
+    (*head)->size = current_size - 1;
     return CLINKD_OK;
   }
 
