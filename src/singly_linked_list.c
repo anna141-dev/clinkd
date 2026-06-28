@@ -200,12 +200,18 @@ size_t SLLCountNodes(SLLNode* head) {
 }
 
 ClinkdStatus SLLReverse(SLLNode** head) {
+  // reject null pointers to the head pointer
+  // *head == NULL is valid and represents an empty list
+  // in this case, the loop does not execute and *head remains NULL
   if (head == NULL) return CLINKD_ERROR;
 
   SLLNode* current = *head;
   SLLNode* previous = NULL;
   SLLNode* next = NULL;
 
+  // with each iteration, redirect current->next to the previous node,
+  // advancing the three hands together. when entering the loop,
+  // "previous" is the head of the already inverted sublist.
   while (current != NULL) {
     next = current->next;
     current->next = previous;
@@ -213,35 +219,49 @@ ClinkdStatus SLLReverse(SLLNode** head) {
     current = next;
   }
 
+  // when exiting the loop, current == NULL and previous points to the last node
+  // original, which is now the new head.
   *head = previous;
 
   return CLINKD_OK;
 }
 
 SLLNode* SLLFilter(SLLNode* head, bool (*predicate)(SLLNode*)) {
+  // both arguments must be valid, without predicate there is no criterion
+  // of filter, and a null list has nothing to filter
   if (head == NULL || predicate == NULL) return NULL;
 
   SLLNode* new_head = NULL;
-  SLLNode* new_tail = NULL;
-  SLLNode* current = head;
+  SLLNode* new_tail = NULL; // will be the new *head at the end of the inversion
+  SLLNode* current = head; //save next before overwriting current->next
 
   while (current != NULL) {
+    // save the next one before any redirection
     SLLNode* next = current->next;
 
     if (predicate(current)) {
+      // isolates the node, ensures it doesn't drag the rest of the original list.
+      // without this, new_tail->next could point to a deprecated node.
       current->next = NULL;
 
       if (new_head == NULL) {
+        // first node approved we initialize
+        // the tail and the head of the new list
         new_head = current;
         new_tail = current;
       } else {
+        // chain at the end and advance the tail
         new_tail->next = current;
         new_tail = current;
       }
     }
 
+    // deprecated nodes are simply ignored, the responsibility of
+    // freeing memory stays with the caller, which still has original head
+
     current = next;
   }
 
+  // returns NULL if no node passed the predicate (new_head was never set)
   return new_head;
 }
